@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 15:36:42 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/10 18:18:08 by rbroque          ###   ########.fr       */
+/*   Created: 2022/10/10 17:07:17 by rbroque           #+#    #+#             */
+/*   Updated: 2022/10/10 18:05:40 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "ft_printf.h"
 
-int	main(void)
+int	ft_printf(const char *str, ...)
 {
-//	const char	*str = "lol";
+	va_list	aptr;
 
-	lol();
+	va_start(aptr, str);
+	printf("%s", aptr);
+	va_end(aptr);
 	return (EXIT_SUCCESS);
+}
+*/
+
+void	lol(void)
+{
 }

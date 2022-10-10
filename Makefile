@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/10 16:56:03 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/10 18:15:53 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = libftprintf.a
 
 PATH_SRCS += srcs/
 
-#SRCS += main.c
+SRCS += ft_printf.c
 
 vpath %.c $(PATH_SRCS)
 
@@ -30,13 +30,12 @@ OBJS = $(patsubst %.c, $(PATH_OBJS)/%.o, $(SRCS))
 ### LIB
 
 LIB_FOLDER = libft/
-LIB_HEADER = $(LIB_FOLDER)/includes/libft.h
 LIB = $(LIB_FOLDER)/libft.a
 
 ### INCLUDES
 
 INCLUDES += includes/
-INCLUDES += $(LIB_HEADER)
+INCLUDES_LIB = $(LIB_FOLDER)/includes/libft.h
 
 ### CHECK
 
@@ -69,7 +68,8 @@ $(LIB):
 
 $(OBJS): $(PATH_OBJS)/%.o: %.c $(HEADER)
 	@mkdir -p $(PATH_OBJS)
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES) -L $(LIB)
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES) -I $(INCLUDES_LIB)
+# -L $(LIB)
 
 test: $(NAME)
 	$(MAKE) -sC $(CHECK_FOLDER) $(IS_BONUS)
@@ -78,7 +78,7 @@ test: $(NAME)
 clean:
 	$(RM) -R $(PATH_OBJS)
 	$(MAKE) -sC $(LIB_FOLDER) clean
-	$(MAKE) -sC $(CHECK_FOLDER) clean
+	$(MAKE) -sC $(CHECK_FOLDER) fclean
 
 fclean: clean
 	$(RM) $(NAME)

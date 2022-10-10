@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 10:14:45 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/10 16:49:03 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/10 18:29:24 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,14 +30,15 @@ CHECK_OBJS += $(patsubst %.c, $(PATH_CHECK_OBJS)/%.o, $(CHECK_SRCS))
 
 ########## INCLUDES
 
-CHECK_INCLUDES += /usr/include
+CHECK_INCLUDES += /usr/include/
 TEST_INCLUDES += includes/
-INCLUDES += ../includes
+INCLUDES += ../includes/
 
 ########## INCLUDES
 
 LIB += /usr/lib/aarch64-linux-gnu/libcheck.a # Must be changed according with the OS
 LIB += ../libft/libft.a
+LIB += ../libftprintf.a
 
 vpath %.h $(INCLUDES)
 vpath %test.h $(TEST_INCLUDES)
