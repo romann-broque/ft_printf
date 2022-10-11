@@ -1,43 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   states.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/11 12:43:35 by rbroque          ###   ########.fr       */
+/*   Created: 2022/10/11 12:47:25 by rbroque           #+#    #+#             */
+/*   Updated: 2022/10/11 12:47:35 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-
-# include <stdarg.h>
-# include "../libft/includes/libft.h"
-
-# define OPTION_CHAR '%'
-
-enum e_state
-{
-	E_IDLE,
-	E_OPTION,
-	E_END,
-};
-
-typedef struct s_machine
-{
-	char			curr_c;
-	enum e_state	state;
-}				t_machine;
+#include "ft_printf.h"
 
 
-// machine_struct
-
-t_machine	*init_machine(const char *str);
-
-// ft_printf
-
-int		ft_printf(const char *str, ...);
-
-#endif

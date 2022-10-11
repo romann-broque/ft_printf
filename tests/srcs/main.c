@@ -6,16 +6,17 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:36:42 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/10 18:18:08 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/11 12:44:34 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main(void)
+int	main(int ac, char **av)
 {
-//	const char	*str = "lol";
-
-	lol();
+	if (ac > 1)
+		ft_printf(av[1]);
+	else
+		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 }

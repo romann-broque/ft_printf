@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   machine_struct.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/11 12:43:35 by rbroque          ###   ########.fr       */
+/*   Created: 2022/10/11 12:04:20 by rbroque           #+#    #+#             */
+/*   Updated: 2022/10/11 12:04:45 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include "../libft/includes/libft.h"
-
-# define OPTION_CHAR '%'
-
-enum e_state
+t_machine	*init_machine(const char *str)
 {
-	E_IDLE,
-	E_OPTION,
-	E_END,
-};
+	t_machine	*machine;
 
-typedef struct s_machine
-{
-	char			curr_c;
-	enum e_state	state;
-}				t_machine;
-
-
-// machine_struct
-
-t_machine	*init_machine(const char *str);
-
-// ft_printf
-
-int		ft_printf(const char *str, ...);
-
-#endif
+	machine = (t_machine *)malloc(sizeof(t_machine));
+	if (machine != NULL)
+	{
+		machine->curr_c = *str;
+		machine->state = E_IDLE;
+	}
+	return (machine);
+}
