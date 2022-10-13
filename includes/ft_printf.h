@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/11 12:43:35 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/11 15:59:17 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ enum e_state
 
 typedef struct s_machine
 {
-	char			curr_c;
+	char			*input;
+	size_t			index;
 	enum e_state	state;
 }				t_machine;
 
