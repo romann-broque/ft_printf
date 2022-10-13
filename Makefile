@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/11 12:49:37 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/13 17:23:45 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ PATH_SRCS += srcs/
 SRCS += ft_printf.c
 SRCS += machine_struct.c
 SRCS += states.c
+SRCS += utils.c
 
 vpath %.c $(PATH_SRCS)
 

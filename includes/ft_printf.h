@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/11 15:59:17 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/13 17:35:16 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include "../libft/includes/libft.h"
 
 # define OPTION_CHAR '%'
+# define OPTIONS "s"
+# define NBOF_OPTIONS 1
 
 enum e_state
 {
@@ -28,17 +30,26 @@ enum e_state
 typedef struct s_machine
 {
 	char			*input;
-	size_t			index;
+	ssize_t			index;
 	enum e_state	state;
 }				t_machine;
 
+
+// ft_printf
+
+int		ft_printf(const char *str, ...);
 
 // machine_struct
 
 t_machine	*init_machine(const char *str);
 
-// ft_printf
+// states
 
-int		ft_printf(const char *str, ...);
+void	string(void);
+
+// utils
+
+size_t	get_index(const char *str, const char c);
+
 
 #endif

@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   machine_struct.c                                   :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 12:04:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/13 17:38:43 by rbroque          ###   ########.fr       */
+/*   Created: 2022/10/13 17:18:33 by rbroque           #+#    #+#             */
+/*   Updated: 2022/10/13 17:20:53 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_machine	*init_machine(const char *str)
+size_t	get_index(const char *str, const char c)
 {
-	t_machine	*machine;
+	size_t	index;
 
-	machine = (t_machine *)malloc(sizeof(t_machine));
-	if (machine != NULL)
-	{
-		machine->input = (char *)str;
-		machine->index = 0;
-		machine->state = E_IDLE;
-	}
-	return (machine);
+	index = 0;
+	while (str[index] != '\0' && str[index] != c)
+		++index;
+	return (index);
 }
