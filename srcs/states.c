@@ -6,13 +6,13 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:47:25 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/13 17:23:06 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/14 15:14:32 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	string(void)
+void	string(va_list aptr)
 {
-	printf("string !\n");
+	ft_putstr_fd((char *)va_arg(aptr, char *), STDOUT_FILENO);
 }

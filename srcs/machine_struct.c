@@ -6,13 +6,13 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:04:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/13 17:38:43 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/13 17:46:07 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_machine	*init_machine(const char *str)
+t_machine	*init_machine(const char *str, va_list aptr)
 {
 	t_machine	*machine;
 
@@ -21,6 +21,7 @@ t_machine	*init_machine(const char *str)
 	{
 		machine->input = (char *)str;
 		machine->index = 0;
+		machine->aptr = aptr;
 		machine->state = E_IDLE;
 	}
 	return (machine);

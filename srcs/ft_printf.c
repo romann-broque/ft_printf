@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 17:07:17 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/13 17:44:34 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/13 17:49:42 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	get_option(t_machine *machine)
 {
-	static void	(*actions[])(void) = {string};
+	static void	(*actions[])(va_list) = {string};
 	const char	curr_c = (machine->input)[machine->index];
 	const size_t	option_index = get_index(OPTIONS, curr_c);
 
 	if (option_index < NBOF_OPTIONS)
-		actions[option_index]();
+		actions[option_index](machine->aptr);
 	else
 		printf("ERROR !\n");
 	machine->state = E_IDLE;
@@ -43,18 +43,17 @@ enum e_state	get_next_state(t_machine *machine)
 
 int	ft_printf(const char *str, ...)
 {
-	//	static void	*(*state_action[])(va_list) = {input};
-	//	va_list		aptr;
+	va_list		aptr;
 	t_machine	*machine;
 
-	//	va_start(aptr, str);
-	machine = init_machine(str);
+	va_start(aptr, str);
+	machine = init_machine(str, aptr);
 	while (get_next_state(machine) != E_END)
 	{
 		//	if (machine->state == E_IDLE)
 		//		state_action[machine->state](aptr);
 	}
 	free(machine);
-	//	va_end(aptr);
+	va_end(aptr);
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/13 17:23:45 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/14 15:15:10 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,8 @@ CC = clang
 CFLAGS += -Wall
 CFLAGS += -Wextra
 
+LINKS += -lft
+
 ifneq ($(noerror), 1)
 	CFLAGS += -Werror
 endif
@@ -72,11 +74,9 @@ $(LIB):
 $(OBJS): $(PATH_OBJS)/%.o: %.c $(HEADER)
 	@mkdir -p $(PATH_OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES) -I $(INCLUDES_LIB)
-# -L $(LIB)
 
 test: $(NAME)
 	$(MAKE) -sC $(CHECK_FOLDER) $(IS_BONUS)
-#	$(CHECK_FOLDER)/run_tests.sh $(CHECK_FOLDER)/exe
 
 clean:
 	$(RM) -R $(PATH_OBJS)

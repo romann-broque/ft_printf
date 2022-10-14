@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/13 17:35:16 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/13 17:50:01 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ enum e_state
 typedef struct s_machine
 {
 	char			*input;
-	ssize_t			index;
+	size_t			index;
+	va_list			aptr;
 	enum e_state	state;
 }				t_machine;
 
@@ -41,11 +42,11 @@ int		ft_printf(const char *str, ...);
 
 // machine_struct
 
-t_machine	*init_machine(const char *str);
+t_machine	*init_machine(const char *str, va_list aptr);
 
 // states
 
-void	string(void);
+void	string(va_list aptr);
 
 // utils
 

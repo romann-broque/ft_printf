@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 10:14:45 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/10 18:29:24 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/14 15:14:16 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,15 +33,16 @@ CHECK_OBJS += $(patsubst %.c, $(PATH_CHECK_OBJS)/%.o, $(CHECK_SRCS))
 CHECK_INCLUDES += /usr/include/
 TEST_INCLUDES += includes/
 INCLUDES += ../includes/
-
-########## INCLUDES
-
-LIB += /usr/lib/aarch64-linux-gnu/libcheck.a # Must be changed according with the OS
-LIB += ../libft/libft.a
-LIB += ../libftprintf.a
+LIB_INCLUDES += ../libft/includes
 
 vpath %.h $(INCLUDES)
 vpath %test.h $(TEST_INCLUDES)
+
+########## LIB
+
+LIB += -L /usr/lib/aarch64-linux-gnu/libcheck.a # Must be changed according with the OS
+LIB += -L ../ -lftprintf
+LIB += -L ../libft/ -lft
 
 ########## COMPILER
 
@@ -67,7 +68,7 @@ endif
 all: $(NAME)
 
 $(NAME): $(CHECK_OBJS)
-	$(CC) $(CFLAGS) $^ -L $(LIB) $(LINKS) -o $@ -I $(INCLUDES) -I $(CHECK_INCLUDES)
+	$(CC) $(CFLAGS) $^ $(LIB) $(LINKS) -o $@ -I $(LIB_INCLUDES) -I $(INCLUDES) -I $(CHECK_INCLUDES)
 	@echo $(NAME) COMPILED !
 
 $(CHECK_OBJS): $(PATH_CHECK_OBJS)/%.o: %.c
