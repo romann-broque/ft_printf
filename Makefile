@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/14 15:15:10 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/14 19:27:59 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ NAME = libftprintf.a
 PATH_SRCS += srcs/
 
 SRCS += ft_printf.c
+SRCS += ft_vdprintf.c
 SRCS += machine_struct.c
 SRCS += states.c
 SRCS += utils.c
