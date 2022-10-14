@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 17:07:17 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/14 17:19:34 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/14 18:23:05 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 void	get_option(t_machine *machine)
 {
-	static void	(*actions[])(t_machine *) = {string};
-	const char	curr_c = (machine->input)[machine->index];
+	static void		(*actions[])(t_machine *) = {string};
+	const char		curr_c = (machine->input)[machine->index];
 	const size_t	option_index = get_index(OPTIONS, curr_c);
+
 	if (option_index < NBOF_OPTIONS)
 		actions[option_index](machine);
-	else
+	else if (machine->input[machine->index + 1] != '\0')
 	{
 		ft_putchar_fd(OPTION_CHAR, STDOUT_FILENO);
 		ft_putchar_fd(curr_c, STDOUT_FILENO);

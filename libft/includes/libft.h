@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:15:48 by rbroque           #+#    #+#             */
-/*   Updated: 2022/09/22 15:09:30 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/14 17:51:15 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdint.h>
 # include <stdio.h>
 # include <stdbool.h>
+# include "get_next_line.h"
 
 # define SPACE ' '
 # define FIRST_WHITESPACE 9 
