@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 17:07:17 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/13 17:49:42 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/14 17:19:34 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 void	get_option(t_machine *machine)
 {
-	static void	(*actions[])(va_list) = {string};
+	static void	(*actions[])(t_machine *) = {string};
 	const char	curr_c = (machine->input)[machine->index];
 	const size_t	option_index = get_index(OPTIONS, curr_c);
-
 	if (option_index < NBOF_OPTIONS)
-		actions[option_index](machine->aptr);
+		actions[option_index](machine);
 	else
-		printf("ERROR !\n");
+	{
+		ft_putchar_fd(OPTION_CHAR, STDOUT_FILENO);
+		ft_putchar_fd(curr_c, STDOUT_FILENO);
+	}
 	machine->state = E_IDLE;
 }
 
@@ -29,14 +31,14 @@ enum e_state	get_next_state(t_machine *machine)
 {
 	char	curr_c = (machine->input)[machine->index];
 
-	if (machine->state == E_OPTION)
+	if (curr_c == '\0')
+		machine->state = E_END;
+	else if (machine->state == E_OPTION)
 		get_option(machine);
 	else if (curr_c == OPTION_CHAR)
 		machine->state = E_OPTION;
-	else if (curr_c == '\0')
-		machine->state = E_END;
 	else
-		printf("%c", curr_c);
+		ft_putchar_fd(curr_c, STDOUT_FILENO);
 	++(machine->index);
 	return (machine->state);
 }

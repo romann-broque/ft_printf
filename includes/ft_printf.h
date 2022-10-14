@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/13 17:50:01 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/14 15:58:56 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_machine	*init_machine(const char *str, va_list aptr);
 
 // states
 
-void	string(va_list aptr);
+void	string(t_machine *machine);
 
 // utils
 
