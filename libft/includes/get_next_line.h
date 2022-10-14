@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 17:48:41 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/14 17:49:00 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/14 21:01:45 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # define OPEN_MAX 256
 # define EMPTY_STRING ""
+# define BUFFER_SIZE 6
 
 typedef enum e_line_status
 {

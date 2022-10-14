@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 10:15:13 by rbroque           #+#    #+#              #
-#    Updated: 2022/09/22 15:21:04 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/14 21:02:38 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ NAME = libft.a
 
 PATH_SRCS += srcs/
 PATH_SRCS += srcs/ctype
+PATH_SRCS += srcs/gnl
 PATH_SRCS += srcs/list
 PATH_SRCS += srcs/memory
 PATH_SRCS += srcs/output
@@ -80,6 +81,11 @@ SRCS += ft_strnstr.c
 SRCS += ft_strrchr.c
 SRCS += ft_strtrim.c
 SRCS += ft_substr.c
+
+# gnl
+
+SRCS += get_next_line.c
+SRCS += get_next_line_utils.c
 
 ifeq (bonus, $(findstring bonus, $(MAKECMDGOALS)))
 	SRCS += $(SRCS_BONUS)
