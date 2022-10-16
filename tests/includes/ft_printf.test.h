@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:31:19 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 22:58:36 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/16 23:31:02 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@
 # define CHAR_TESTS "\n-----CHAR TESTS-----\n"
 # define LOW_HEX_TESTS "\n-----LOW HEX TESTS-----\n"
 # define UP_HEX_TESTS "\n-----UP HEX TESTS-----\n"
+# define ADDRESS_TESTS "\n-----ADDRESS TESTS-----\n"
 
 void	string_tests(void);
 void	character_tests(void);
 void	low_hex_tests(void);
 void	up_hex_tests(void);
+void	address_tests(void);
 
 #endif

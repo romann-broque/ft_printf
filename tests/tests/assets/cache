@@ -25,6 +25,10 @@ test3: 0
 test1: 3C706
 test2: FFFFFFFF
 test3: 0
+
+-----ADDRESS TESTS-----
+test1: 0xaaaae2753010
+test2: (nil)
 <---------------------------->
 
 -----STRING TESTS-----
@@ -53,3 +57,7 @@ test3: 0
 test1: 3C706
 test2: FFFFFFFF
 test3: 0
+
+-----ADDRESS TESTS-----
+test1: 0xaaaae2753010
+test2: (nil)
