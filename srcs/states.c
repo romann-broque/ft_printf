@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:47:25 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/14 15:58:45 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/16 18:23:36 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 void	string(t_machine *machine)
 {
-	ft_putstr_fd((char *)va_arg(machine->aptr, char *), STDOUT_FILENO);
+	ft_putstr_fd((char *)va_arg(machine->aptr, char *), machine->fd);
+}
+
+void	character(t_machine *machine)
+{
+	ft_putchar_fd((int)va_arg(machine->aptr, int), machine->fd);
 }

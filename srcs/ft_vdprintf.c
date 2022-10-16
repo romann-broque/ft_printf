@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 14:03:36 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/16 18:20:04 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,26 @@
 
 static void	get_option(t_machine *machine)
 {
-	static void		(*actions[])(t_machine *) = {string};
-	const char		curr_c = (machine->input)[machine->index];
-	const size_t	option_index = get_index(OPTIONS, curr_c);
+	static void		(*actions[])(t_machine *) = {string, character};
+	const char		*input = machine->input;
+	const size_t	option_index = get_index(OPTIONS, input[machine->index]);
+	const int		fd = machine->fd;
 
 	if (option_index < NBOF_OPTIONS)
 		actions[option_index](machine);
-	else if (machine->input[machine->index + 1] != '\0')
-		ft_putchar_fd(OPTION_CHAR, STDOUT_FILENO);
+	else if (input[machine->index + 1] != '\0')
+	{
+		ft_putchar_fd(OPTION_CHAR, fd);
+		if (input[machine->index + 2] != '\0')
+			ft_putchar_fd(input[machine->index], fd);
+	}
 	machine->state = E_IDLE;
 }
 
 static enum e_state	get_next_state(t_machine *machine)
 {
-	char	curr_c = (machine->input)[machine->index];
+	const char	curr_c = (machine->input)[machine->index];
+	const int	fd = machine->fd;
 
 	if (curr_c == '\0')
 		machine->state = E_END;
@@ -36,7 +42,7 @@ static enum e_state	get_next_state(t_machine *machine)
 	else if (curr_c == OPTION_CHAR)
 		machine->state = E_OPTION;
 	else
-		ft_putchar_fd(curr_c, STDOUT_FILENO);
+		ft_putchar_fd(curr_c, fd);
 	++(machine->index);
 	return (machine->state);
 }

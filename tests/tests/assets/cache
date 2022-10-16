@@ -1,3 +1,4 @@
+-----STRING TESTS-----
 test1: wouah
 test2: wouincredibleah
 test3: wouincredible
@@ -5,7 +6,13 @@ test4: wou
 test5: wou
 test6: wouincredible
 test7: wou%
------------
+test8: wou%wincredible
+test9: 
+-----CHAR TESTS-----
+test1: a
+test2: ÿ
+<---------------------------->
+-----STRING TESTS-----
 test1: wouah
 test2: wouincredibleah
 test3: wouincredible
@@ -13,3 +20,8 @@ test4: wou
 test5: wou
 test6: wouincredible
 test7: wou%
+test8: wou%wincredible
+test9: 
+-----CHAR TESTS-----
+test1: a
+test2: ÿ

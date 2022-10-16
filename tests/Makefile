@@ -6,19 +6,27 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 10:14:45 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/16 13:44:04 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/16 19:11:36 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = tests/exe
+FINAL_NAME = tests/is_same
 
 ########## SRCS
 
 PATH_SRCS += srcs/
+PATH_SRCS += tests/
 
-# main
+# CHECKS
 
 CHECK_SRCS += main.c
+CHECK_SRCS += string.test.c
+CHECK_SRCS += character.test.c
+
+# FINAL_SRCS
+
+FINAL_CHECK_SRCS += is_same_output.c
 
 vpath %.c $(PATH_SRCS)
 
@@ -27,6 +35,7 @@ vpath %.c $(PATH_SRCS)
 PATH_CHECK_OBJS += objs
 
 CHECK_OBJS += $(patsubst %.c, $(PATH_CHECK_OBJS)/%.o, $(CHECK_SRCS))
+FINAL_CHECK_OBJS += $(patsubst %.c, $(PATH_CHECK_OBJS)/%.o, $(FINAL_CHECK_SRCS))
 
 ########## INCLUDES
 
@@ -66,15 +75,22 @@ endif
 
 ########## RULES
 
-all: $(NAME)
+all: $(NAME) $(FINAL_NAME)
+	./tests/exe_test.sh ./tests/exe
+
+$(FINAL_NAME): $(FINAL_CHECK_OBJS)
+	$(CC) $(CFLAGS) $^ $(LIB) $(LINKS) -o $@ -I $(LIB_INCLUDES) -I $(INCLUDES) -I $(CHECK_INCLUDES)
+
+$(FINAL_CHECK_OBJS): $(PATH_CHECK_OBJS)/%.o: %.c
+	@mkdir -p $(PATH_CHECK_OBJS)
+	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES) -I $(CHECK_INCLUDES) -I $(TEST_INCLUDES)
 
 $(NAME): $(CHECK_OBJS)
 	$(CC) $(CFLAGS) $^ $(LIB) $(LINKS) -o $@ -I $(LIB_INCLUDES) -I $(INCLUDES) -I $(CHECK_INCLUDES)
 	@echo $(NAME) COMPILED !
-	./tests/exe_test.sh ./tests/exe
 
 $(CHECK_OBJS): $(PATH_CHECK_OBJS)/%.o: %.c
-	mkdir -p $(PATH_CHECK_OBJS)
+	@mkdir -p $(PATH_CHECK_OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES) -I $(CHECK_INCLUDES) -I $(TEST_INCLUDES)
 
 clean:
@@ -82,6 +98,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) $(FINAL_NAME)
 
 re: fclean
 	$(MAKE)

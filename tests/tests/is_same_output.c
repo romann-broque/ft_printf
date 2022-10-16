@@ -6,19 +6,11 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:31:54 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 13:35:30 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/16 18:47:40 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
-#include <stdbool.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <string.h>
-
-#define SEPARATOR "-----------\n"
+#include "../includes/ft_printf.test.h"
 
 void	concat(char **str, int fd)
 {

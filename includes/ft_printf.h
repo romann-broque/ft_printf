@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/14 19:27:46 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/16 18:43:59 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include "../libft/includes/libft.h"
 
 # define OPTION_CHAR '%'
-# define OPTIONS "s"
-# define NBOF_OPTIONS 1
+# define OPTIONS "sc"
+# define NBOF_OPTIONS 2
 
 enum e_state
 {
@@ -52,6 +52,7 @@ t_machine	*init_machine(const char *str, va_list aptr, int fd);
 // states
 
 void	string(t_machine *machine);
+void	character(t_machine *machine);
 
 // utils
 
