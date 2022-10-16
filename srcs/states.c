@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:47:25 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 20:19:32 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/16 22:54:05 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	character(t_machine *machine)
 
 void	up_hex(t_machine *machine)
 {
-	ft_puthex_fd((unsigned long)va_arg(machine->aptr, unsigned long), machine->fd);
+	ft_puthex_fd(UP_HEX, (unsigned int)va_arg(machine->aptr, unsigned int), machine->fd);
 }

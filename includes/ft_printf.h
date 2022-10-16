@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 20:19:10 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/16 22:54:42 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdarg.h>
 # include "../libft/includes/libft.h"
 
-# define HEX "0123456789ABCDEF"
+# define UP_HEX "0123456789ABCDEF"
 # define OPTION_CHAR '%'
 # define OPTIONS "scX"
 # define NBOF_OPTIONS 3
@@ -52,7 +52,7 @@ t_machine	*init_machine(const char *str, va_list aptr, int fd);
 
 //print_hex
 
-void	ft_puthex_fd(const unsigned long nb, int fd);
+void	ft_puthex_fd(const char *hbase, const unsigned int nb, int fd);
 
 // states
 
