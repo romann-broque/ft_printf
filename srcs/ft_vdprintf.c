@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 23:31:48 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 00:00:36 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	get_option(t_machine *machine)
 {
 	static void		(*actions[])(t_machine *) = {string, character, low_hex,
-									up_hex, address};
+		up_hex, address};
 	const char		*input = machine->input;
 	const size_t	option_index = get_index(OPTIONS, input[machine->index]);
 	const int		fd = machine->fd;
@@ -54,10 +54,7 @@ int	ft_vdprintf(int fd, const char *str, va_list aptr)
 
 	machine = init_machine(str, aptr, fd);
 	while (get_next_state(machine) != E_END)
-	{
-	//	if (machine->state == E_IDLE)
-	//		state_action[machine->state](aptr);
-	}
+		;
 	free(machine);
 	return (EXIT_SUCCESS);
 }
