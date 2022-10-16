@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 20:20:09 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/16 23:02:23 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	get_option(t_machine *machine)
 {
-	static void		(*actions[])(t_machine *) = {string, character, up_hex};
+	static void		(*actions[])(t_machine *) = {string, character, low_hex, up_hex};
 	const char		*input = machine->input;
 	const size_t	option_index = get_index(OPTIONS, input[machine->index]);
 	const int		fd = machine->fd;

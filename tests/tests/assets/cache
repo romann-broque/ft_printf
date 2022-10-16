@@ -16,6 +16,11 @@ test2: ÿ
 test3: ÿ c 1 9 1
 test4: Charlotte
 
+-----LOW HEX TESTS-----
+test1: 3c706
+test2: ffffffff
+test3: 0
+
 -----UP HEX TESTS-----
 test1: 3C706
 test2: FFFFFFFF
@@ -38,6 +43,11 @@ test1: a
 test2: ÿ
 test3: ÿ c 1 9 1
 test4: Charlotte
+
+-----LOW HEX TESTS-----
+test1: 3c706
+test2: ffffffff
+test3: 0
 
 -----UP HEX TESTS-----
 test1: 3C706

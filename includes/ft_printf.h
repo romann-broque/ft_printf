@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 22:54:42 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/16 23:02:36 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@
 # include <stdarg.h>
 # include "../libft/includes/libft.h"
 
+# define LOW_HEX "0123456789abcdef"
 # define UP_HEX "0123456789ABCDEF"
 # define OPTION_CHAR '%'
-# define OPTIONS "scX"
-# define NBOF_OPTIONS 3
+# define OPTIONS "scxX"
+# define NBOF_OPTIONS 4
 
 enum e_state
 {
@@ -58,11 +59,11 @@ void	ft_puthex_fd(const char *hbase, const unsigned int nb, int fd);
 
 void	string(t_machine *machine);
 void	character(t_machine *machine);
+void	low_hex(t_machine *machine);
 void	up_hex(t_machine *machine);
 
 // utils
 
 size_t	get_index(const char *str, const char c);
-
 
 #endif
