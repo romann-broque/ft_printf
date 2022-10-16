@@ -6,21 +6,11 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:34:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/14 17:49:31 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/15 13:54:02 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	len;
-
-	len = 0;
-	while (str[len] != '\0')
-		++len;
-	return (len);
-}
 
 size_t	index_of(const char *str, const char c)
 {

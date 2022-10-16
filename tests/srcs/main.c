@@ -6,52 +6,35 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:36:42 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/14 18:30:20 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/16 13:11:17 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main(int ac, char **av)
+#define SEPARATOR "\n-----------\n"
+
+void	test1(void)
 {
-	if (ac == 2)
-	{
-		ft_printf(av[1]);
-		printf("\n");
-		printf(av[1]);
-	}
-	else if (ac == 3)
-	{
-		ft_printf(av[1], av[2]);
-		printf("\n");
-		printf(av[1], av[2]);
-	}
-	else if (ac == 4)
-	{
-		ft_printf(av[1], av[2], av[3]);
-		printf("\n");
-		printf(av[1], av[2], av[3]);
-	}
-	else if (ac == 5)
-	{
-		ft_printf(av[1], av[2], av[3], av[4]);
-		printf("\n");
-		printf(av[1], av[2], av[3], av[4]);
-	}
-	else if (ac == 6)
-	{
-		ft_printf(av[1], av[2], av[3], av[4], av[5]);
-		printf("\n");
-		printf(av[1], av[2], av[3], av[4], av[5]);
-	}
-	else if (ac == 7)
-	{
-		ft_printf(av[1], av[2], av[3], av[4], av[5], av[6]);
-		printf("\n");
-		printf(av[1], av[2], av[3], av[4], av[5], av[6]);
-	}
-	else
-		return (EXIT_FAILURE);
-	printf("\n");
+	const char	*str = "wouah";
+
+	ft_printf(str);
+	printf(str);
+}
+
+void	test2(void)
+{
+	const char	*str1 = "wou%sah";
+	const char	*str2 = "incredible";
+
+	ft_printf(str1, str2);
+	printf(str1, str2);
+}
+
+int	main(void)
+{
+	printf(SEPARATOR);
+	test1();
+	test2();
 	return (EXIT_SUCCESS);
 }

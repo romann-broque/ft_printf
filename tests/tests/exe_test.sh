@@ -14,7 +14,7 @@ echo "<--------- TEST ---------->"
 ### CHECK TESTS
 
 BIN=$1
-CACHE="./assets/cache"
+CACHE="./tests/assets/cache"
 
 for arg in "$@"; do
 	if [ "${arg}" != "${BIN}" ]; then
@@ -26,7 +26,9 @@ echo "$(./${BIN} ${ARGS})" > ${CACHE}
 
 ### RETURN_VALUE 
 
-IS_SAME=$(./is_same ${CACHE})
+PROGRAM="./tests/is_same"
+
+IS_SAME=$(${PROGRAM} ${CACHE})
 RET=$?
 
 if [ "${RET}" == "0" ]; then

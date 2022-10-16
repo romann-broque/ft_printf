@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 10:14:45 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/14 23:31:59 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/14 23:45:33 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,7 @@ all: $(NAME)
 $(NAME): $(CHECK_OBJS)
 	$(CC) $(CFLAGS) $^ $(LIB) $(LINKS) -o $@ -I $(LIB_INCLUDES) -I $(INCLUDES) -I $(CHECK_INCLUDES)
 	@echo $(NAME) COMPILED !
+	./tests/exe_test.sh ./tests/exe
 
 $(CHECK_OBJS): $(PATH_CHECK_OBJS)/%.o: %.c
 	mkdir -p $(PATH_CHECK_OBJS)

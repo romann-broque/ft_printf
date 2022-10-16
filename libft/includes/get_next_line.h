@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 17:48:41 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/14 21:01:45 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/15 13:53:52 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef enum e_line_status
 	VALID_LINE
 }	t_line_status;
 
-size_t	ft_strlen(const char *str);
 size_t	index_of(const char *str, const char c);
 char	*ft_strncpy(char *dest, char *src, size_t size);
 char	*strnjoin(char *s1, const char *s2, const size_t n);
