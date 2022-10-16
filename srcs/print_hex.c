@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   states.c                                           :+:      :+:    :+:   */
+/*   print_hex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 12:47:25 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 20:19:32 by rbroque          ###   ########.fr       */
+/*   Created: 2022/10/16 20:10:56 by rbroque           #+#    #+#             */
+/*   Updated: 2022/10/16 20:29:03 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	string(t_machine *machine)
+void	print_hex_fd(const unsigned long nb, int fd)
 {
-	ft_putstr_fd((char *)va_arg(machine->aptr, char *), machine->fd);
+	if (nb > 0)
+	{
+		print_hex_fd(nb / 16, fd);
+		ft_putchar_fd(HEX[nb % 16], fd);
+	}
 }
 
-void	character(t_machine *machine)
+void	ft_puthex_fd(const unsigned long nb, int fd)
 {
-	ft_putchar_fd((int)va_arg(machine->aptr, int), machine->fd);
+	print_hex_fd(nb, fd);
 }
 
-void	up_hex(t_machine *machine)
-{
-	ft_puthex_fd((unsigned long)va_arg(machine->aptr, unsigned long), machine->fd);
-}

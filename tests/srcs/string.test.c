@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:28:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 18:41:05 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/16 20:23:20 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,7 @@ static void	test9(void)
 	printf(str1, str2);
 	printf("\n");
 }
+
 void	string_tests(void)
 {
 	ft_printf(STRING_TESTS);

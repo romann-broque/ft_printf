@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   states.c                                           :+:      :+:    :+:   */
+/*   up_hex.test.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 12:47:25 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 20:19:32 by rbroque          ###   ########.fr       */
+/*   Created: 2022/10/16 20:22:17 by rbroque           #+#    #+#             */
+/*   Updated: 2022/10/16 20:27:42 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf.test.h"
 
-void	string(t_machine *machine)
+static void	test1(void)
 {
-	ft_putstr_fd((char *)va_arg(machine->aptr, char *), machine->fd);
+	const char	*test_name = "test1: ";
+	const char	*str = "%X";
+	const unsigned long	nb = 247558;
+
+	ft_printf(test_name);
+	ft_printf(str, nb);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb);
+	printf("\n");
 }
 
-void	character(t_machine *machine)
+void	up_hex_tests(void)
 {
-	ft_putchar_fd((int)va_arg(machine->aptr, int), machine->fd);
-}
-
-void	up_hex(t_machine *machine)
-{
-	ft_puthex_fd((unsigned long)va_arg(machine->aptr, unsigned long), machine->fd);
+	ft_printf(UP_HEX_TESTS);
+	printf(UP_HEX_TESTS);
+	test1();
 }

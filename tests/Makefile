@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 10:14:45 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/16 19:11:36 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/16 20:26:35 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ PATH_SRCS += tests/
 CHECK_SRCS += main.c
 CHECK_SRCS += string.test.c
 CHECK_SRCS += character.test.c
+CHECK_SRCS += up_hex.test.c
 
 # FINAL_SRCS
 

@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/16 19:10:00 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/16 20:21:58 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ PATH_SRCS += srcs/
 SRCS += ft_printf.c
 SRCS += ft_vdprintf.c
 SRCS += machine_struct.c
+SRCS += print_hex.c
 SRCS += states.c
 SRCS += utils.c
 
