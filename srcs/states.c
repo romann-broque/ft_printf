@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:47:25 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 23:59:01 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 00:16:21 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	string(t_machine *machine)
 	char	*str;
 
 	str = va_arg(machine->aptr, char *);
-	ft_putstr_fd(str, machine->fd);
+	if (str == NULL)
+		ft_putstr_fd(NULL_DEF, machine->fd);
+	else
+		ft_putstr_fd(str, machine->fd);
 }
 
 void	character(t_machine *machine)

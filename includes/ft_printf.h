@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 23:58:22 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 00:16:39 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdarg.h>
 # include "../libft/includes/libft.h"
+# define NULL_DEF "(null)"
 # define NIL_DEF "(nil)"
 # define PRE_HEX "0x"
 # define LOW_HEX "0123456789abcdef"
