@@ -34,6 +34,7 @@ RET=$?
 if [ "${RET}" == "0" ]; then
 	echo -e "${GREEN}OK${NC}"
 else
+	cat ${CACHE}
 	echo -e "${RED}KO${NC}"
 fi
 

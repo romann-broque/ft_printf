@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/14 19:28:27 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/16 14:03:36 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ static void	get_option(t_machine *machine)
 	if (option_index < NBOF_OPTIONS)
 		actions[option_index](machine);
 	else if (machine->input[machine->index + 1] != '\0')
-	{
 		ft_putchar_fd(OPTION_CHAR, STDOUT_FILENO);
-		ft_putchar_fd(curr_c, STDOUT_FILENO);
-	}
 	machine->state = E_IDLE;
 }
 

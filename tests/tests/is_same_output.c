@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:31:54 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 13:05:59 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/16 13:35:30 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	concat(char **str, int fd)
 	line = get_next_line(fd);
 	while (line != NULL && strcmp(line, SEPARATOR) != 0)
 	{
-		*str = ft_strjoin(*str, line);
+		*str = strnjoin(*str, line, ft_strlen(line));
 		free(line);
 		line = get_next_line(fd);
 	}
@@ -45,10 +45,12 @@ int	main(int ac, char **av)
 	if (ac > 1)
 	{
 		fd = open(av[1], O_RDONLY);
-		output1 = "";
-		output2 = "";
+		output1 = NULL;
+		output2 = NULL;
 		concat(&output1, fd);
 		concat(&output2, fd);
+		printf("[%s]", output1);
+		printf("[%s]", output2);
 		if (strcmp(output1, output2) != 0)
 			ret_val = EXIT_FAILURE;
 		free(output1);
