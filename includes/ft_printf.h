@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 16:10:13 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 20:34:58 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@
 # define OPTIONS "scxXpdui%"
 # define NBOF_OPTIONS 9
 
+# define FLAGS " "
+# define NBOF_FLAGS 1
+# define NO_FLAG 0x01
+# define SPACE_FLAG 0x02
+
 enum e_state
 {
 	E_IDLE,
@@ -37,6 +42,7 @@ typedef struct s_machine
 	size_t			index;
 	va_list			aptr;
 	int				fd;
+	uint8_t			flags;
 	enum e_state	state;
 }				t_machine;
 

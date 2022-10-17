@@ -30,7 +30,7 @@ test2: FFFFFFFF
 test3: 0
 
 -----ADDRESS TESTS-----
-test1: 0xaaaae9547010
+test1: 0xaaaaf0f4c010
 test2: (nil)
 
 -----INTEGER TESTS-----
@@ -38,12 +38,14 @@ test1: 247558
 test2: 2147483647
 test3: -2147483648
 test4: 0
+test5:  0 -1234018 18
 
 -----U_INTEGER TESTS-----
 test1: 247558
 test2: 2147483647
 test3: 4294967295
 test4: 0
+test5: 3 125
 
 -----INTEGER TEN TESTS-----
 test1: 247558
@@ -58,6 +60,8 @@ test2: % %%
 test3: % %%
 test4: % %%%
 test5: qw% %%%; v% %jjjj%%%rqwqqvsf
+test6: qw%  
+%%%; v% %jjjj%%%rqwqqvsf
 <------------------------------------------------------->
 
 -----STRING TESTS-----
@@ -91,7 +95,7 @@ test2: FFFFFFFF
 test3: 0
 
 -----ADDRESS TESTS-----
-test1: 0xaaaae9547010
+test1: 0xaaaaf0f4c010
 test2: (nil)
 
 -----INTEGER TESTS-----
@@ -99,12 +103,14 @@ test1: 247558
 test2: 2147483647
 test3: -2147483648
 test4: 0
+test5:  0 -1234018 18
 
 -----U_INTEGER TESTS-----
 test1: 247558
 test2: 2147483647
 test3: 4294967295
 test4: 0
+test5: 3 125
 
 -----INTEGER TEN TESTS-----
 test1: 247558
@@ -119,3 +125,5 @@ test2: % %%
 test3: % %%
 test4: % %%%
 test5: qw% %%%; v% %jjjj%%%rqwqqvsf
+test6: qw%  
+%%%; v% %jjjj%%%rqwqqvsf

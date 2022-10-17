@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:23:17 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 15:00:03 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 19:07:27 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,21 @@ static void	test5(void)
 	printf("\n");
 }
 
+static void	test6(void)
+{
+	const char	*test_name = "test6: ";
+	const char	*str = "qw%%  \n%%%%%     %; v%% % %jjjj%%% %%rqwqqvsf";
+
+	ft_printf(test_name);
+	ft_printf(str);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str);
+	printf("\n");
+}
+
+
 void	percentage_tests(void)
 {
 	ft_printf(PERCENTAGE_TESTS);
@@ -91,4 +106,5 @@ void	percentage_tests(void)
 	test3();
 	test4();
 	test5();
+	test6();
 }

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:38:44 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 16:39:04 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 20:50:49 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	integer(t_machine *machine)
 {
 	const int	nb = va_arg(machine->aptr, int);
 
+	if (machine->flags & SPACE_FLAG && nb >= 0)
+		ft_putchar_fd(' ', machine->fd);
 	ft_putnbr_fd(nb, machine->fd);
 }
 
