@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 15:13:21 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 16:10:13 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # define LOW_HEX "0123456789abcdef"
 # define UP_HEX "0123456789ABCDEF"
 # define OPTION_CHAR '%'
-# define OPTIONS "scxXpdu%"
-# define NBOF_OPTIONS 8
+# define OPTIONS "scxXpdui%"
+# define NBOF_OPTIONS 9
 
 enum e_state
 {
@@ -70,6 +70,7 @@ void		up_hex(t_machine *machine);
 void		address(t_machine *machine);
 void		integer(t_machine *machine);
 void		u_integer(t_machine *machine);
+void		integer_ten(t_machine *machine);
 void		percentage(t_machine *machine);
 
 // utils

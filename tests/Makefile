@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 10:14:45 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/17 15:08:18 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/17 16:13:14 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ CHECK_SRCS += up_hex.test.c
 CHECK_SRCS += address.test.c
 CHECK_SRCS += integer.test.c
 CHECK_SRCS += u_integer.test.c
+CHECK_SRCS += integer_ten.test.c
 CHECK_SRCS += percentage.test.c
 
 # FINAL_SRCS

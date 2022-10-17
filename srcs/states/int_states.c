@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   int_states.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 15:36:42 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 16:15:11 by rbroque          ###   ########.fr       */
+/*   Created: 2022/10/17 16:38:44 by rbroque           #+#    #+#             */
+/*   Updated: 2022/10/17 16:39:04 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.test.h"
+#include "ft_printf.h"
 
-int	main(void)
+void	integer(t_machine *machine)
 {
-	printf(SEPARATOR);
-	string_tests();
-	character_tests();
-	low_hex_tests();
-	up_hex_tests();
-	address_tests();
-	integer_tests();
-	u_integer_tests();
-	integer_ten_tests();
-	percentage_tests();
-	return (EXIT_SUCCESS);
+	const int	nb = va_arg(machine->aptr, int);
+
+	ft_putnbr_fd(nb, machine->fd);
+}
+
+void	u_integer(t_machine *machine)
+{
+	const unsigned int	nb = va_arg(machine->aptr, unsigned int);
+
+	ft_putunbr_fd(nb, machine->fd);
+}
+
+void	integer_ten(t_machine *machine)
+{
+	integer(machine);
 }

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:31:19 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 15:14:55 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 16:14:50 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # define ADDRESS_TESTS "\n-----ADDRESS TESTS-----\n"
 # define INTEGER_TESTS "\n-----INTEGER TESTS-----\n"
 # define U_INTEGER_TESTS "\n-----U_INTEGER TESTS-----\n"
+# define INTEGER_TEN_TESTS "\n-----INTEGER TEN TESTS-----\n"
 # define PERCENTAGE_TESTS "\n-----PERCENTAGE TESTS-----\n"
 
 void	string_tests(void);
@@ -38,6 +39,7 @@ void	up_hex_tests(void);
 void	address_tests(void);
 void	integer_tests(void);
 void	u_integer_tests(void);
+void	integer_ten_tests(void);
 void	percentage_tests(void);
 
 #endif
