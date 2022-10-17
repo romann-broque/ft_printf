@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 20:34:58 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 21:00:22 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@
 # define OPTIONS "scxXpdui%"
 # define NBOF_OPTIONS 9
 
-# define FLAGS " "
-# define NBOF_FLAGS 1
+# define FLAGS " +"
+# define NBOF_FLAGS 2
 # define NO_FLAG 0x01
 # define SPACE_FLAG 0x02
+# define PLUS_FLAG 0x04
 
 enum e_state
 {
@@ -81,6 +82,6 @@ void		percentage(t_machine *machine);
 
 // utils
 
-size_t		get_index(const char *str, const char c);
+ssize_t		get_index(const char *str, const char c);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 20:43:12 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 21:00:40 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 static uint8_t	get_flag(const char c)
 {
-	size_t	flag_index;
+	ssize_t	flag_index;
 	uint8_t	flag;
 
 	flag = NO_FLAG;
 	flag_index = get_index(FLAGS, c);
-	while (flag_index < NBOF_FLAGS)
+	while (flag_index >= 0)
 	{
 		flag <<= 1;
-		++flag_index;
+		--flag_index;
 	}
 	return (flag);
 }
@@ -30,17 +30,17 @@ static uint8_t	get_flag(const char c)
 static void	get_option(t_machine *machine)
 {
 	const char		*input = machine->input;
-	const size_t	option_index = get_index(OPTIONS, input[machine->index]);
+	const ssize_t	option_index = get_index(OPTIONS, input[machine->index]);
 	static void		(*actions[])(t_machine *) = {string, character, low_hex,
 		up_hex, address, integer, u_integer, integer_ten, percentage};
 
 	machine->state = E_IDLE;
-	if (option_index < NBOF_OPTIONS)
+	if (option_index > -1)
 	{
 		actions[option_index](machine);
 		machine->flags = NO_FLAG;
 	}
-	else if (input[machine->index] != ' '
+	else if (ft_strchr(FLAGS, input[machine->index]) == NULL
 		&& input[machine->index + 1] != '\0')
 	{
 		ft_putchar_fd(OPTION_CHAR, machine->fd);
