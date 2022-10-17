@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 21:00:22 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 21:08:57 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,23 @@
 
 # include <stdarg.h>
 # include "../libft/includes/libft.h"
+
 # define NULL_DEF "(null)"
 # define NIL_DEF "(nil)"
 # define PRE_HEX "0x"
 # define LOW_HEX "0123456789abcdef"
 # define UP_HEX "0123456789ABCDEF"
+# define PREFIX_HEX "0x"
 # define OPTION_CHAR '%'
 # define OPTIONS "scxXpdui%"
 # define NBOF_OPTIONS 9
 
-# define FLAGS " +"
-# define NBOF_FLAGS 2
+# define FLAGS " +#"
+# define NBOF_FLAGS 3
 # define NO_FLAG 0x01
 # define SPACE_FLAG 0x02
 # define PLUS_FLAG 0x04
+# define PREFIX_FLAG 0x08
 
 enum e_state
 {

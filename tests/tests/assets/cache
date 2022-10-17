@@ -23,15 +23,20 @@ test4: Charlotte
 test1: 3c706
 test2: ffffffff
 test3: 0
+test4: 0
+test5: 0x23ae
 
 -----UP HEX TESTS-----
 test1: 3C706
 test2: FFFFFFFF
 test3: 0
+test4: 0
+test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0xaaaae3204010
+test1: 0xaaaaf0587010
 test2: (nil)
+test3: (nil)
 
 -----INTEGER TESTS-----
 test1: 247558
@@ -91,15 +96,20 @@ test4: Charlotte
 test1: 3c706
 test2: ffffffff
 test3: 0
+test4: 0
+test5: 0x23ae
 
 -----UP HEX TESTS-----
 test1: 3C706
 test2: FFFFFFFF
 test3: 0
+test4: 0
+test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0xaaaae3204010
+test1: 0xaaaaf0587010
 test2: (nil)
+test3: (nil)
 
 -----INTEGER TESTS-----
 test1: 247558

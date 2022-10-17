@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 20:22:17 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 22:51:52 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 21:12:48 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,36 @@ static void	test3(void)
 	printf("\n");
 }
 
+static void	test4(void)
+{
+	const char	*test_name = "test4: ";
+	const char	*str = "%#+x";
+	const unsigned int	nb = 0;
+
+	ft_printf(test_name);
+	ft_printf(str, nb);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb);
+	printf("\n");
+}
+
+static void	test5(void)
+{
+	const char	*test_name = "test5: ";
+	const char	*str = "%#    +x";
+	const unsigned int	nb = 9134;
+
+	ft_printf(test_name);
+	ft_printf(str, nb);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb);
+	printf("\n");
+}
+
 void	up_hex_tests(void)
 {
 	ft_printf(UP_HEX_TESTS);
@@ -64,4 +94,6 @@ void	up_hex_tests(void)
 	test1();
 	test2();
 	test3();
+	test4();
+	test5();
 }
