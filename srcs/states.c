@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:47:25 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 00:16:21 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 11:05:39 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,11 @@ void	address(t_machine *machine)
 		ft_putstr_fd(PRE_HEX, machine->fd);
 		ft_putlhex_fd(LOW_HEX, address, machine->fd);
 	}
+}
+
+void	integer(t_machine *machine)
+{
+	const int	nb = va_arg(machine->aptr, int);
+
+	ft_putnbr_fd(nb, machine->fd);
 }

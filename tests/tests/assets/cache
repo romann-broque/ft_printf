@@ -30,8 +30,14 @@ test2: FFFFFFFF
 test3: 0
 
 -----ADDRESS TESTS-----
-test1: 0xaaaaee9e6010
+test1: 0xaaaad3181010
 test2: (nil)
+
+-----INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
 <---------------------------->
 
 -----STRING TESTS-----
@@ -65,5 +71,11 @@ test2: FFFFFFFF
 test3: 0
 
 -----ADDRESS TESTS-----
-test1: 0xaaaaee9e6010
+test1: 0xaaaad3181010
 test2: (nil)
+
+-----INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
