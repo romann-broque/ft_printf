@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:36:42 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 11:07:08 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 11:25:50 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ int	main(void)
 	up_hex_tests();
 	address_tests();
 	integer_tests();
+	percentage_tests();
 	return (EXIT_SUCCESS);
 }

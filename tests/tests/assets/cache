@@ -30,7 +30,7 @@ test2: FFFFFFFF
 test3: 0
 
 -----ADDRESS TESTS-----
-test1: 0xaaaad3181010
+test1: 0xaaaae7acb010
 test2: (nil)
 
 -----INTEGER TESTS-----
@@ -38,6 +38,13 @@ test1: 247558
 test2: 2147483647
 test3: -2147483648
 test4: 0
+
+-----PERCENTAGE TESTS-----
+test1: %
+test2: % %%
+test3: % %%
+test4: % %%%
+test5: qw% %%%; v% %jjjj%%%rqwqqvsf
 <---------------------------->
 
 -----STRING TESTS-----
@@ -71,7 +78,7 @@ test2: FFFFFFFF
 test3: 0
 
 -----ADDRESS TESTS-----
-test1: 0xaaaad3181010
+test1: 0xaaaae7acb010
 test2: (nil)
 
 -----INTEGER TESTS-----
@@ -79,3 +86,10 @@ test1: 247558
 test2: 2147483647
 test3: -2147483648
 test4: 0
+
+-----PERCENTAGE TESTS-----
+test1: %
+test2: % %%
+test3: % %%
+test4: % %%%
+test5: qw% %%%; v% %jjjj%%%rqwqqvsf

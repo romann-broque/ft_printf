@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 11:03:04 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/17 14:55:45 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,23 @@
 static void	get_option(t_machine *machine)
 {
 	static void		(*actions[])(t_machine *) = {string, character, low_hex,
-		up_hex, address, integer};
+		up_hex, address, integer, percentage};
 	const char		*input = machine->input;
 	const size_t	option_index = get_index(OPTIONS, input[machine->index]);
 	const int		fd = machine->fd;
 
+	machine->state = E_IDLE;
 	if (option_index < NBOF_OPTIONS)
 		actions[option_index](machine);
-	else if (input[machine->index + 1] != '\0')
+	else if (input[machine->index] != ' '
+		&& input[machine->index + 1] != '\0')
 	{
 		ft_putchar_fd(OPTION_CHAR, fd);
 		if (input[machine->index + 2] != '\0')
 			ft_putchar_fd(input[machine->index], fd);
 	}
-	machine->state = E_IDLE;
+	else
+		machine->state = E_OPTION;
 }
 
 static enum e_state	get_next_state(t_machine *machine)
