@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 21:08:57 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/19 17:37:13 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 # define NULL_DEF "(null)"
 # define NIL_DEF "(nil)"
+# define WIDTH_UNIT " "
 # define PRE_HEX "0x"
 # define LOW_HEX "0123456789abcdef"
 # define UP_HEX "0123456789ABCDEF"
@@ -26,12 +27,13 @@
 # define OPTIONS "scxXpdui%"
 # define NBOF_OPTIONS 9
 
-# define FLAGS " +#"
-# define NBOF_FLAGS 3
+# define FLAGS " +#-"
+# define NBOF_FLAGS 4
 # define NO_FLAG 0x01
 # define SPACE_FLAG 0x02
 # define PLUS_FLAG 0x04
 # define PREFIX_FLAG 0x08
+# define MINUS_FLAG 0x10
 
 enum e_state
 {
@@ -43,9 +45,9 @@ enum e_state
 typedef struct s_machine
 {
 	char			*input;
-	size_t			index;
 	va_list			aptr;
 	int				fd;
+	size_t			width;
 	uint8_t			flags;
 	enum e_state	state;
 }				t_machine;
@@ -65,6 +67,10 @@ void		ft_putunbr_fd(unsigned int n, int fd);
 // machine_struct
 
 t_machine	*init_machine(const char *str, va_list aptr, int fd);
+
+//print
+
+void	print(t_machine *machine, ssize_t option_index);
 
 //print_hex
 

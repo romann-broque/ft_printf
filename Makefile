@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/17 16:41:23 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/19 17:34:57 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS += utils.c
 
 # srcs/print
 SRCS += ft_putunbr_fd.c
+SRCS += print.c
 SRCS += print_hex.c
 
 # srcs/states

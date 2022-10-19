@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:04:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 20:17:26 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/19 17:42:07 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ t_machine	*init_machine(const char *str, va_list aptr, int fd)
 	if (machine != NULL)
 	{
 		machine->input = (char *)str;
-		machine->index = 0;
 		machine->aptr = aptr;
 		machine->fd = fd;
+		machine->width = 0;
 		machine->flags = NO_FLAG;
 		machine->state = E_IDLE;
 	}

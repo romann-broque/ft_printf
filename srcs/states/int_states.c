@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:38:44 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 20:54:44 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/19 17:28:34 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	integer(t_machine *machine)
 	{
 		if (machine->flags & PLUS_FLAG)
 			ft_putchar_fd('+', machine->fd);
-		else if (machine->flags & SPACE_FLAG)
+		else if (machine->width == 0 && machine->flags & SPACE_FLAG)
 			ft_putchar_fd(' ', machine->fd);
 	}
 	ft_putnbr_fd(nb, machine->fd);
