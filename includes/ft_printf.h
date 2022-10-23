@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/19 17:37:13 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/21 15:08:11 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,10 @@ void		integer(t_machine *machine);
 void		u_integer(t_machine *machine);
 void		integer_ten(t_machine *machine);
 void		percentage(t_machine *machine);
+
+// get_size
+
+void	get_widthsize(t_machine *machine, ssize_t option_index);
 
 // utils
 

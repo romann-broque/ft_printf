@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/19 17:34:57 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/23 12:36:16 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ PATH_SRCS += srcs/struct
 # srcs/
 SRCS += ft_printf.c
 SRCS += ft_vdprintf.c
+SRCS += width.c
 SRCS += utils.c
 
 # srcs/print
