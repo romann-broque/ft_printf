@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 18:34:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/15 13:54:02 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/24 11:41:35 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,4 @@ char	*strnjoin(char *s1, const char *s2, const size_t n)
 	}
 	free(s1);
 	return (new);
-}
-
-void	ft_bzero(void *ptr, size_t size)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < size)
-	{
-		((uint8_t *)ptr)[i] = 0;
-		++i;
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/21 15:08:11 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/24 14:45:15 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <stdarg.h>
 # include "../libft/includes/libft.h"
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4096
+# endif
 
 # define NULL_DEF "(null)"
 # define NIL_DEF "(nil)"
@@ -46,8 +50,12 @@ typedef struct s_machine
 {
 	char			*input;
 	va_list			aptr;
-	int				fd;
+	char			buffer[BUFFER_SIZE];
+	char			rest[BUFFER_SIZE];
+	size_t			nbof_buffer;
+	size_t			index;
 	size_t			width;
+	int				fd;
 	uint8_t			flags;
 	enum e_state	state;
 }				t_machine;
@@ -96,5 +104,6 @@ void	get_widthsize(t_machine *machine, ssize_t option_index);
 // utils
 
 ssize_t		get_index(const char *str, const char c);
+void	cpy_data(t_machine *machine, void *data, size_t n);
 
 #endif

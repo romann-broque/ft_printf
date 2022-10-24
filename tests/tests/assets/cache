@@ -1,13 +1,13 @@
 
 -----STRING TESTS-----
 test1: wouah
-test2: wouincredibleah
-test3: wouincredible
+test2: wouincreda
+test3: wouincred
 test4: wou
 test5: wou
-test6: wouincredible
+test6: wouincred
 test7: wou%
-test8: wou%wincredible
+test8: wou%wincred
 test9: 
 test10: (null)
 test11: (null)
@@ -18,62 +18,6 @@ test1: a
 test2: ÿ
 test3: ÿ c 1 9 1
 test4: Charlotte
-
------LOW HEX TESTS-----
-test1: 3c706
-test2: ffffffff
-test3: 0
-test4: 0
-test5: 0x23ae
-
------UP HEX TESTS-----
-test1: 3C706
-test2: FFFFFFFF
-test3: 0
-test4: 0
-test5: 0x23ae
-
------ADDRESS TESTS-----
-test1: 0xaaab07f9c010
-test2: (nil)
-test3: (nil)
-
------INTEGER TESTS-----
-test1: 247558
-test2: 2147483647
-test3: -2147483648
-test4: 0
-test5:  0 -1234018 18
-test6: +0 -1234018 18
-test7: +0 -1234018 +18 +312
-test8:  0  1234018  18 +312
-test9:  10 -1234018
-test10:  10 34018
-
------U_INTEGER TESTS-----
-test1: 247558
-test2: 2147483647
-test3: 4294967295
-test4: 0
-test5: 3 125
-test6: 3 125
-
------INTEGER TEN TESTS-----
-test1: 247558
-test2: 2147483647
-test3: -2147483648
-test4: 0
-test5: 114
-test6: +114
-
------PERCENTAGE TESTS-----
-test1: %
-test2: % %%
-test3: % %%
-test4: % %%%
-test5: qw% %%%; v% %jjjj%%%rqwqqvsf
-test6: qw%  
-%%%; v% %jjjj%%%rqwqqvsf
 <------------------------------------------------------->
 
 -----STRING TESTS-----
@@ -95,59 +39,3 @@ test1: a
 test2: ÿ
 test3: ÿ c 1 9 1
 test4: Charlotte
-
------LOW HEX TESTS-----
-test1: 3c706
-test2: ffffffff
-test3: 0
-test4: 0
-test5: 0x23ae
-
------UP HEX TESTS-----
-test1: 3C706
-test2: FFFFFFFF
-test3: 0
-test4: 0
-test5: 0x23ae
-
------ADDRESS TESTS-----
-test1: 0xaaab07f9c010
-test2: (nil)
-test3: (nil)
-
------INTEGER TESTS-----
-test1: 247558
-test2: 2147483647
-test3: -2147483648
-test4: 0
-test5:  0 -1234018 18
-test6: +0 -1234018 18
-test7: +0 -1234018 +18 +312
-test8:  0  1234018  18 +312
-test9:  10 -1234018
-test10:  10 34018
-
------U_INTEGER TESTS-----
-test1: 247558
-test2: 2147483647
-test3: 4294967295
-test4: 0
-test5: 3 125
-test6: 3 125
-
------INTEGER TEN TESTS-----
-test1: 247558
-test2: 2147483647
-test3: -2147483648
-test4: 0
-test5: 114
-test6: +114
-
------PERCENTAGE TESTS-----
-test1: %
-test2: % %%
-test3: % %%
-test4: % %%%
-test5: qw% %%%; v% %jjjj%%%rqwqqvsf
-test6: qw%  
-%%%; v% %jjjj%%%rqwqqvsf

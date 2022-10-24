@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/19 21:09:40 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/24 16:33:46 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,13 @@ void	get_width(t_machine *machine)
 
 void	print_unknown(t_machine *machine)
 {
+	const char	option_char = OPTION_CHAR;
+
 	if (*(machine->input + 1) != '\0')
 	{
-		ft_putchar_fd(OPTION_CHAR, machine->fd);
+		cpy_data(machine, (char *)(&option_char), sizeof(char));
 		if (*(machine->input + 2) != '\0')
-			ft_putchar_fd(*machine->input, machine->fd);
+			cpy_data(machine, machine->input, sizeof(char));
 	}
 	machine->state = E_IDLE;
 }
@@ -73,7 +75,6 @@ static void	get_data(t_machine *machine)
 static enum e_state	get_next_state(t_machine *machine)
 {
 	const char	curr_c = *machine->input;
-	const int	fd = machine->fd;
 
 	if (curr_c == '\0')
 		machine->state = E_END;
@@ -82,17 +83,33 @@ static enum e_state	get_next_state(t_machine *machine)
 	else if (curr_c == OPTION_CHAR)
 		machine->state = E_OPTION;
 	else
-		ft_putchar_fd(curr_c, fd);
+		cpy_data(machine, (char *)(&curr_c), sizeof(char));
 	return (machine->state);
 }
 
 int	ft_vdprintf(int fd, const char *str, va_list aptr)
 {
 	t_machine	*machine;
+	char		*output;
 
 	machine = init_machine(str, aptr, fd);
+	output = NULL;
 	while (get_next_state(machine) != E_END)
+	{
+		if (machine->index >= BUFFER_SIZE)
+		{
+			output = strnjoin(output, machine->buffer, BUFFER_SIZE);
+			output = strnjoin(output, machine->rest, BUFFER_SIZE);
+			ft_bzero(machine->buffer, BUFFER_SIZE);
+			ft_bzero(machine->rest, BUFFER_SIZE);
+			machine->index -= BUFFER_SIZE;
+			++(machine->nbof_buffer);
+		}
 		++(machine->input);
+	}
+	output = strnjoin(output, machine->buffer, BUFFER_SIZE);
+	write(fd, output, machine->nbof_buffer * BUFFER_SIZE + machine->index);
+	free(output);
 	free(machine);
 	return (EXIT_SUCCESS);
 }
