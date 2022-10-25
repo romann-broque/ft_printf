@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 12:19:40 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/23 18:51:57 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/25 18:17:51 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ void	get_widthsize(t_machine *machine, ssize_t option_index)
 	void	*arg;
 
 	arg = va_arg(machine->aptr, void *);
+	if ((get_argsize[option_index] == ft_strlen || get_argsize[option_index] == address_size) && arg == NULL)
+		machine->width = 0;
 	argsize = get_argsize[option_index](arg);
 	if (argsize < machine->width)
 		machine->width -= argsize;

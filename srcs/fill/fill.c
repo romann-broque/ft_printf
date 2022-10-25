@@ -6,11 +6,26 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:22:17 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 17:22:46 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/25 18:24:19 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+/*
+void	fill_width(t_machine *machine)
+{
+	char	*width;
+
+	width = (char *)malloc(machine->width * sizeof(char));
+	if (width != NULL)
+	{
+		ft_memset(width, WIDTH_UNIT, machine->width);
+		cpy_data(machine->width);
+		free(width);
+	}
+}
+*/
 
 void	fill(t_machine *machine, ssize_t option_index)
 {
@@ -21,13 +36,13 @@ void	fill(t_machine *machine, ssize_t option_index)
 	get_widthsize(machine, option_index);
 	if (machine->flags & MINUS_FLAG)
 	{
-		print_arg[option_index](machine);
-		print_width(machine);
+//		fill_arg[option_index](machine);
+		fill_width(machine);
 	}
 	else
 	{
-		print_width(machine);
-		print_arg[option_index](machine);
+//		fill_width(machine);
+		fill_arg[option_index](machine);
 	}
 */
 	fill_arg[option_index](machine);

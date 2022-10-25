@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 17:37:33 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/25 18:37:58 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,17 @@
 
 enum e_state
 {
-	E_IDLE,
+	E_IDLE, //standard
 	E_OPTION,
 	E_END,
 };
 
 typedef struct s_machine
 {
-	char			*input;
+	char			*input; // change to const
 	char			*output;
 	va_list			aptr;
 	char			buffer[BUFFER_SIZE];
-	char			rest[BUFFER_SIZE];
 	size_t			nbof_buffer;
 	size_t			index;
 	size_t			width;

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 17:23:37 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/25 23:19:50 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,9 @@ static enum e_state	get_next_state(t_machine *machine)
 {
 	const char	curr_c = *machine->input;
 
-	if (curr_c == '\0')
+	if (curr_c == '\0') // END_CHAR
 		machine->state = E_END;
-	else if (machine->state == E_OPTION)
+	else if (machine->state == E_OPTION) //move to another state_function
 		get_data(machine);
 	else if (curr_c == OPTION_CHAR)
 		machine->state = E_OPTION;
@@ -100,3 +100,44 @@ int	ft_vdprintf(int fd, const char *str, va_list aptr)
 	free(machine);
 	return (EXIT_SUCCESS);
 }
+
+/*
+
+// standard
+
+	if (curr_c == '\0') // END_CHAR
+		machine->state = E_END;
+	else if (curr_c == OPTION_CHAR)
+		machine->state = E_MOD;
+	else
+		cpy_data(machine, (char *)(&curr_c), sizeof(char));
+	return (machine->state);
+
+
+// mod
+
+	input_offset = 0;
+	if (flag)
+		input_offset = add_flag
+	else
+		state = converter
+	return (input_offset);
+
+// converter
+	
+	function = {conv_s, conv_d, conv_c, ...};
+
+	string = function[](va_list, flags)
+	add_to_buffer(string)
+	free(string)
+
+// conv_d
+
+	return (conv_numeric(nb, flags, itoa))
+
+// conv_numeric (nb, flags, char *(*function)(long))
+
+	apply_flags()
+	function(nb)
+	
+*/

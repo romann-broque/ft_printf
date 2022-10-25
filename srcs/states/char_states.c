@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:39:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 17:28:16 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/25 18:29:34 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	string(t_machine *machine)
 {
-	const char	*null_def = NULL_DEF;
 	char		*str;
 
 	str = va_arg(machine->aptr, char *);
 	if (str == NULL)
-		cpy_data(machine, (char *)null_def, ft_strlen(null_def));
-	else
-		cpy_data(machine, str, ft_strlen(str));
+		str = NULL_DEF;
+	cpy_data(machine, str, ft_strlen(str));
 }
 
 void	character(t_machine *machine)
