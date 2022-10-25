@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:39:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/24 16:29:25 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/25 16:49:03 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	character(t_machine *machine)
 
 void	percentage(t_machine *machine)
 {
-	machine->buffer[machine->index] = '%';
-	++(machine->index);
+	const int	c = '%';
+
+	cpy_data(machine, (char *)&c, sizeof(char));
 }

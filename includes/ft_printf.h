@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/24 17:17:50 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/25 17:23:12 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,14 +77,14 @@ void		ft_putunbr_fd(unsigned int n, int fd);
 
 t_machine	*init_machine(const char *str, va_list aptr, int fd);
 
-//print
+//fill
 
-void	print(t_machine *machine, ssize_t option_index);
+void	fill(t_machine *machine, ssize_t option_index);
 
-//print_hex
+//fill_hex
 
-void		ft_puthex_fd(const char *hbase, const unsigned int nb, int fd);
-void		ft_putlhex_fd(const char *hbase, const unsigned long nb, int fd);
+void		fill_hex(const char *hbase, const unsigned int nb, t_machine *machine);
+void		fill_lhex(const char *hbase, const unsigned long nb, t_machine *machine);
 
 // states
 

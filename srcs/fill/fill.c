@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   fill.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 17:30:00 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/23 18:47:32 by rbroque          ###   ########.fr       */
+/*   Created: 2022/10/25 17:22:17 by rbroque           #+#    #+#             */
+/*   Updated: 2022/10/25 17:22:46 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print(t_machine *machine, ssize_t option_index)
+void	fill(t_machine *machine, ssize_t option_index)
 {
-	static void		(*print_arg[])(t_machine *) = {string, character, low_hex,
+	static void		(*fill_arg[])(t_machine *) = {string, character, low_hex,
 		up_hex, address, integer, u_integer, integer_ten, percentage};
 
 /*
@@ -30,5 +30,5 @@ void	print(t_machine *machine, ssize_t option_index)
 		print_arg[option_index](machine);
 	}
 */
-	print_arg[option_index](machine);
+	fill_arg[option_index](machine);
 }

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 14:29:59 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/25 17:23:37 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	get_option(t_machine *machine)
 {
 	const ssize_t	option_index = get_index(OPTIONS, *machine->input);
 
-	print(machine, option_index);
+	fill(machine, option_index);
 	machine->flags = NO_FLAG;
 	machine->width = 0;
 	machine->state = E_IDLE;

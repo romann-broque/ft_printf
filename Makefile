@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/23 12:36:16 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/25 17:21:48 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = libftprintf.a
 
 PATH_SRCS += srcs/
 PATH_SRCS += srcs/states
-PATH_SRCS += srcs/print
+PATH_SRCS += srcs/fill
 PATH_SRCS += srcs/struct
 
 # srcs/
@@ -27,10 +27,10 @@ SRCS += ft_vdprintf.c
 SRCS += width.c
 SRCS += utils.c
 
-# srcs/print
+# srcs/fill
 SRCS += ft_putunbr_fd.c
-SRCS += print.c
-SRCS += print_hex.c
+SRCS += fill.c
+SRCS += fill_hex.c
 
 # srcs/states
 SRCS += char_states.c
