@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/24 16:33:46 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/25 14:29:59 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,26 +90,13 @@ static enum e_state	get_next_state(t_machine *machine)
 int	ft_vdprintf(int fd, const char *str, va_list aptr)
 {
 	t_machine	*machine;
-	char		*output;
 
 	machine = init_machine(str, aptr, fd);
-	output = NULL;
 	while (get_next_state(machine) != E_END)
-	{
-		if (machine->index >= BUFFER_SIZE)
-		{
-			output = strnjoin(output, machine->buffer, BUFFER_SIZE);
-			output = strnjoin(output, machine->rest, BUFFER_SIZE);
-			ft_bzero(machine->buffer, BUFFER_SIZE);
-			ft_bzero(machine->rest, BUFFER_SIZE);
-			machine->index -= BUFFER_SIZE;
-			++(machine->nbof_buffer);
-		}
 		++(machine->input);
-	}
-	output = strnjoin(output, machine->buffer, BUFFER_SIZE);
-	write(fd, output, machine->nbof_buffer * BUFFER_SIZE + machine->index);
-	free(output);
+	machine->output = strnjoin(machine->output, machine->buffer, machine->index + 1);
+	write(fd, machine->output, machine->nbof_buffer * BUFFER_SIZE + machine->index);
+	free(machine->output);
 	free(machine);
 	return (EXIT_SUCCESS);
 }

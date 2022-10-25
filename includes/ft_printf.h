@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/24 14:45:15 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/24 17:17:50 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ enum e_state
 typedef struct s_machine
 {
 	char			*input;
+	char			*output;
 	va_list			aptr;
 	char			buffer[BUFFER_SIZE];
 	char			rest[BUFFER_SIZE];
