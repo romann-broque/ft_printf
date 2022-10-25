@@ -1,29 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunbr_fd.c                                    :+:      :+:    :+:   */
+/*   fill_nb.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:06:19 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 15:13:12 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/25 17:40:06 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	print_nb(unsigned int n, int fd)
+static void	fill_pos_nb(unsigned int n, t_machine *machine)
 {
+	const char	digit = n % 10 + '0';
+
 	if (n > 0)
 	{
-		print_nb(n / 10, fd);
-		ft_putchar_fd(n % 10 + '0', fd);
+		fill_pos_nb(n / 10, machine);
+		cpy_data(machine, (char *)&digit, sizeof(char));
 	}
 }
 
-void	ft_putunbr_fd(unsigned int n, int fd)
+void	fill_nbr(int n, t_machine *machine)
 {
+	const char		minus = '-';
+	unsigned int	abs_n;
+
+	abs_n = n;
+	if (n < 0)
+	{
+		cpy_data(machine, (char *)&minus, sizeof(char));
+		abs_n = -n;
+	}
+	fill_unbr(abs_n, machine);
+}
+
+void	fill_unbr(unsigned int n, t_machine *machine)
+{
+	const char		zero = '0';
+
 	if (n == 0)
-		ft_putchar_fd('0', fd);
-	print_nb(n, fd);
+		cpy_data(machine, (char *)&zero, sizeof(char));
+	fill_pos_nb(n, machine);
 }

@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/25 17:21:48 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/25 17:38:55 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,9 @@ SRCS += width.c
 SRCS += utils.c
 
 # srcs/fill
-SRCS += ft_putunbr_fd.c
 SRCS += fill.c
 SRCS += fill_hex.c
+SRCS += fill_nb.c
 
 # srcs/states
 SRCS += char_states.c

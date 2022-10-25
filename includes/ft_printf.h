@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 17:23:12 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/25 17:37:33 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,6 @@ int			ft_vdprintf(int fd, const char *str, va_list aptr);
 
 int			ft_printf(const char *str, ...);
 
-// ft_putunbr_fd
-
-void		ft_putunbr_fd(unsigned int n, int fd);
-
 // machine_struct
 
 t_machine	*init_machine(const char *str, va_list aptr, int fd);
@@ -80,6 +76,11 @@ t_machine	*init_machine(const char *str, va_list aptr, int fd);
 //fill
 
 void	fill(t_machine *machine, ssize_t option_index);
+
+// fill_nb
+
+void	fill_nbr(int n, t_machine *machine);
+void	fill_unbr(unsigned int n, t_machine *machine);
 
 //fill_hex
 

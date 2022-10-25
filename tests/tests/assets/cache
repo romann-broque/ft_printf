@@ -43,9 +43,37 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0xaaaaacced10d
+test1: 0xaaaadd49d04d
 test2: (nil)
 test3: (nil)
+
+-----INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5:  0 -1234018 18
+test6: +0 -1234018 18
+test7: +0 -1234018 +18 +312
+test8:  0  1234018  18 +312
+test9:  10 -1234018
+test10:  10 34018
+
+-----U_INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: 4294967295
+test4: 0
+test5: 3 125
+test6: 3 125
+
+-----INTEGER TEN TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5: 114
+test6: +114
 <------------------------------------------------------->
 
 -----STRING TESTS-----
@@ -92,6 +120,34 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0xaaaaacced10d
+test1: 0xaaaadd49d04d
 test2: (nil)
 test3: (nil)
+
+-----INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5:  0 -1234018 18
+test6: +0 -1234018 18
+test7: +0 -1234018 +18 +312
+test8:  0  1234018  18 +312
+test9:  10 -1234018
+test10:  10 34018
+
+-----U_INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: 4294967295
+test4: 0
+test5: 3 125
+test6: 3 125
+
+-----INTEGER TEN TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5: 114
+test6: +114
