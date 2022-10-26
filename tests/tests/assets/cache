@@ -16,6 +16,15 @@ test7: wou%
 test8: wou%wincredible
 test9: 
 test10: (null)
+
+-----PERCENTAGE TESTS-----
+test1: %
+test2: % %%
+test3: % %%
+test4: % %%%
+test5: qw% %%%; v% %jjjj%%%rqwqqvsf
+test6: qw%  
+%%%; v% %jjjj%%%rqwqqvsf
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -35,3 +44,12 @@ test7: wou%
 test8: wou%wincredible
 test9: 
 test10: (null)
+
+-----PERCENTAGE TESTS-----
+test1: %
+test2: % %%
+test3: % %%
+test4: % %%%
+test5: qw% %%%; v% %jjjj%%%rqwqqvsf
+test6: qw%  
+%%%; v% %jjjj%%%rqwqqvsf

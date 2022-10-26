@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/26 16:03:36 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/26 16:19:34 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	conv_state(t_machine *machine)
 {
-	static char		*(*fill_arg[NBOF_OPTIONS])(t_machine *) = {string, character, low_hex,
+	static char		*(*fill_arg[])() = {string, character, low_hex,
 		up_hex, address, integer, u_integer, integer_ten, percentage};
 	const char		curr_c = *machine->input;
 	char			*string;
