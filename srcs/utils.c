@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:18:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 16:46:13 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/26 11:58:58 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ssize_t	get_index(const char *str, const char c)
 	index = 0;
 	while (str[index] != '\0' && str[index] != c)
 		++index;
-	if (str[index] == '\0' && c != '\0')
+	if (str[index] == '\0')
 		index = -1;
 	return (index);
 }

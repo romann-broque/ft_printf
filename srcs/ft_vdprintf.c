@@ -6,25 +6,14 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 23:19:50 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/26 12:29:07 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	get_option(t_machine *machine)
+void	get_flag(t_machine *machine, const ssize_t flag_index)
 {
-	const ssize_t	option_index = get_index(OPTIONS, *machine->input);
-
-	fill(machine, option_index);
-	machine->flags = NO_FLAG;
-	machine->width = 0;
-	machine->state = E_IDLE;
-}
-
-void	get_flag(t_machine *machine)
-{
-	const ssize_t	flag_index = get_index(FLAGS, *machine->input);
 	ssize_t			i;
 	uint8_t			flag;
 
@@ -36,64 +25,93 @@ void	get_flag(t_machine *machine)
 		++i;
 	}
 	machine->flags |= flag;
-	machine->state = E_OPTION;
 }
 
 void	get_width(t_machine *machine)
 {
 	machine->width = machine->width * 10 + *machine->input - '0';
-	machine->state = E_OPTION;
+	machine->state = E_MOD;
 }
 
-void	print_unknown(t_machine *machine)
+size_t	fill_unknown(t_machine *machine)
 {
 	const char	option_char = OPTION_CHAR;
+	size_t		offset;
 
-	if (*(machine->input + 1) != '\0')
+	offset = 0;
+	if (machine->input[0] != '\0' && machine->input[1] != '\0')
 	{
 		cpy_data(machine, (char *)(&option_char), sizeof(char));
-		if (*(machine->input + 2) != '\0')
+		if (machine->input[2] != '\0')
 			cpy_data(machine, machine->input, sizeof(char));
+		++offset;
 	}
-	machine->state = E_IDLE;
+	return (offset);
 }
 
-static void	get_data(t_machine *machine)
+static size_t	conv_state(t_machine *machine)
+{
+	static void		(*fill_arg[NBOF_OPTIONS])(t_machine *) = {string, character, low_hex,
+		up_hex, address, integer, u_integer, integer_ten, percentage};
+	const char		curr_c = *machine->input;
+	ssize_t			option_index;
+	size_t			input_offset;
+
+	option_index = get_index(OPTIONS, curr_c);
+	if (option_index > -1)
+	{
+		fill_arg[option_index](machine);
+		input_offset = 1;
+	}
+	else
+		input_offset = fill_unknown(machine);
+	machine->flags = NO_FLAG;
+	machine->width = 0;
+	machine->state = E_STANDARD;
+	return (input_offset);
+}
+
+static size_t mod_state(t_machine *machine)
 {
 	const char	curr_c = *machine->input;
+	size_t		input_offset;
+	ssize_t		flag_index;
 
-	if (ft_strchr(OPTIONS, curr_c))
-		get_option(machine);
-	else if (ft_strchr(FLAGS, curr_c) != NULL)
-		get_flag(machine);
-	else if (ft_isdigit(curr_c) != 0)
-		get_width(machine);
+	input_offset = 0;
+	flag_index = get_index(FLAGS, curr_c);
+	if (flag_index > -1)
+	{
+		get_flag(machine, flag_index);
+		++input_offset;
+	}
 	else
-		print_unknown(machine);
+		machine->state = E_CONV;
+//	else if (ft_isdigit(curr_c) != 0)
+//		get_width(machine);
+	return (input_offset);
 }
 
-static enum e_state	get_next_state(t_machine *machine)
+static size_t	standard_state(t_machine *machine)
 {
 	const char	curr_c = *machine->input;
 
 	if (curr_c == '\0') // END_CHAR
 		machine->state = E_END;
-	else if (machine->state == E_OPTION) //move to another state_function
-		get_data(machine);
 	else if (curr_c == OPTION_CHAR)
-		machine->state = E_OPTION;
+		machine->state = E_MOD;
 	else
 		cpy_data(machine, (char *)(&curr_c), sizeof(char));
-	return (machine->state);
+	return (1);
 }
 
 int	ft_vdprintf(int fd, const char *str, va_list aptr)
 {
-	t_machine	*machine;
+	static size_t	(*state_function[])(t_machine *) = {standard_state, mod_state, conv_state};
+	t_machine			*machine;
 
 	machine = init_machine(str, aptr, fd);
-	while (get_next_state(machine) != E_END)
-		++(machine->input);
+	while (machine->state != E_END)
+		machine->input += state_function[machine->state](machine);
 	machine->output = strnjoin(machine->output, machine->buffer, machine->index + 1);
 	write(fd, machine->output, machine->nbof_buffer * BUFFER_SIZE + machine->index);
 	free(machine->output);
@@ -105,13 +123,6 @@ int	ft_vdprintf(int fd, const char *str, va_list aptr)
 
 // standard
 
-	if (curr_c == '\0') // END_CHAR
-		machine->state = E_END;
-	else if (curr_c == OPTION_CHAR)
-		machine->state = E_MOD;
-	else
-		cpy_data(machine, (char *)(&curr_c), sizeof(char));
-	return (machine->state);
 
 
 // mod

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 18:37:58 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/25 23:27:26 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,9 @@
 
 enum e_state
 {
-	E_IDLE, //standard
-	E_OPTION,
+	E_STANDARD,
+	E_MOD,
+	E_CONV,
 	E_END,
 };
 

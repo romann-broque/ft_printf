@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:36:42 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 17:40:31 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/26 11:54:34 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 int	main(void)
 {
 	printf(SEPARATOR);
-	string_tests();
 	character_tests();
+	string_tests();
+/*
 	percentage_tests();
 	low_hex_tests();
 	up_hex_tests();
@@ -24,5 +25,6 @@ int	main(void)
 	integer_tests();
 	u_integer_tests();
 	integer_ten_tests();
+*/
 	return (EXIT_SUCCESS);
 }

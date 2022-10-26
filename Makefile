@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/25 17:38:55 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/26 10:42:35 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,6 +76,11 @@ endif
 
 ifeq ($(everything), true)
 	CFLAGS += -Weverything
+endif
+
+ifeq ($(debug), true)
+	CFLAGS += -g3
+	CFLAGS += -fsanitize=address,undefined
 endif
 
 ### RULES
