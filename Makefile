@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/26 10:42:35 by rbroque          ###   ########.fr        #
+#    Updated: 2022/10/26 16:14:50 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,28 +17,42 @@ NAME = libftprintf.a
 ### SRCS
 
 PATH_SRCS += srcs/
-PATH_SRCS += srcs/states
+PATH_SRCS += srcs/converters
+PATH_SRCS += srcs/core
+PATH_SRCS += srcs/core/struct
 PATH_SRCS += srcs/fill
-PATH_SRCS += srcs/struct
+PATH_SRCS += srcs/modifiers
+PATH_SRCS += srcs/printf
+PATH_SRCS += srcs/states
+PATH_SRCS += srcs/utils
 
 # srcs/
-SRCS += ft_printf.c
-SRCS += ft_vdprintf.c
 SRCS += width.c
-SRCS += utils.c
 
-# srcs/fill
-SRCS += fill.c
-SRCS += fill_hex.c
-SRCS += fill_nb.c
-
-# srcs/states
+# srcs/converters
 SRCS += char_states.c
 SRCS += hex_states.c
 SRCS += int_states.c
 
-# srcs/struct
+# srcs/core
+
+# srcs/core/struct
 SRCS += machine_struct.c
+
+# srcs/fill
+SRCS += fill_hex.c
+SRCS += fill_nb.c
+
+# srcs/printf
+SRCS += ft_printf.c
+SRCS += ft_vdprintf.c
+
+# srcs/states
+SRCS += states.c
+SRCS += states_utils.c
+
+# srcs/utils
+SRCS += utils.c
 
 vpath %.c $(PATH_SRCS)
 

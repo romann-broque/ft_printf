@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/26 15:33:44 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/26 16:13:49 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,6 @@ int			ft_printf(const char *str, ...);
 
 t_machine	*init_machine(const char *str, va_list aptr, int fd);
 
-//fill
-
-void	fill(t_machine *machine, ssize_t option_index);
-
 // fill_nb
 
 void	fill_nbr(int n, t_machine *machine);
@@ -87,7 +83,12 @@ void	fill_unbr(unsigned int n, t_machine *machine);
 void		fill_hex(const char *hbase, const unsigned int nb, t_machine *machine);
 void		fill_lhex(const char *hbase, const unsigned long nb, t_machine *machine);
 
-// states
+//states_utils
+
+char	*fill_unknown(t_machine *machine);
+void	get_flag(t_machine *machine, const ssize_t flag_index);
+
+// converters
 
 char		*string(t_machine *machine);
 char		*character(t_machine *machine);
@@ -98,6 +99,12 @@ char		*integer(t_machine *machine);
 char		*u_integer(t_machine *machine);
 char		*integer_ten(t_machine *machine);
 char		*percentage(t_machine *machine);
+
+// states
+
+size_t	conv_state(t_machine *machine);
+size_t mod_state(t_machine *machine);
+size_t	standard_state(t_machine *machine);
 
 // get_size
 
