@@ -6,13 +6,13 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:38:44 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 17:38:10 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/26 15:41:32 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	integer(t_machine *machine)
+char	*integer(t_machine *machine)
 {
 	const int	nb = va_arg(machine->aptr, int);
 	const char	plus = '+';
@@ -26,16 +26,18 @@ void	integer(t_machine *machine)
 			cpy_data(machine, (char *)&space, sizeof(char));
 	}
 	fill_nbr(nb, machine);
+	return (NULL);
 }
 
-void	u_integer(t_machine *machine)
+char	*u_integer(t_machine *machine)
 {
 	const unsigned int	nb = va_arg(machine->aptr, unsigned int);
 
 	fill_unbr(nb, machine);
+	return (NULL);
 }
 
-void	integer_ten(t_machine *machine)
+char	*integer_ten(t_machine *machine)
 {
-	integer(machine);
+	return(integer(machine));
 }

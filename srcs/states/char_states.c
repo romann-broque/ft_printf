@@ -6,13 +6,13 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:39:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 18:29:34 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/26 15:44:11 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	string(t_machine *machine)
+char	*string(t_machine *machine)
 {
 	char		*str;
 
@@ -20,18 +20,23 @@ void	string(t_machine *machine)
 	if (str == NULL)
 		str = NULL_DEF;
 	cpy_data(machine, str, ft_strlen(str));
+	return (NULL);
 }
 
-void	character(t_machine *machine)
+char	*character(t_machine *machine)
 {
 	const int	c = va_arg(machine->aptr, int);
+	char		str[2];
 
-	cpy_data(machine, (char *)&c, sizeof(char));
+	str[0] = c;
+	str[1] = '\0';
+	return (ft_strdup(str));
 }
 
-void	percentage(t_machine *machine)
+char	*percentage(t_machine *machine)
 {
 	const int	c = '%';
 
 	cpy_data(machine, (char *)&c, sizeof(char));
+	return (NULL);
 }

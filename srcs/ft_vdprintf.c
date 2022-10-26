@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/26 12:29:07 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/26 15:38:30 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,42 +33,43 @@ void	get_width(t_machine *machine)
 	machine->state = E_MOD;
 }
 
-size_t	fill_unknown(t_machine *machine)
+char	*fill_unknown(t_machine *machine)
 {
-	const char	option_char = OPTION_CHAR;
-	size_t		offset;
+	char		*string;
+	size_t		len;
 
-	offset = 0;
-	if (machine->input[0] != '\0' && machine->input[1] != '\0')
+	len = (machine->input[0] != '\0' && machine->input[1] != '\0') + (machine->input[2] != '\0');
+	string = (char *)malloc((len + 1) * sizeof(char));
+	if (string != NULL)
 	{
-		cpy_data(machine, (char *)(&option_char), sizeof(char));
-		if (machine->input[2] != '\0')
-			cpy_data(machine, machine->input, sizeof(char));
-		++offset;
+		string[len] = '\0';
+		if (len > 0)
+			string[0] = OPTION_CHAR;
+		if (len > 1)
+			string[1] = *machine->input;
 	}
-	return (offset);
+	return (string);
 }
 
 static size_t	conv_state(t_machine *machine)
 {
-	static void		(*fill_arg[NBOF_OPTIONS])(t_machine *) = {string, character, low_hex,
+	static char		*(*fill_arg[NBOF_OPTIONS])(t_machine *) = {string, character, low_hex,
 		up_hex, address, integer, u_integer, integer_ten, percentage};
 	const char		curr_c = *machine->input;
+	char			*string;
 	ssize_t			option_index;
-	size_t			input_offset;
 
 	option_index = get_index(OPTIONS, curr_c);
 	if (option_index > -1)
-	{
-		fill_arg[option_index](machine);
-		input_offset = 1;
-	}
+		string = fill_arg[option_index](machine);
 	else
-		input_offset = fill_unknown(machine);
+		string = fill_unknown(machine);
+	cpy_data(machine, string, ft_strlen(string));
+	free(string);
 	machine->flags = NO_FLAG;
 	machine->width = 0;
 	machine->state = E_STANDARD;
-	return (input_offset);
+	return (ft_strlen(string) > 0);
 }
 
 static size_t mod_state(t_machine *machine)

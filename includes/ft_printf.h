@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 23:27:26 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/26 15:33:44 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,15 +89,15 @@ void		fill_lhex(const char *hbase, const unsigned long nb, t_machine *machine);
 
 // states
 
-void		string(t_machine *machine);
-void		character(t_machine *machine);
-void		low_hex(t_machine *machine);
-void		up_hex(t_machine *machine);
-void		address(t_machine *machine);
-void		integer(t_machine *machine);
-void		u_integer(t_machine *machine);
-void		integer_ten(t_machine *machine);
-void		percentage(t_machine *machine);
+char		*string(t_machine *machine);
+char		*character(t_machine *machine);
+char		*low_hex(t_machine *machine);
+char		*up_hex(t_machine *machine);
+char		*address(t_machine *machine);
+char		*integer(t_machine *machine);
+char		*u_integer(t_machine *machine);
+char		*integer_ten(t_machine *machine);
+char		*percentage(t_machine *machine);
 
 // get_size
 

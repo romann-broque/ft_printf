@@ -4,20 +4,6 @@ test1: a
 test2: ÿ
 test3: ÿ c 1 9 1
 test4: Charlotte
-
------STRING TESTS-----
-test1: wouah
-test2: wouincredibleah
-test3: wouincredible
-test4: wou
-test5: wou
-test6: wouincredible
-test7: wou%
-test8: wou%wincredible
-test9: 
-test10: (null)
-test11: (null)
-
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -25,16 +11,3 @@ test1: a
 test2: ÿ
 test3: ÿ c 1 9 1
 test4: Charlotte
-
------STRING TESTS-----
-test1: wouah
-test2: wouincredibleah
-test3: wouincredible
-test4: wou
-test5: wou
-test6: wouincredible
-test7: wou%
-test8: wou%wincredible
-test9: 
-test10: (null)
-test11: (null)

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:22:17 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/25 18:24:19 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/26 15:42:24 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,12 @@ void	fill_width(t_machine *machine)
 		free(width);
 	}
 }
-*/
 
 void	fill(t_machine *machine, ssize_t option_index)
 {
 	static void		(*fill_arg[])(t_machine *) = {string, character, low_hex,
 		up_hex, address, integer, u_integer, integer_ten, percentage};
 
-/*
 	get_widthsize(machine, option_index);
 	if (machine->flags & MINUS_FLAG)
 	{
@@ -44,6 +42,6 @@ void	fill(t_machine *machine, ssize_t option_index)
 //		fill_width(machine);
 		fill_arg[option_index](machine);
 	}
-*/
 	fill_arg[option_index](machine);
 }
+*/
