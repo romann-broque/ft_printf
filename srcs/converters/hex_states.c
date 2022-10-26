@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:37:48 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/26 15:44:41 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/26 18:14:50 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,37 @@
 char	*low_hex(t_machine *machine)
 {
 	const unsigned int	nb = va_arg(machine->aptr, unsigned int);
-	const char			*prefix_hex = PREFIX_HEX;
+	char				*nb_base;
+	char				*output;
 
+	output = NULL;
 	if (machine->flags & PREFIX_FLAG && nb > 0)
-		cpy_data(machine, (char *)prefix_hex, ft_strlen(prefix_hex));
-	fill_hex(LOW_HEX, nb, machine);
-	return (NULL);
+		output = ft_strdup(PREFIX_HEX);
+	nb_base = itoa_base(nb, HEX);
+	output = strnjoin(output, nb_base, ft_strlen(nb_base));
+	free(nb_base);
+	return (output);
 }
 
 char	*up_hex(t_machine *machine)
 {
-	return (low_hex(machine));
+	return (toupper_str(low_hex(machine)));
 }
 
 char	*address(t_machine *machine)
 {
 	const unsigned long	address = va_arg(machine->aptr, unsigned long);
-	const char			*pre_hex = PRE_HEX;
-	const char			*nil_def = NIL_DEF;
-
+	char				*address_hex;
+	char				*output;
+	output = NULL;
 	if (address == 0)
-		cpy_data(machine, (char *)nil_def, ft_strlen(nil_def));
+		output = ft_strdup(NIL_DEF);
 	else
 	{
-		cpy_data(machine, (char *)pre_hex, ft_strlen(pre_hex));
-		fill_lhex(LOW_HEX, address, machine);
+		output = ft_strdup(PRE_HEX);
+		address_hex = itoa_base(address, HEX);
+		output = strnjoin(output, address_hex, ft_strlen(address_hex));
+		free(address_hex);
 	}
-	return (NULL);
+	return (output);
 }

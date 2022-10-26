@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/26 16:22:30 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/26 18:09:02 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@
 # define NIL_DEF "(nil)"
 # define WIDTH_UNIT " "
 # define PRE_HEX "0x"
-# define LOW_HEX "0123456789abcdef"
-# define UP_HEX "0123456789ABCDEF"
+# define HEX "0123456789abcdef"
 # define PREFIX_HEX "0x"
 # define OPTION_CHAR '%'
 # define OPTIONS "scxXpdui%"
@@ -109,6 +108,15 @@ size_t	standard_state(t_machine *machine);
 // get_size
 
 void	get_widthsize(t_machine *machine, ssize_t option_index);
+
+// tocase_str
+
+char	*toupper_str(char *str);
+char	*tolower_str(char *str);
+
+// itoa_base
+
+char	*itoa_base(const long nb, const char *base);
 
 // utils
 
