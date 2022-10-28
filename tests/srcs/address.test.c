@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 23:29:01 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/26 18:17:04 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/28 17:23:36 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ static void	test3(void)
 static void	test4(void)
 {
 	const char	*test_name = "test4: ";
-	const char	*str = "%#  p";
+	const char	*str = "%  p";
 	char		*ptr;
 
-	ptr = ULONG_MAX;
+	ptr = (char *)ULONG_MAX;
 	ft_printf(test_name);
 	ft_printf(str, ptr);
 	ft_printf("\n");

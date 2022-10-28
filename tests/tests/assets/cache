@@ -41,10 +41,10 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0xaaaaf9104010
+test1: 0xaaaab687d010
 test2: (nil)
 test3: (nil)
-test4: 0xffffffffffffffffS
+test4:  0xffffffffffffffff
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -89,7 +89,7 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0xaaaaf9104010
+test1: 0xaaaab687d010
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff

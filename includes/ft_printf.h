@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/26 18:09:02 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/28 17:12:54 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ char	*tolower_str(char *str);
 
 // itoa_base
 
-char	*itoa_base(const long nb, const char *base);
+char	*itoa_base(const unsigned long nb, const char *base);
 
 // utils
 

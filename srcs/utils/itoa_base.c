@@ -6,17 +6,17 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 17:30:06 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/26 17:48:20 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/10/28 17:12:33 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static size_t	get_nbsize(long nb, const size_t len_base)
+static size_t	get_nbsize(unsigned long nb, const size_t len_base)
 {
 	size_t	size;
 
-	size = (nb <= 0);
+	size = (nb == 0);
 	while (nb != 0)
 	{
 		nb /= len_base;
@@ -54,13 +54,7 @@ static bool	is_valid_base(const char *base)
 	return (true);
 }
 
-void	assign_sign(char *str, const long nb)
-{
-	if (nb < 0)
-		*str = '-';
-}
-
-char	*itoa_base(long nb, const char *base)
+char	*itoa_base(unsigned long nb, const char *base)
 {
 	const size_t	len_base = ft_strlen(base);
 	size_t			nb_size;
@@ -74,8 +68,7 @@ char	*itoa_base(long nb, const char *base)
 		str = (char *)malloc((nb_size + 1) * sizeof(char));
 		if (str != NULL)
 		{
-			assign_sign(str, nb);
-			i = (nb < 0);
+			i = 0;
 			while (i < nb_size)
 			{
 				str[nb_size - i - 1] = base[nb % len_base];
