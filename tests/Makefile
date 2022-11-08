@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 10:14:45 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/17 16:13:14 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/08 12:09:06 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,22 +56,20 @@ vpath %test.h $(TEST_INCLUDES)
 
 ########## LIB
 
-LIB += -L /usr/lib/aarch64-linux-gnu/libcheck.a # Must be changed according with the OS
 LIB += -L ../ -lftprintf
 LIB += -L ../libft/ -lft
 
 ########## COMPILER
 
-CC = clang
+CC = cc 
 
 CFLAGS += -Wno-format-security
+CFLAGS += -fPIE
 #CFLAGS += -Wall
 #CFLAGS += -Wextra
 #CFLAGS += -Werror
 
-LINKS += -lcheck
 LINKS += -lbsd
-LINKS += -lsubunit
 LINKS += -lm
 LINKS += -lpthread
 

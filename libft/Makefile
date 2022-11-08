@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 10:15:13 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/14 21:02:38 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/08 12:06:38 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,7 +106,7 @@ INCLUDES += includes/
 
 ### COMPILATION
 
-CC = clang
+CC = cc
 
 CFLAGS += -Wall
 CFLAGS += -Wextra

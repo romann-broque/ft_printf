@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:04:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/26 10:25:40 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/08 12:07:25 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_machine	*init_machine(const char *str, va_list aptr, int fd)
 	{
 		machine->input = (char *)str;
 		machine->output = NULL;
-		machine->aptr = aptr;
+		va_copy(machine->aptr, aptr);
 		ft_bzero(machine->buffer, BUFFER_SIZE);
 		machine->nbof_buffer = 0;
 		machine->index = 0;

@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/10/26 18:04:16 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/08 12:09:27 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,7 @@ CC = clang
 
 CFLAGS += -Wall
 CFLAGS += -Wextra
+CFLAGS += -fPIE
 
 LINKS += -lft
 
