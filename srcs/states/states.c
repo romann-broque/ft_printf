@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/26 16:19:34 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/08 17:31:11 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	conv_state(t_machine *machine)
 
 	option_index = get_index(OPTIONS, curr_c);
 	if (option_index > -1)
-		string = fill_arg[option_index](machine);
+		string = fill_arg[option_index](machine->aptr, machine->flags);
 	else
 		string = fill_unknown(machine);
 	cpy_data(machine, string, ft_strlen(string));
@@ -59,7 +59,7 @@ size_t	standard_state(t_machine *machine)
 {
 	const char	curr_c = *machine->input;
 
-	if (curr_c == '\0') // END_CHAR
+	if (curr_c == END_CHAR)
 		machine->state = E_END;
 	else if (curr_c == OPTION_CHAR)
 		machine->state = E_MOD;

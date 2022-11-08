@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/28 17:12:54 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/08 17:48:26 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,14 @@
 
 # define NULL_DEF "(null)"
 # define NIL_DEF "(nil)"
+# define END_CHAR '\0'
+# define PLUS_SIGN "+"
+# define MINUS_SIGN "+"
+# define NIL_DEF "(nil)"
 # define WIDTH_UNIT " "
 # define PRE_HEX "0x"
 # define HEX "0123456789abcdef"
+# define DEC "0123456789"
 # define PREFIX_HEX "0x"
 # define OPTION_CHAR '%'
 # define OPTIONS "scxXpdui%"
@@ -48,7 +53,7 @@ enum e_state
 
 typedef struct s_machine
 {
-	char			*input; // change to const
+	const char	*input;
 	char			*output;
 	va_list			aptr;
 	char			buffer[BUFFER_SIZE];
@@ -74,8 +79,8 @@ t_machine	*init_machine(const char *str, va_list aptr, int fd);
 
 // fill_nb
 
-void	fill_nbr(int n, t_machine *machine);
-void	fill_unbr(unsigned int n, t_machine *machine);
+void		fill_nbr(int n, t_machine *machine);
+void		fill_unbr(unsigned int n, t_machine *machine);
 
 //fill_hex
 
@@ -84,44 +89,48 @@ void		fill_lhex(const char *hbase, const unsigned long nb, t_machine *machine);
 
 //states_utils
 
-char	*fill_unknown(t_machine *machine);
-void	get_flag(t_machine *machine, const ssize_t flag_index);
+char		*fill_unknown(t_machine *machine);
+void		get_flag(t_machine *machine, const ssize_t flag_index);
 
 // converters
 
-char		*string(t_machine *machine);
-char		*character(t_machine *machine);
-char		*low_hex(t_machine *machine);
-char		*up_hex(t_machine *machine);
-char		*address(t_machine *machine);
-char		*integer(t_machine *machine);
-char		*u_integer(t_machine *machine);
-char		*integer_ten(t_machine *machine);
+char		*string(va_list aptr);
+char		*character(va_list aptr);
+char		*low_hex(va_list aptr, int flags);
+char		*up_hex(va_list aptr, int flags);
+char		*address(va_list aptr, int flags);
+char		*integer(va_list aptr, int flags);
+char		*u_integer(va_list aptr, int flags);
+char		*integer_ten(va_list aptr, int flags);
 char		*percentage(void);
 
 // states
 
-size_t	conv_state(t_machine *machine);
-size_t mod_state(t_machine *machine);
-size_t	standard_state(t_machine *machine);
+size_t		conv_state(t_machine *machine);
+size_t		mod_state(t_machine *machine);
+size_t		standard_state(t_machine *machine);
 
 // get_size
 
-void	get_widthsize(t_machine *machine, ssize_t option_index);
+void		get_widthsize(t_machine *machine, ssize_t option_index);
 
 // tocase_str
 
-char	*toupper_str(char *str);
-char	*tolower_str(char *str);
+char		*toupper_str(char *str);
+char		*tolower_str(char *str);
 
 // itoa_base
 
-char	*itoa_base(const unsigned long nb, const char *base);
+char		*itoa_base(const unsigned long nb, const char *base);
+
+// get_abs
+
+unsigned int	get_abs(int nb);
 
 // utils
 
 ssize_t		get_index(const char *str, const char c);
-void	cpy_data(t_machine *machine, void *data, size_t n);
-char	*to_string(const char c);
+void		cpy_data(t_machine *machine, void *data, size_t n);
+char		*to_string(const char c);
 
 #endif

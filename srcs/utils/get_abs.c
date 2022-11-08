@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char_states.c                                      :+:      :+:    :+:   */
+/*   get_abs.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 16:39:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/08 16:20:52 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/08 17:04:38 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/08 17:49:26 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*string(va_list aptr)
+unsigned int	get_abs(int nb)
 {
-	char		*str;
+	unsigned int	abs;
 
-	str = va_arg(aptr, char *);
-	if (str == NULL)
-		str = NULL_DEF;
-	return (ft_strdup(str));
-}
-
-char	*character(va_list aptr)
-{
-	return (to_string(va_arg(aptr, int)));
-}
-
-char	*percentage(void)
-{
-	return (to_string(OPTION_CHAR));
+	if (nb < 0)
+		abs = -nb;
+	else
+		abs = nb;
+	return (abs);
 }

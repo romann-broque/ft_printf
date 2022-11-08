@@ -41,10 +41,16 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0x5618a1167189
+test1: 0x563eceb20189
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
+
+-----INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: +2147483648
+test4: 0
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -89,7 +95,13 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0x5618a1167189
+test1: 0x563eceb20189
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
+
+-----INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
