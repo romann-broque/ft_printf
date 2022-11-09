@@ -6,26 +6,11 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:13:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/26 16:13:38 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/09 09:56:49 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	get_flag(t_machine *machine, const ssize_t flag_index)
-{
-	ssize_t			i;
-	uint8_t			flag;
-
-	flag = NO_FLAG;
-	i = 0;
-	while (i <= flag_index)
-	{
-		flag <<= 1;
-		++i;
-	}
-	machine->flags |= flag;
-}
 
 void	get_width(t_machine *machine)
 {

@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/08 17:09:21 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/09 10:00:06 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,9 +35,11 @@ SRCS += hex_states.c
 SRCS += int_states.c
 
 # srcs/core
-
 # srcs/core/struct
 SRCS += machine_struct.c
+
+# srcs/modifiers
+SRCS += flags.c
 
 # srcs/fill
 SRCS += fill_hex.c

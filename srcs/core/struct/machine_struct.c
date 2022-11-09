@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:04:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/08 12:07:25 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/09 09:50:40 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,10 @@ t_machine	*init_machine(const char *str, va_list aptr, int fd)
 		machine->state = E_STANDARD;
 	}
 	return (machine);
+}
+
+void	free_machine(t_machine *machine)
+{
+	free(machine->output);
+	free(machine);
 }

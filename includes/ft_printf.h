@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 01:17:14 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/09 09:57:33 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int			ft_printf(const char *str, ...);
 // machine_struct
 
 t_machine	*init_machine(const char *str, va_list aptr, int fd);
+void		free_machine(t_machine *machine);
 
 // fill_nb
 
@@ -90,7 +91,6 @@ void		fill_lhex(const char *hbase, const unsigned long nb, t_machine *machine);
 //states_utils
 
 char		*fill_unknown(t_machine *machine);
-void		get_flag(t_machine *machine, const ssize_t flag_index);
 
 // converters
 
@@ -109,6 +109,10 @@ char		*percentage(void);
 size_t		conv_state(t_machine *machine);
 size_t		mod_state(t_machine *machine);
 size_t		standard_state(t_machine *machine);
+
+// flags
+
+void		get_flag(t_machine *machine, const ssize_t flag_index);
 
 // get_size
 
