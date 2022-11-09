@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:38:44 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/08 17:59:38 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/09 09:20:02 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,16 @@ char	*integer(va_list aptr, int flags)
 
 char	*u_integer(va_list aptr, int flags)
 {
-//	const unsigned int	nb = va_arg(aptr, unsigned int);
+	const unsigned int	nb = va_arg(aptr, unsigned int);
+	char				*nb_output;
+	char				*output;
 
-//	fill_unbr(nb, machine);
-	(void)aptr;
 	(void)flags;
-	return (NULL);
+	output = NULL;
+	nb_output = itoa_base(get_abs(nb), DEC);
+	output = strnjoin(output, nb_output, ft_strlen(nb_output));
+	free(nb_output);
+	return (output);
 }
 
 char	*integer_ten(va_list aptr, int flags)
