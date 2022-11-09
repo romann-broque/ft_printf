@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/08 17:48:26 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/09 01:17:14 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define NIL_DEF "(nil)"
 # define END_CHAR '\0'
 # define PLUS_SIGN "+"
-# define MINUS_SIGN "+"
+# define MINUS_SIGN "-"
 # define NIL_DEF "(nil)"
 # define WIDTH_UNIT " "
 # define PRE_HEX "0x"
