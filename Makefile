@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/09 11:13:00 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/09 14:21:58 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ PATH_SRCS += srcs/states
 PATH_SRCS += srcs/utils
 
 # srcs/
-SRCS += width.c
 
 # srcs/converters
 SRCS += apply_converter.c
@@ -51,9 +50,11 @@ SRCS += states_utils.c
 
 # srcs/utils
 SRCS += utils.c
+SRCS += strings.c
 SRCS += tocase_str.c
 SRCS += itoa_base.c
 SRCS += get_abs.c
+SRCS += cpy_data.c
 
 vpath %.c $(PATH_SRCS)
 

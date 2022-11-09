@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:03:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 09:17:07 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/09 13:02:13 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,9 +182,9 @@ void	integer_tests(void)
 	test2();
 	test3();
 	test4();
-/*
 	test5();
 	test6();
+/*
 	test7();
 	test8();
 	test9();

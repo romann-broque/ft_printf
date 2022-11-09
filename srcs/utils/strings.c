@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   strings.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 15:36:42 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 14:24:44 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/09 14:06:23 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/09 14:22:23 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.test.h"
+#include "ft_printf.h"
 
-int	main(void)
+char	*strset(int c, size_t n)
 {
-	printf(SEPARATOR);
-	character_tests();
-	string_tests();
-	percentage_tests();
-	low_hex_tests();
-	up_hex_tests();
-	address_tests();
-	integer_tests();
-/*
-	u_integer_tests();
-	integer_ten_tests();
-*/
-	return (EXIT_SUCCESS);
+	char	*new;
+
+	new = (char *)malloc((n + 1) * sizeof(char));
+	if (new != NULL)
+	{
+		ft_memset(new, c, n);
+		new[n] = '\0';
+	}
+	return (new);
 }

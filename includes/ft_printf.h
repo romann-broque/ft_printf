@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 11:22:30 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/09 14:38:54 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 # define NULL_DEF "(null)"
 # define NIL_DEF "(nil)"
+# define SPACE_PAT " "
 # define END_CHAR '\0'
 # define PLUS_SIGN "+"
 # define MINUS_SIGN "-"
@@ -125,7 +126,13 @@ unsigned int	get_abs(int nb);
 // utils
 
 ssize_t		get_index(const char *str, const char c);
-void		cpy_data(t_machine *machine, void *data, size_t n);
 char		*to_string(const char c);
 
+// strings
+char	*strset(int c, size_t n);
+
+// cpy_data
+
+void		cpy_data(t_machine *machine, void *data, size_t n);
+void		cpy_to_buffer(t_machine *machine, char *string);
 #endif

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:38:44 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 09:42:03 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/09 14:41:03 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,10 @@ char	*integer(va_list aptr, int flags)
 	char		*output;
 
 	output = NULL;
-	if (nb >= 0)
-	{
-		if (flags & PLUS_FLAG)
-			output = ft_strdup(PLUS_SIGN);
-//		else if (machine->width == 0 && machine->flags & SPACE_FLAG)
-//			output = ft_strdup(WIDTH_UNIT);
-	}
-	else
-			output = ft_strdup(MINUS_SIGN);
+	if (nb >= 0 && flags & PLUS_FLAG)
+		output = ft_strdup(PLUS_SIGN);
+	else if (nb < 0)
+		output = ft_strdup(MINUS_SIGN);
 	nb_output = itoa_base(get_abs(nb), DEC);
 	output = strnjoin(output, nb_output, ft_strlen(nb_output));
 	free(nb_output);
