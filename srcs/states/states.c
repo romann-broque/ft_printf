@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/08 17:31:11 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/09 11:30:58 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,9 @@
 
 size_t	conv_state(t_machine *machine)
 {
-	static char		*(*fill_arg[])() = {string, character, low_hex,
-		up_hex, address, integer, u_integer, integer_ten, percentage};
-	const char		curr_c = *machine->input;
-	char			*string;
-	ssize_t			option_index;
-	size_t			offset;
+	size_t	offset;
 
-	option_index = get_index(OPTIONS, curr_c);
-	if (option_index > -1)
-		string = fill_arg[option_index](machine->aptr, machine->flags);
-	else
-		string = fill_unknown(machine);
-	cpy_data(machine, string, ft_strlen(string));
-	offset = (ft_strlen(string) > 0);
-	free(string);
+	offset = apply_converter(machine);
 	machine->flags = NO_FLAG;
 	machine->width = 0;
 	machine->state = E_STANDARD;
@@ -64,6 +52,6 @@ size_t	standard_state(t_machine *machine)
 	else if (curr_c == OPTION_CHAR)
 		machine->state = E_MOD;
 	else
-		cpy_data(machine, (char *)(&curr_c), sizeof(char));
+		cpy_data(machine, (char *)machine->input, sizeof(char));
 	return (1);
 }

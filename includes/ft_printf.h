@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 09:57:33 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/09 11:22:30 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,22 +78,13 @@ int			ft_printf(const char *str, ...);
 t_machine	*init_machine(const char *str, va_list aptr, int fd);
 void		free_machine(t_machine *machine);
 
-// fill_nb
-
-void		fill_nbr(int n, t_machine *machine);
-void		fill_unbr(unsigned int n, t_machine *machine);
-
-//fill_hex
-
-void		fill_hex(const char *hbase, const unsigned int nb, t_machine *machine);
-void		fill_lhex(const char *hbase, const unsigned long nb, t_machine *machine);
-
 //states_utils
 
 char		*fill_unknown(t_machine *machine);
 
 // converters
 
+size_t		apply_converter(t_machine *machine);
 char		*string(va_list aptr);
 char		*character(va_list aptr);
 char		*low_hex(va_list aptr, int flags);
