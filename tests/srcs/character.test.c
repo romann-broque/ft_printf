@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:35:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 01:21:34 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/09 09:43:43 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	test2(void)
 {
 	const char	*test_name = "test2: ";
 	const char	*str = "%c";
-	const char	character = UCHAR_MAX;
+	const unsigned char	character = UCHAR_MAX;
 
 	ft_printf(test_name);
 	ft_printf(str, character);
@@ -46,7 +46,7 @@ static void	test3(void)
 {
 	const char	*test_name = "test3: ";
 	const char	*str = "%c %c %c %c %c";
-	const char	character1 = UCHAR_MAX;
+	const unsigned char	character1 = UCHAR_MAX;
 	const char	character2 = 'c';
 	const char	character3 = '1';
 	const char	character4 = '9';

@@ -41,7 +41,7 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0x565401490189
+test1: 0x23ae00402d06
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
@@ -55,10 +55,18 @@ test4: 0
 -----U_INTEGER TESTS-----
 test1: 247558
 test2: 2147483647
-test3: 1
+test3: 4294967295
 test4: 0
 test5: 3 125
 test6: 3 125
+
+-----INTEGER TEN TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5: 114
+test6: +114
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -103,7 +111,7 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0x565401490189
+test1: 0x23ae00402d06
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
@@ -121,3 +129,11 @@ test3: 4294967295
 test4: 0
 test5: 3 125
 test6: 3 125
+
+-----INTEGER TEN TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5: 114
+test6: +114

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:38:44 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 09:20:02 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/09 09:42:03 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*u_integer(va_list aptr, int flags)
 
 	(void)flags;
 	output = NULL;
-	nb_output = itoa_base(get_abs(nb), DEC);
+	nb_output = itoa_base(nb, DEC);
 	output = strnjoin(output, nb_output, ft_strlen(nb_output));
 	free(nb_output);
 	return (output);
