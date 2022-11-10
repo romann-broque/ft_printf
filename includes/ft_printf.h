@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 14:38:54 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/09 15:52:53 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@
 # define PLUS_FLAG 0x04
 # define PREFIX_FLAG 0x08
 # define MINUS_FLAG 0x10
+
+# define INT_TYPE 0x70
 
 enum e_state
 {
@@ -134,5 +136,6 @@ char	*strset(int c, size_t n);
 // cpy_data
 
 void		cpy_data(t_machine *machine, void *data, size_t n);
-void		cpy_to_buffer(t_machine *machine, char *string);
+void		cpy_to_buffer(t_machine *machine, char *string, int type);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:46:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 14:40:11 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/10 18:14:24 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,18 @@ static size_t	reduce_width(size_t width, char *str)
 	return (width);
 }
 
-void	cpy_to_buffer(t_machine *machine, char *string)
+static void cpy_whitespaces_in_buff(t_machine *machine, char *width_part, int type)
+{
+	if (type & INT_TYPE)
+	{
+		if (width_part != NULL && *width_part != '\0')
+			cpy_data(machine, width_part, ft_strlen(width_part));
+		else if (machine->flags & SPACE_FLAG && !(machine->flags & PLUS_FLAG))
+			cpy_data(machine, SPACE_PAT, ft_strlen(SPACE_PAT));
+	}
+}
+
+void	cpy_to_buffer(t_machine *machine, char *string, int type)
 {
 	char	*width_part;
 
@@ -46,17 +57,11 @@ void	cpy_to_buffer(t_machine *machine, char *string)
 	if (machine->flags & MINUS_FLAG)
 	{
 		cpy_data(machine, string, ft_strlen(string));
-		if (width_part != NULL && *width_part != '\0')
-			cpy_data(machine, width_part, ft_strlen(width_part));
-		else if (machine->flags & SPACE_FLAG)
-			cpy_data(machine, SPACE_PAT, ft_strlen(SPACE_PAT));
+		cpy_whitespaces_in_buff(machine, width_part, type);
 	}
 	else
 	{
-		if (width_part != NULL && *width_part != '\0')
-			cpy_data(machine, width_part, ft_strlen(width_part));
-		else if (machine->flags & SPACE_FLAG)
-			cpy_data(machine, SPACE_PAT, ft_strlen(SPACE_PAT));
+		cpy_whitespaces_in_buff(machine, width_part, type);
 		cpy_data(machine, string, ft_strlen(string));
 	}
 	free(width_part);

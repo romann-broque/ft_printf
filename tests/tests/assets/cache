@@ -10,8 +10,8 @@ test1: wouah
 test2: wouincredibleah
 test3: wouincredible
 test4: wou
-test5: wou 
-test6: wouincredible 
+test5: wou
+test6: wouincredible
 test7: wou%
 test8: wou%wincredible
 test9: 
@@ -21,38 +21,30 @@ test10: (null)
 test1: %
 test2: % %%
 test3: % %%
-test4: % %% %
-test5: qw% %% %; v%  %jjjj% %%rqwqqvsf
+test4: % %%%
+test5: qw% %%%; v% %jjjj%%%rqwqqvsf
 test6: qw%  
-%% %; v%  %jjjj% %%rqwqqvsf
+%%%; v% %jjjj%%%rqwqqvsf
 
 -----LOW HEX TESTS-----
 test1: 3c706
 test2: ffffffff
 test3: 0
 test4: 0
-test5:  0x23ae
+test5: 0x23ae
 
 -----UP HEX TESTS-----
 test1: 3C706
 test2: FFFFFFFF
 test3: 0
 test4: 0
-test5:  0x23ae
+test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0x55f27fbf6199
+test1: 0x55f089b51199
 test2: (nil)
-test3:  (nil)
+test3: (nil)
 test4:   0xffffffffffffffff
-
------INTEGER TESTS-----
-test1: 247558
-test2: 2147483647
-test3: -2147483648
-test4: 0
-test5:  0  -1234018 18
-test6:  +0  -1234018 18
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -97,15 +89,7 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0x55f27fbf6199
+test1: 0x55f089b51199
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
-
------INTEGER TESTS-----
-test1: 247558
-test2: 2147483647
-test3: -2147483648
-test4: 0
-test5:  0 -1234018 18
-test6: +0 -1234018 18
