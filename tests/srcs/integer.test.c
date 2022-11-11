@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:03:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 13:02:13 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/11 15:29:24 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ static void	test4(void)
 static void	test5(void)
 {
 	const char	*test_name = "test5: ";
-	const char	*str = "%  d % d %d";
+	const char	*str = "%d % d %d";
 	const int	nb1 = 0;
 	const int	nb2 = -1234018;
-	const int	nb3 = 18;
+	const int	nb3 = -18;
 
 	ft_printf(test_name);
 	ft_printf(str, nb1, nb2, nb3);
@@ -161,7 +161,23 @@ static void	test9(void)
 static void	test10(void)
 {
 	const char	*test_name = "test10: ";
-	const char	*str = "% -d %0d";
+	const char	*str = "% -d %d";
+	const int	nb1 = 10;
+	const int	nb2 = 34018;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1, nb2);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1, nb2);
+	printf("\n");
+}
+
+static void	test11(void)
+{
+	const char	*test_name = "test11: ";
+	const char	*str = "% -d %10d";
 	const int	nb1 = 10;
 	const int	nb2 = 34018;
 
@@ -184,10 +200,9 @@ void	integer_tests(void)
 	test4();
 	test5();
 	test6();
-/*
 	test7();
 	test8();
 	test9();
 	test10();
-*/
+	test11();
 }

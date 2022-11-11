@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:46:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/10 18:14:24 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/11 18:09:21 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,14 @@ static size_t	reduce_width(size_t width, char *str)
 	return (width);
 }
 
-static void cpy_whitespaces_in_buff(t_machine *machine, char *width_part, int type)
+static void cpy_whitespaces_in_buff(t_machine *machine, char *width_part, int type, char *str)
 {
 	if (type & INT_TYPE)
 	{
 		if (width_part != NULL && *width_part != '\0')
 			cpy_data(machine, width_part, ft_strlen(width_part));
-		else if (machine->flags & SPACE_FLAG && !(machine->flags & PLUS_FLAG))
+		else if (machine->flags & SPACE_FLAG
+			&& *str != '+' && *str != '-')
 			cpy_data(machine, SPACE_PAT, ft_strlen(SPACE_PAT));
 	}
 }
@@ -54,14 +55,14 @@ void	cpy_to_buffer(t_machine *machine, char *string, int type)
 
 	machine->width = reduce_width(machine->width, string);
 	width_part = strset(*WIDTH_UNIT, machine->width);
-	if (machine->flags & MINUS_FLAG)
+	if (machine->flags & MINUS_FLAG && !(machine->flags & SPACE_FLAG))
 	{
 		cpy_data(machine, string, ft_strlen(string));
-		cpy_whitespaces_in_buff(machine, width_part, type);
+		cpy_whitespaces_in_buff(machine, width_part, type, string);
 	}
 	else
 	{
-		cpy_whitespaces_in_buff(machine, width_part, type);
+		cpy_whitespaces_in_buff(machine, width_part, type, string);
 		cpy_data(machine, string, ft_strlen(string));
 	}
 	free(width_part);

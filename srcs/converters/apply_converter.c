@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:20:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/10 18:24:10 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/11 10:10:31 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,13 @@ static int	get_type(ssize_t option_index)
 {
 	int	type;
 
-	type = 0x01;
-	type <<= option_index;
-	if (type & INT_TYPE)
-		return (INT_TYPE);
+	if (option_index > -1 && option_index < 8)
+	{
+		type = 0x01;
+		type <<= option_index;
+		if (type & INT_TYPE)
+			return (INT_TYPE);
+	}
 	return (0);
 }
 

@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_nbsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 15:36:42 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/11 15:30:16 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/11 15:26:58 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/11 15:27:28 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.test.h"
+#include "ft_printf.h"
 
-int	main(void)
+size_t	get_nbsize(const size_t nb)
 {
-	printf(SEPARATOR);
-	character_tests();
-	string_tests();
-	percentage_tests();
-	low_hex_tests();
-	up_hex_tests();
-	address_tests();
-	integer_tests();
-	u_integer_tests();
-	integer_ten_tests();
-	return (EXIT_SUCCESS);
+	
+	while ()
+	{
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 15:52:53 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/11 18:08:57 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@
 # define PREFIX_FLAG 0x08
 # define MINUS_FLAG 0x10
 
-# define INT_TYPE 0x70
+# define INT_TYPE 0xA0
 
 enum e_state
 {
@@ -119,6 +119,7 @@ char		*tolower_str(char *str);
 
 // itoa_base
 
+size_t	get_nbsize(unsigned long nb, const size_t len_base);
 char		*itoa_base(const unsigned long nb, const char *base);
 
 // get_abs
