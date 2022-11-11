@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 15:29:49 by rbroque           #+#    #+#             */
-/*   Updated: 2022/09/22 15:05:07 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/07 11:34:54 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,12 @@ static size_t	get_wordlen(const char *s, char c)
 
 static char	*get_word(const char **s, char c)
 {
-	const size_t	wordlen = get_wordlen(*s, c);
-	char			*word;
+	size_t	wordlen;
+	char	*word;
 
 	while (**s == c)
 		++(*s);
+	wordlen = get_wordlen(*s, c);
 	word = (char *)malloc((wordlen + 1) * sizeof(char));
 	if (word != NULL)
 		ft_strlcpy(word, *s, wordlen + 1);

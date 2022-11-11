@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:37:48 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/08 16:25:28 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/11 22:21:35 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*low_hex(va_list aptr, int flags)
 	if (flags & PREFIX_FLAG && nb > 0)
 		output = ft_strdup(PREFIX_HEX);
 	nb_base = itoa_base(nb, HEX);
-	output = strnjoin(output, nb_base, ft_strlen(nb_base));
+	output = ft_strnjoin(output, nb_base, ft_strlen(nb_base));
 	free(nb_base);
 	return (output);
 }
@@ -45,9 +45,9 @@ char	*address(va_list aptr, int flags)
 	{
 		if (flags & SPACE_FLAG)
 			output = ft_strdup(WIDTH_UNIT);
-		output = strnjoin(output, PRE_HEX, ft_strlen(PRE_HEX));
+		output = ft_strnjoin(output, PRE_HEX, ft_strlen(PRE_HEX));
 		address_hex = itoa_base(address, HEX);
-		output = strnjoin(output, address_hex, ft_strlen(address_hex));
+		output = ft_strnjoin(output, address_hex, ft_strlen(address_hex));
 		free(address_hex);
 	}
 	return (output);

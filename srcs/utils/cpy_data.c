@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:46:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/11 18:09:21 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/11 23:15:35 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	build_new_buffer(t_machine *machine)
 {
-	machine->output = strnjoin(machine->output, machine->buffer, BUFFER_SIZE);
+	machine->output = ft_strnjoin(machine->output, machine->buffer, BUFFER_SIZE);
 	++machine->nbof_buffer;
 	ft_bzero(machine->buffer, BUFFER_SIZE);
 }

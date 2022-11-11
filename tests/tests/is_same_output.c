@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 20:31:54 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/16 18:47:40 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/11 23:16:02 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	concat(char **str, int fd)
 	line = get_next_line(fd);
 	while (line != NULL && strcmp(line, SEPARATOR) != 0)
 	{
-		*str = strnjoin(*str, line, ft_strlen(line));
+		*str = ft_strnjoin(*str, line, ft_strlen(line));
 		free(line);
 		line = get_next_line(fd);
 	}

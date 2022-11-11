@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:38:44 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/11 14:25:54 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/11 22:21:58 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*integer(va_list aptr, int flags)
 	else if (nb < 0)
 		output = ft_strdup(MINUS_SIGN);
 	nb_output = itoa_base(get_abs(nb), DEC);
-	output = strnjoin(output, nb_output, ft_strlen(nb_output));
+	output = ft_strnjoin(output, nb_output, ft_strlen(nb_output));
 	free(nb_output);
 	return (output);
 }
@@ -38,7 +38,7 @@ char	*u_integer(va_list aptr, int flags)
 	(void)flags;
 	output = NULL;
 	nb_output = itoa_base(nb, DEC);
-	output = strnjoin(output, nb_output, ft_strlen(nb_output));
+	output = ft_strnjoin(output, nb_output, ft_strlen(nb_output));
 	free(nb_output);
 	return (output);
 }

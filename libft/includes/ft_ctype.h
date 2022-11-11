@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_ctype.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/10 12:19:32 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/08 00:23:41 by rbroque          ###   ########.fr       */
+/*   Created: 2022/09/14 15:23:37 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/11 21:12:03 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_CTYPE_H
+# define FT_CTYPE_H
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
-{
-	const size_t	size_src = ft_strlen(src);
-	size_t			size_dest;
+# include <limits.h>
 
-	if (dst == NULL)
-		size_dest = 0;
-	else
-		size_dest = ft_strlen(dst);
-	if (dstsize <= size_dest)
-		return (dstsize + size_src);
-	ft_strlcpy(dst + size_dest, src, dstsize - size_dest);
-	return (size_dest + size_src);
-}
+# define FIRST_ASCII 0
+# define LAST_ASCII 127
+# define FIRST_PRINTABLE 32
+# define LAST_PRINTABLE 126
+# define CASE_OFFSET 32
+
+int	ft_isalnum(int c);
+int	ft_isalpha(int c);
+int	ft_isascii(int c);
+int	ft_isdigit(int c);
+int	ft_islower(int c);
+int	ft_isprint(int c);
+int	ft_isupper(int c);
+int	ft_tolower(int c);
+int	ft_toupper(int c);
+
+#endif

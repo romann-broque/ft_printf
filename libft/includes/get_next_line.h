@@ -5,32 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/14 17:48:41 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/15 13:53:52 by rbroque          ###   ########.fr       */
+/*   Created: 2022/10/10 15:00:22 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/11 21:55:10 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <unistd.h>
-# include <stdint.h>
-# include <stdlib.h>
+# include "libft.h"
 
-# define OPEN_MAX 256
-# define EMPTY_STRING ""
-# define BUFFER_SIZE 6
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4096
+# endif
+# define OPEN_MAX FOPEN_MAX
 
 typedef enum e_line_status
 {
 	INVALID_LINE,
 	VALID_LINE
 }	t_line_status;
-
-size_t	index_of(const char *str, const char c);
-char	*ft_strncpy(char *dest, char *src, size_t size);
-char	*strnjoin(char *s1, const char *s2, const size_t n);
-void	ft_bzero(void *ptr, size_t size);
 
 char	*get_next_line(int fd);
 

@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   index_of.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/10 12:19:32 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/08 00:23:41 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/11 21:53:42 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/11 22:05:59 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+ssize_t	index_of(const char *str, const char c)
 {
-	const size_t	size_src = ft_strlen(src);
-	size_t			size_dest;
+	ssize_t	index;
 
-	if (dst == NULL)
-		size_dest = 0;
-	else
-		size_dest = ft_strlen(dst);
-	if (dstsize <= size_dest)
-		return (dstsize + size_src);
-	ft_strlcpy(dst + size_dest, src, dstsize - size_dest);
-	return (size_dest + size_src);
+	index = 0;
+	while (str[index] != '\0' && str[index] != c)
+		++index;
+	if (str[index] != c)
+		return (-1);
+	return (index);
 }
