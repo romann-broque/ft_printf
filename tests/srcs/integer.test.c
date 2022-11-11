@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:03:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/11 15:29:24 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/11 20:31:56 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,6 +190,61 @@ static void	test11(void)
 	printf("\n");
 }
 
+static void	test12(void)
+{
+	const char	*test_name = "test12: ";
+	const char	*str = "% -d %     9d%10d";
+	const int	nb1 = -12349510;
+	const int	nb2 = INT_MAX;
+	const int	nb3 = 34018;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1, nb2, nb3);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1, nb2, nb3);
+	printf("\n");
+}
+
+static void	test13(void)
+{
+	const char	*test_name = "test13: ";
+	const char	*str = "RESULTAT -> %d,,,,, %d%d%d,,,   ----%d";
+	const int	nb1 = -12349510;
+	const int	nb2 = INT_MAX;
+	const int	nb3 = 34018;
+	const int	nb4 = 45;
+	const int	nb5 = 2;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1, nb2, nb3, nb4, nb5);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1, nb2, nb3, nb4, nb5);
+	printf("\n");
+}
+
+static void	test14(void)
+{
+	const char	*test_name = "test14: ";
+	const char	*str = "RESULTAT -> %d,,,,, %      34d%d%-993d,,,   ----%d";
+	const int	nb1 = -12349510;
+	const int	nb2 = INT_MAX;
+	const int	nb3 = 34018;
+	const int	nb4 = 45;
+	const int	nb5 = 2;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1, nb2, nb3, nb4, nb5);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1, nb2, nb3, nb4, nb5);
+	printf("\n");
+}
+
 void	integer_tests(void)
 {
 	ft_printf(INTEGER_TESTS);
@@ -205,4 +260,7 @@ void	integer_tests(void)
 	test9();
 	test10();
 	test11();
+	test12();
+	test13();
+	test14();
 }

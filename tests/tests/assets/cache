@@ -41,7 +41,7 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0x4d1500
+test1: 0x55743c49d199
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
@@ -58,6 +58,9 @@ test8:  0  1234018  18 +312
 test9:  10 -1234018
 test10:  10 34018
 test11:  10      34018
+test12: -12349510  2147483647     34018
+test13: RESULTAT -> -12349510,,,,, 21474836473401845,,,   ----2
+test14: RESULTAT -> -12349510,,,,,                         21474836473401845                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ,,,   ----2
 
 -----U_INTEGER TESTS-----
 test1: 247558
@@ -118,7 +121,7 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0x4d1500
+test1: 0x55743c49d199
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
@@ -135,6 +138,9 @@ test8:  0  1234018  18 +312
 test9:  10 -1234018
 test10:  10 34018
 test11:  10      34018
+test12: -12349510  2147483647     34018
+test13: RESULTAT -> -12349510,,,,, 21474836473401845,,,   ----2
+test14: RESULTAT -> -12349510,,,,,                         21474836473401845                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ,,,   ----2
 
 -----U_INTEGER TESTS-----
 test1: 247558
