@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:03:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/11 23:16:32 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/12 15:05:04 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -229,7 +229,7 @@ static void	test13(void)
 static void	test14(void)
 {
 	const char	*test_name = "test14: ";
-	const char	*str = "RESULTAT -> %d,,,,, %      34d%d%-993d,,,   ----%d";
+	const char	*str = "RESULTAT -> %d%34d%d%1000d%d";
 	const int	nb1 = -12349510;
 	const int	nb2 = INT_MAX;
 	const int	nb3 = 34018;
@@ -262,5 +262,5 @@ void	integer_tests(void)
 	test11();
 	test12();
 	test13();
-	//test14();
+	test14();
 }
