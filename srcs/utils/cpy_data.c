@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:46:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 13:58:58 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/12 16:44:23 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static size_t	reduce_width(size_t width, char *str)
 
 static void cpy_whitespaces_in_buff(t_machine *machine, char *width_part, int type, char *str)
 {
-	if (type & INT_TYPE || (type & ADDRESS_TYPE))
+	if (type & INT_TYPE || type & ADDRESS_TYPE)
 	{
 		if (width_part != NULL && *width_part != '\0')
 			cpy_data(machine, width_part, ft_strlen(width_part));
@@ -71,9 +71,9 @@ static void cpy_whitespaces_in_buff(t_machine *machine, char *width_part, int ty
 	}
 }
 
-static char get_width_unit(int flags, int type)
+static char get_width_unit(t_flag flags, int type)
 {
-	if (flags & ZERO_FLAG && type & INT_TYPE)
+	if (flags & ZERO_FLAG && !(flags & MINUS_FLAG) && type & INT_TYPE)
 		return (WIDTH_UNIT[1]);
 	return (WIDTH_UNIT[0]); 
 }
