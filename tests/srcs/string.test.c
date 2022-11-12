@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:28:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/26 12:51:35 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/12 10:52:58 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,6 +176,38 @@ static void	test11(void)
 	printf("\n");
 }
 
+static void	test12(void)
+{
+	const char	*test_name = "test12: ";
+	const char	*str1 = "%s    \n";
+	const char	*str2 = "";
+
+	ft_printf(test_name);
+	ft_printf(str1, str2);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str1, str2);
+	printf("\n");
+}
+
+static void	test13(void)
+{
+	const char	*test_name = "test13: ";
+	const char	*str1 = "%s    \n%s	% sa sdasdasdSSSSSS";
+	const char	*str2 = "";
+	const char	*str3 = "asdasd";
+	const char	*str4 = "ougiouhug";
+
+	ft_printf(test_name);
+	ft_printf(str1, str2, str3, str4);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str1, str2, str3, str4);
+	printf("\n");
+}
+
 void	string_tests(void)
 {
 	ft_printf(STRING_TESTS);
@@ -190,5 +222,7 @@ void	string_tests(void)
 	test8();
 	test9();
 	test10();
-	//test11();
+	test11();
+	test12();
+	test13();
 }

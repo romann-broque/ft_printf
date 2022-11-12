@@ -20,6 +20,12 @@ test7: wou%
 test8: wou%wincredible
 test9: 
 test10: (null)
+test11: (null)
+
+test12:     
+
+test13:     
+asdasd	ougiouhuga sdasdasdSSSSSS
 
 -----PERCENTAGE TESTS-----
 test1: %
@@ -45,7 +51,7 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0x559786439199
+test1: 0x5586bd8e2199
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
@@ -103,6 +109,12 @@ test7: wou%
 test8: wou%wincredible
 test9: 
 test10: (null)
+test11: (null)
+
+test12:     
+
+test13:     
+asdasd	ougiouhuga sdasdasdSSSSSS
 
 -----PERCENTAGE TESTS-----
 test1: %
@@ -128,7 +140,7 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0x559786439199
+test1: 0x5586bd8e2199
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff

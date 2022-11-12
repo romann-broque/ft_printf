@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/09 14:21:58 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/12 10:55:32 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -129,5 +129,8 @@ fclean: clean
 
 re: fclean
 	$(MAKE)
+
+norm:
+	@norminette $(PATH_SRCS) $(INCLUDES)
 
 .PHONY: all clean fclean re

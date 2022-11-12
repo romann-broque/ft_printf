@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/11 18:08:57 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/12 14:31:07 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@
 # define PLUS_SIGN "+"
 # define MINUS_SIGN "-"
 # define NIL_DEF "(nil)"
-# define WIDTH_UNIT " "
-# define PRE_HEX "0x"
+# define WIDTH_UNIT " 0"
 # define HEX "0123456789abcdef"
 # define DEC "0123456789"
 # define PREFIX_HEX "0x"
@@ -36,15 +35,17 @@
 # define OPTIONS "scxXpdui%"
 # define NBOF_OPTIONS 9
 
-# define FLAGS " +#-"
+# define FLAGS " +#-0"
 # define NBOF_FLAGS 4
 # define NO_FLAG 0x01
 # define SPACE_FLAG 0x02
 # define PLUS_FLAG 0x04
 # define PREFIX_FLAG 0x08
 # define MINUS_FLAG 0x10
+# define ZERO_FLAG 0x20
 
 # define INT_TYPE 0xA0
+# define ADDRESS_TYPE 0x10
 
 enum e_state
 {
@@ -53,6 +54,8 @@ enum e_state
 	E_CONV,
 	E_END,
 };
+
+typedef uint8_t t_flag;
 
 typedef struct s_machine
 {
@@ -64,7 +67,7 @@ typedef struct s_machine
 	size_t			index;
 	size_t			width;
 	int				fd;
-	uint8_t			flags;
+	t_flag			flags;
 	enum e_state	state;
 }				t_machine;
 
@@ -90,12 +93,12 @@ char		*fill_unknown(t_machine *machine);
 size_t		apply_converter(t_machine *machine);
 char		*string(va_list aptr);
 char		*character(va_list aptr);
-char		*low_hex(va_list aptr, int flags);
-char		*up_hex(va_list aptr, int flags);
-char		*address(va_list aptr, int flags);
-char		*integer(va_list aptr, int flags);
-char		*u_integer(va_list aptr, int flags);
-char		*integer_ten(va_list aptr, int flags);
+char		*low_hex(va_list aptr, t_flag *flags);
+char		*up_hex(va_list aptr, t_flag *flags);
+char		*address(va_list aptr, t_flag *flags);
+char		*integer(va_list aptr, t_flag *flags);
+char		*u_integer(va_list aptr);
+char		*integer_ten(va_list aptr, t_flag *flags);
 char		*percentage(void);
 
 // states
@@ -106,7 +109,8 @@ size_t		standard_state(t_machine *machine);
 
 // flags
 
-void		get_flag(t_machine *machine, const ssize_t flag_index);
+void		remove_flag(t_flag *flags, t_flag removing_flag);
+void		get_flag(t_flag *flags, const ssize_t flag_index);
 
 // get_size
 

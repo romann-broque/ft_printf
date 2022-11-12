@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/11 15:29:03 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/12 14:27:28 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ size_t mod_state(t_machine *machine)
 	flag_index = get_index(FLAGS, curr_c);
 	if (flag_index > -1)
 	{
-		get_flag(machine, flag_index);
+		get_flag(&machine->flags, flag_index);
 		++input_offset; //input_offset+=ft_strlen(flag)
 	}
 	else

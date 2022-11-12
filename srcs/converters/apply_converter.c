@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:20:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 10:28:58 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/12 14:17:56 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static int	get_type(ssize_t option_index)
 		type <<= option_index;
 		if (type & INT_TYPE)
 			return (INT_TYPE);
+		if (type & ADDRESS_TYPE)
+			return (ADDRESS_TYPE);
 	}
 	return (0);
 }
@@ -37,12 +39,12 @@ size_t	apply_converter(t_machine *machine)
 
 	option_index = get_index(OPTIONS, curr_c);
 	if (option_index > -1)
-		string = converters[option_index](machine->aptr, machine->flags, machine->width);
+		string = converters[option_index](machine->aptr, &machine->flags, machine->width);
 	else
 		string = fill_unknown(machine);
 	if (string != NULL)
 		cpy_to_buffer(machine, string, get_type(option_index));
-	offset = (curr_c != '\0');
 	free(string);
+	offset = (curr_c != '\0');
 	return (offset);
 }

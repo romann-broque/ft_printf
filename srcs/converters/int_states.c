@@ -6,20 +6,20 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:38:44 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/11 22:21:58 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/12 14:33:07 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*integer(va_list aptr, int flags)
+char	*integer(va_list aptr, t_flag *flags)
 {
 	const int	nb = va_arg(aptr, int);
 	char		*nb_output;
 	char		*output;
 
 	output = NULL;
-	if (nb >= 0 && flags & PLUS_FLAG)
+	if (nb >= 0 && *flags & PLUS_FLAG)
 		output = ft_strdup(PLUS_SIGN);
 	else if (nb < 0)
 		output = ft_strdup(MINUS_SIGN);
@@ -29,13 +29,12 @@ char	*integer(va_list aptr, int flags)
 	return (output);
 }
 
-char	*u_integer(va_list aptr, int flags)
+char	*u_integer(va_list aptr)
 {
 	const unsigned int	nb = va_arg(aptr, unsigned int);
 	char				*nb_output;
 	char				*output;
 
-	(void)flags;
 	output = NULL;
 	nb_output = itoa_base(nb, DEC);
 	output = ft_strnjoin(output, nb_output, ft_strlen(nb_output));
@@ -43,7 +42,7 @@ char	*u_integer(va_list aptr, int flags)
 	return (output);
 }
 
-char	*integer_ten(va_list aptr, int flags)
+char	*integer_ten(va_list aptr, t_flag *flags)
 {
 	return (integer(aptr, flags));
 }
