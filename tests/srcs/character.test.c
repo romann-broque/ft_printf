@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:35:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 09:43:43 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/12 10:44:50 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,67 @@ static void	test4(void)
 	printf("\n");
 }
 
+static void	test5(void)
+{
+	const char	*test_name = "test5: ";
+	const char	*str = "%   -0c";
+	const char	character = 'e';
+
+	ft_printf(test_name);
+	ft_printf(str, character);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, character);
+	printf("\n");
+}
+
+static void	test6(void)
+{
+	const char	*test_name = "test6: ";
+	const char	*str = "% c";
+	const char	character = '\0';
+
+	ft_printf(test_name);
+	ft_printf(str, character);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, character);
+	printf("\n");
+}
+
+static void	test7(void)
+{
+	const char	*test_name = "test7: ";
+	const char	*str = "c% casd";
+	const char	character = '\0';
+
+	ft_printf(test_name);
+	ft_printf(str, character);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, character);
+	printf("\n");
+}
+
+static void	test8(void)
+{
+	const char	*test_name = "test8: ";
+	const char	*str = "c% cas%       cccd";
+	const char	character = '\0';
+	const char	character2 = '\0';
+
+	ft_printf(test_name);
+	ft_printf(str, character, character2);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, character, character2);
+	printf("\n");
+}
+
 void	character_tests(void)
 {
 	ft_printf(CHAR_TESTS);
@@ -84,4 +145,8 @@ void	character_tests(void)
 	test2();
 	test3();
 	test4();
+	test5();
+	test6();
+	test7();
+	test8();
 }

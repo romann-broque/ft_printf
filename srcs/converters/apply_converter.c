@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:20:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/11 10:10:31 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/12 10:28:58 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ size_t	apply_converter(t_machine *machine)
 		string = converters[option_index](machine->aptr, machine->flags, machine->width);
 	else
 		string = fill_unknown(machine);
-	cpy_to_buffer(machine, string, get_type(option_index));
-	offset = (ft_strlen(string) > 0);
+	if (string != NULL)
+		cpy_to_buffer(machine, string, get_type(option_index));
+	offset = (curr_c != '\0');
 	free(string);
 	return (offset);
 }

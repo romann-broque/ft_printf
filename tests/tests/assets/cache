@@ -4,6 +4,10 @@ test1: a
 test2: ÿ
 test3: ÿ c 1 9 1
 test4: Charlotte
+test5: e
+test6: 
+test7: casd
+test8: casccd
 
 -----STRING TESTS-----
 test1: wouah
@@ -41,7 +45,7 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0x562914ca0199
+test1: 0x559786439199
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
@@ -83,6 +87,10 @@ test1: a
 test2: ÿ
 test3: ÿ c 1 9 1
 test4: Charlotte
+test5: e
+test6: 
+test7: casd
+test8: casccd
 
 -----STRING TESTS-----
 test1: wouah
@@ -120,7 +128,7 @@ test4: 0
 test5: 0x23ae
 
 -----ADDRESS TESTS-----
-test1: 0x562914ca0199
+test1: 0x559786439199
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
