@@ -6,13 +6,13 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:38:44 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 14:33:07 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/12 19:28:59 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*integer(va_list aptr, t_flag *flags)
+char	*integer_d(va_list aptr, t_flag *flags)
 {
 	const int	nb = va_arg(aptr, int);
 	char		*nb_output;
@@ -42,7 +42,7 @@ char	*u_integer(va_list aptr)
 	return (output);
 }
 
-char	*integer_ten(va_list aptr, t_flag *flags)
+char	*integer_i(va_list aptr, t_flag *flags)
 {
-	return (integer(aptr, flags));
+	return (integer_d(aptr, flags));
 }

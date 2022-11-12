@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   hex_conv.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 15:36:42 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 21:25:35 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/12 18:08:32 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/12 21:07:33 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.test.h"
+#include "ft_printf.h"
 
-int	main(void)
+char	*hex_conv(t_type curr_type, va_list aptr, t_flag *flags, size_t width)
 {
-	printf(SEPARATOR);
-	character_tests();
-	string_tests();
-	percentage_tests();
-/*
-	low_hex_tests();
-	up_hex_tests();
-	address_tests();
-	integer_tests();
-	u_integer_tests();
-	integer_ten_tests();
-*/
-	return (EXIT_SUCCESS);
+	static char		*(*converters[])() = {low_hex, up_hex, address};
+	ssize_t			type_index;
+
+	type_index = get_index_from_type(curr_type, HEX_TYPE);
+	return (converters[type_index](aptr, &flags, width));
 }

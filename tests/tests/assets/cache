@@ -19,13 +19,6 @@ test6: wouincredible
 test7: wou%
 test8: wou%wincredible
 test9: 
-test10: (null)
-test11: (null)
-
-test12:     
-
-test13:     
-asdasd	ougiouhuga sdasdasdSSSSSS
 
 -----PERCENTAGE TESTS-----
 test1: %
@@ -37,56 +30,11 @@ test6: qw%
 %%%; v% %jjjj%%%rqwqqvsf
 
 -----LOW HEX TESTS-----
-test1: 3c706
-test2: ffffffff
-test3: 0
-test4: 0
-test5: 0x23ae
-
------UP HEX TESTS-----
-test1: 3C706
-test2: FFFFFFFF
-test3: 0
-test4: 0
-test5: 0x23ae
-
------ADDRESS TESTS-----
-test1: 0x55ddf4c23199
-test2: (nil)
-test3: (nil)
-test4:  0xffffffffffffffff
-
------INTEGER TESTS-----
-test1: 247558
-test2: 2147483647
-test3: -2147483648
-test4: 0
-test5: 0 -1234018 -18
-test6: +0 -1234018 18
-test7: +0 -1234018 +18 +312
-test8:  0  1234018  18 +312
-test9:  10 -1234018
-test10:  10 34018
-test11:  10      34018
-test12: -12349510  2147483647     34018
-test13: RESULTAT -> -12349510,,,,, 21474836473401845,,,   ----2
-test14: RESULTAT -> -12349510                        214748364734018                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      452
-
------U_INTEGER TESTS-----
-test1: 247558
-test2: 2147483647
-test3: 4294967295
-test4: 0
-test5: 3 125
-test6: 3 125
-
------INTEGER TEN TESTS-----
-test1: 247558
-test2: 2147483647
-test3: -2147483648
-test4: 0
-test5: 114
-test6: +114
+test1: 
+test2: ÿ
+test3: 
+test4: 
+test5: ®
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -109,13 +57,6 @@ test6: wouincredible
 test7: wou%
 test8: wou%wincredible
 test9: 
-test10: (null)
-test11: (null)
-
-test12:     
-
-test13:     
-asdasd	ougiouhuga sdasdasdSSSSSS
 
 -----PERCENTAGE TESTS-----
 test1: %
@@ -132,48 +73,3 @@ test2: ffffffff
 test3: 0
 test4: 0
 test5: 0x23ae
-
------UP HEX TESTS-----
-test1: 3C706
-test2: FFFFFFFF
-test3: 0
-test4: 0
-test5: 0x23ae
-
------ADDRESS TESTS-----
-test1: 0x55ddf4c23199
-test2: (nil)
-test3: (nil)
-test4:  0xffffffffffffffff
-
------INTEGER TESTS-----
-test1: 247558
-test2: 2147483647
-test3: -2147483648
-test4: 0
-test5: 0 -1234018 -18
-test6: +0 -1234018 18
-test7: +0 -1234018 +18 +312
-test8:  0  1234018  18 +312
-test9:  10 -1234018
-test10:  10 34018
-test11:  10      34018
-test12: -12349510  2147483647     34018
-test13: RESULTAT -> -12349510,,,,, 21474836473401845,,,   ----2
-test14: RESULTAT -> -12349510                        214748364734018                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      452
-
------U_INTEGER TESTS-----
-test1: 247558
-test2: 2147483647
-test3: 4294967295
-test4: 0
-test5: 3 125
-test6: 3 125
-
------INTEGER TEN TESTS-----
-test1: 247558
-test2: 2147483647
-test3: -2147483648
-test4: 0
-test5: 114
-test6: +114

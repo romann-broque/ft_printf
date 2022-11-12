@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 17:51:00 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 14:30:07 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/12 20:43:44 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,19 @@ void	remove_flag(t_flag *flags, t_flag removing_flag)
 {
 	if (*flags & removing_flag)
 		*flags ^= removing_flag;
+}
+
+size_t	get_index_from_type(t_type type, t_type mask)
+{
+	size_t	index;
+
+	index = 0;
+	while (!(type & 0x01) && type & mask)
+	{
+		type >>= 1;
+		++index;
+	}
+	return (index);
 }
 
 void	get_flag(t_flag *flags, const ssize_t flag_index)

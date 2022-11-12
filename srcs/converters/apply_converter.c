@@ -6,45 +6,43 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:20:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 14:17:56 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/12 21:24:57 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	get_type(ssize_t option_index)
+static t_type	get_type(ssize_t option_index)
 {
-	int	type;
+	t_type	type;
 
-	if (option_index > -1 && option_index < 8)
+	type = 0;
+	if (option_index > -1)
 	{
 		type = 0x01;
 		type <<= option_index;
-		if (type & INT_TYPE)
-			return (INT_TYPE);
-		if (type & ADDRESS_TYPE)
-			return (ADDRESS_TYPE);
 	}
-	return (0);
+	return (type);
 }
 
 size_t	apply_converter(t_machine *machine)
 {
-	static char		*(*converters[])() = {string, character, low_hex,
-		up_hex, address, integer, u_integer, integer_ten, percentage};
+	static char		*(*converter_type[])(t_type, va_list, t_flag *, size_t) = {
+		character_conv,
+		nb_conv};
 	const char		curr_c = *machine->input;
 	char			*string;
-	size_t			offset;
 	ssize_t			option_index;
 
 	option_index = get_index(OPTIONS, curr_c);
 	if (option_index > -1)
-		string = converters[option_index](machine->aptr, &machine->flags, machine->width);
+	{
+		string = converter_type[option_index > CHAR_TYPE](get_type(option_index), machine->aptr, &machine->flags, machine->width);
+	}
 	else
 		string = fill_unknown(machine);
 	if (string != NULL)
-		cpy_to_buffer(machine, string, get_type(option_index));
+		cpy_data(machine, string, ft_strlen(string));
 	free(string);
-	offset = (curr_c != '\0');
-	return (offset);
+	return (curr_c != '\0');
 }

@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/12 10:55:32 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/12 20:21:39 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,11 @@ PATH_SRCS += srcs/utils
 
 # srcs/converters
 SRCS += apply_converter.c
+SRCS += character_conv.c
+SRCS += nb_conv.c
+SRCS += signed_conv.c
+SRCS += unsigned_conv.c
+SRCS += hex_conv.c
 SRCS += char_states.c
 SRCS += hex_states.c
 SRCS += int_states.c
