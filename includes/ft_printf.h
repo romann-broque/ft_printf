@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 14:34:22 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 15:07:49 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,6 +166,6 @@ char	*strset(int c, size_t n);
 // cpy_data
 
 void		cpy_data(t_machine *machine, void *data, size_t n);
-void		cpy_to_buffer(t_machine *machine, char *string, int type);
+void		cpy_to_buffer(t_machine *machine, char *string);
 
 #endif

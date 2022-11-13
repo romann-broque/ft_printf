@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:20:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 14:34:34 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 15:06:09 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ size_t	apply_converter(t_machine *machine)
 	else
 		string = fill_unknown(machine);
 	if (string != NULL)
-		cpy_data(machine, string, ft_strlen(string));
+		cpy_to_buffer(machine, string);
 	free(string);
 	return (curr_c != '\0');
 }

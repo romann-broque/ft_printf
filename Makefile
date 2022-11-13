@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/13 14:33:09 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/13 15:08:23 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,8 @@ PATH_SRCS += srcs/states/
 PATH_SRCS += srcs/utils/
 
 # srcs/
+
+SRCS += width.c
 
 # srcs/converters
 SRCS += apply_converter.c

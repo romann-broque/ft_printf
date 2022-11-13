@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:56:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 14:38:40 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 15:31:20 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*signed_type(t_arg *arg)
 {
 	static char		*(*converters[])(int) = {integer_d, integer_i};
-	const ssize_t	type_index = get_index_from_type(arg->type, SIGNED_TYPE);
-	const int	nb = va_arg(arg->aptr, int);
+	const ssize_t	type_index = get_index_from_type(arg->type, SIGNED_TYPE) - 1;
+	const int		nb = va_arg(arg->aptr, int);
 	char			*conv_out;
 	char			*output;
 

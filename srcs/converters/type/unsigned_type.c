@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 18:00:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 14:43:37 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 15:19:24 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@ char	*unsigned_type(t_arg *arg)
 	char			*output;
 
 	output = NULL;
-	if (arg->flags & PLUS_FLAG)
-		output = ft_strdup(PLUS_SIGN);
-	else if (arg->flags & SPACE_FLAG)
-		output = ft_strdup(SPACE_PAT);
 	if (arg->type & HEX_TYPE)
 		conv_out = hex_type(arg);
 	else
