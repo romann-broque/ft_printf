@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nb_type.c                                          :+:      :+:    :+:   */
+/*   precision.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 20:07:36 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 17:55:31 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/13 16:59:57 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/13 17:58:14 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*nb_type(t_arg *arg)
+char	*get_precision(size_t precision, char *string)
 {
-	static char		*(*converters[])(t_arg *) = {
-		signed_type,
-		unsigned_type};
-	const ssize_t	type_index = !(arg->type & SIGNED_TYPE);
-	char			*conv_out;
-	char			*output;
-
-	conv_out = converters[type_index](arg);
-	output = get_precision(arg->precision, conv_out);	
-	output = ft_strnjoin(output, conv_out, ft_strlen(conv_out));
-	free(conv_out);
-	return (output);
+	precision = reduce_size(precision, string);
+	return (strset('0', precision));
 }

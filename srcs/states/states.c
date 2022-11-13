@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 16:08:26 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 16:44:34 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ size_t	conv_state(t_machine *machine)
 	offset = apply_converter(machine);
 	machine->arg->flags = NO_FLAG;
 	machine->arg->width = 0;
+	machine->arg->precision = 0;
 	machine->state = E_STANDARD;
 	return (offset);
 }
@@ -50,6 +51,24 @@ size_t	width_state(t_machine *machine)
 	{
 		machine->arg->width = atol(machine->input); //code ft_atol function
 		input_offset = get_nbsize(machine->arg->width, 10);
+	}
+	machine->state = E_PRECISION;
+	return (input_offset);
+}
+
+size_t	precision_state(t_machine *machine)
+{
+	size_t	input_offset;
+
+	input_offset = 0;
+	if (machine->input[0] == PRECISION_CHAR)
+	{
+		++input_offset;
+		if (ft_isdigit(machine->input[1]) != 0)
+		{
+			machine->arg->precision = atol(machine->input + 1); //code ft_atol function
+			input_offset += get_nbsize(machine->arg->precision, 10);
+		}
 	}
 	machine->state = E_CONV;
 	return (input_offset);

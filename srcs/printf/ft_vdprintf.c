@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 16:05:57 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 16:43:03 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_vdprintf(int fd, const char *str, va_list aptr)
 		standard_state,
 		mod_state,
 		width_state,
+		precision_state,
 		conv_state};
 	t_machine			*machine;
 	ssize_t				ret_val;

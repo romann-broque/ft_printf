@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 16:06:55 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 17:58:35 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define DEC "0123456789"
 # define PREFIX_HEX "0x"
 # define OPTION_CHAR '%'
+# define PRECISION_CHAR '.'
 # define OPTIONS "cs%diuxXp"
 # define NBOF_OPTIONS 9
 
@@ -58,6 +59,7 @@ enum e_state
 	E_STANDARD,
 	E_MOD,
 	E_WIDTH,
+	E_PRECISION,
 	E_CONV,
 	E_END,
 };
@@ -71,6 +73,7 @@ typedef struct s_arg
 	t_type	type;
 	t_flag	flags;
 	size_t	width;
+	size_t	precision;
 }				t_arg;
 
 typedef struct s_machine
@@ -95,7 +98,7 @@ int			ft_printf(const char *str, ...);
 
 // machine_struct
 
-t_arg	*init_arg(t_type type, va_list aptr, t_flag flags, size_t width);
+t_arg	*init_arg(t_type type, va_list aptr);
 t_machine	*init_machine(const char *str, va_list aptr, int fd);
 void		free_machine(t_machine *machine);
 
@@ -124,12 +127,12 @@ char		*signed_type(t_arg *arg);
 char		*unsigned_type(t_arg *arg);
 char		*hex_type(t_arg *arg);
 
-
 // states
 
 size_t		conv_state(t_machine *machine);
 size_t		mod_state(t_machine *machine);
 size_t		width_state(t_machine *machine);
+size_t		precision_state(t_machine *machine);
 size_t		standard_state(t_machine *machine);
 
 // flags
@@ -137,6 +140,10 @@ size_t		standard_state(t_machine *machine);
 void		remove_flag(t_flag *flags, t_flag removing_flag);
 size_t		get_index_from_type(t_type type, t_type mask);
 void		get_flag(t_flag *flags, const ssize_t flag_index);
+
+// precision
+
+char	*get_precision(size_t precision, char *string);
 
 // get_size
 
@@ -158,6 +165,7 @@ unsigned int	get_abs(int nb);
 
 // utils
 
+size_t		reduce_size(size_t width, char *str);
 ssize_t		get_index(const char *str, const char c);
 char		*to_string(const char c);
 
