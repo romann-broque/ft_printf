@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 15:07:49 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 16:06:55 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ enum e_state
 {
 	E_STANDARD,
 	E_MOD,
+	E_WIDTH,
 	E_CONV,
 	E_END,
 };
@@ -128,6 +129,7 @@ char		*hex_type(t_arg *arg);
 
 size_t		conv_state(t_machine *machine);
 size_t		mod_state(t_machine *machine);
+size_t		width_state(t_machine *machine);
 size_t		standard_state(t_machine *machine);
 
 // flags

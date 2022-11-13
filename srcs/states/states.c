@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 12:13:25 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 16:08:26 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,21 @@ size_t mod_state(t_machine *machine)
 		++input_offset; //input_offset+=ft_strlen(flag)
 	}
 	else
+		machine->state = E_WIDTH;
+	return (input_offset);
+}
+
+size_t	width_state(t_machine *machine)
+{
+	size_t	input_offset;
+
+	input_offset = 0;
+	if (ft_isdigit(*machine->input) != 0)
 	{
-		if (ft_isdigit(curr_c) != 0)
-		{
-			machine->arg->width = atol(machine->input); //code ft_atol function
-			input_offset += get_nbsize(machine->arg->width, 10);
-		}
-		machine->state = E_CONV;
+		machine->arg->width = atol(machine->input); //code ft_atol function
+		input_offset = get_nbsize(machine->arg->width, 10);
 	}
+	machine->state = E_CONV;
 	return (input_offset);
 }
 
