@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 20:43:12 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 10:38:39 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 # define DEC "0123456789"
 # define PREFIX_HEX "0x"
 # define OPTION_CHAR '%'
-# define OPTIONS "cs%diupxX"
+# define OPTIONS "cs%diuxXp"
 # define NBOF_OPTIONS 9
 
 # define FLAGS " +#-0"
@@ -49,6 +49,8 @@
 # define SIGNED_TYPE 0x0018
 # define UNSIGNED_TYPE 0x01E0
 # define HEX_TYPE 0x01C0
+# define LOW_TYPE 0x0040
+# define UP_TYPE 0x0080
 
 enum e_state
 {

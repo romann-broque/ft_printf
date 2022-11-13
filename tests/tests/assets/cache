@@ -30,11 +30,24 @@ test6: qw%
 %%%; v% %jjjj%%%rqwqqvsf
 
 -----LOW HEX TESTS-----
-test1: 
-test2: ÿ
-test3: 
-test4: 
-test5: ®
+test1: 3c706
+test2: ffffffff
+test3: 0
+test4: 0
+test5: 0x23ae
+
+-----UP HEX TESTS-----
+test1: 3C706
+test2: FFFFFFFF
+test3: 0
+test4: 0
+test5: 0X23AE
+
+-----ADDRESS TESTS-----
+test1: 0x23ae00403546
+test2: (nil)
+test3: (nil)
+test4: 0xffffffffffffffff
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -73,3 +86,16 @@ test2: ffffffff
 test3: 0
 test4: 0
 test5: 0x23ae
+
+-----UP HEX TESTS-----
+test1: 3C706
+test2: FFFFFFFF
+test3: 0
+test4: 0
+test5: 0X23AE
+
+-----ADDRESS TESTS-----
+test1: 0x23ae00403546
+test2: (nil)
+test3: (nil)
+test4:  0xffffffffffffffff

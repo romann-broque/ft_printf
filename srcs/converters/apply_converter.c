@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:20:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 21:24:57 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 10:14:49 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,14 @@ size_t	apply_converter(t_machine *machine)
 		nb_conv};
 	const char		curr_c = *machine->input;
 	char			*string;
+	t_type			type;
 	ssize_t			option_index;
 
 	option_index = get_index(OPTIONS, curr_c);
 	if (option_index > -1)
 	{
-		string = converter_type[option_index > CHAR_TYPE](get_type(option_index), machine->aptr, &machine->flags, machine->width);
+		type = get_type(option_index);
+		string = converter_type[!(type & CHAR_TYPE)](type, machine->aptr, &machine->flags, machine->width);
 	}
 	else
 		string = fill_unknown(machine);

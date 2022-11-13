@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 20:22:17 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 21:12:48 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 11:07:22 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	test3(void)
 static void	test4(void)
 {
 	const char	*test_name = "test4: ";
-	const char	*str = "%#+x";
+	const char	*str = "%#+X";
 	const unsigned int	nb = 0;
 
 	ft_printf(test_name);
@@ -75,7 +75,7 @@ static void	test4(void)
 static void	test5(void)
 {
 	const char	*test_name = "test5: ";
-	const char	*str = "%#    +x";
+	const char	*str = "%#    +X";
 	const unsigned int	nb = 9134;
 
 	ft_printf(test_name);
