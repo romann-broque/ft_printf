@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:39:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 10:24:23 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 11:58:31 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ char	*string(va_list aptr)
 
 char	*character(va_list aptr)
 {
-	return (to_string(va_arg(aptr, int)));
+	const char	c = va_arg(aptr, int);
+
+	return (to_string(c));
 }
 
 char	*percentage(void)

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:46:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 21:08:39 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 12:14:52 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	cpy_data(t_machine *machine, void *data, size_t n)
 }
 
 /////
-
+/*
 static size_t	reduce_width(size_t width, char *str)
 {
 	const size_t len = ft_strlen(str);
@@ -98,4 +98,4 @@ void	cpy_to_buffer(t_machine *machine, char *string, int type)
 	}
 	free(width_part);
 }
-
+*/

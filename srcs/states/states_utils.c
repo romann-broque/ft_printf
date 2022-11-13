@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:13:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 09:56:49 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 12:14:10 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	get_width(t_machine *machine)
 {
-	machine->width = machine->width * 10 + *machine->input - '0';
+	machine->arg->width = machine->arg->width * 10 + *machine->input - '0';
 	machine->state = E_MOD;
 }
 

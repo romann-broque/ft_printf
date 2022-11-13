@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:20:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 10:14:49 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 12:06:43 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,19 +27,18 @@ static t_type	get_type(ssize_t option_index)
 
 size_t	apply_converter(t_machine *machine)
 {
-	static char		*(*converter_type[])(t_type, va_list, t_flag *, size_t) = {
+	static char		*(*converter_type[])(t_arg *arg) = {
 		character_conv,
 		nb_conv};
 	const char		curr_c = *machine->input;
 	char			*string;
-	t_type			type;
 	ssize_t			option_index;
 
 	option_index = get_index(OPTIONS, curr_c);
 	if (option_index > -1)
 	{
-		type = get_type(option_index);
-		string = converter_type[!(type & CHAR_TYPE)](type, machine->aptr, &machine->flags, machine->width);
+		machine->arg->type = get_type(option_index);
+		string = converter_type[!(machine->arg->type & CHAR_TYPE)](machine->arg);
 	}
 	else
 		string = fill_unknown(machine);

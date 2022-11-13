@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 10:38:39 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 12:12:00 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,23 @@ enum e_state
 typedef uint16_t t_type;
 typedef uint8_t t_flag;
 
+typedef struct s_arg
+{
+	va_list	aptr;
+	t_type	type;
+	t_flag	flags;
+	size_t	width;
+}				t_arg;
+
 typedef struct s_machine
 {
 	const char	*input;
 	char			*output;
-	va_list			aptr;
 	char			buffer[BUFFER_SIZE];
 	size_t			nbof_buffer;
 	size_t			index;
-	size_t			width;
 	int				fd;
-	t_flag			flags;
+	t_arg			*arg;
 	enum e_state	state;
 }				t_machine;
 
@@ -87,6 +93,7 @@ int			ft_printf(const char *str, ...);
 
 // machine_struct
 
+t_arg	*init_arg(t_type type, va_list aptr, t_flag flags, size_t width);
 t_machine	*init_machine(const char *str, va_list aptr, int fd);
 void		free_machine(t_machine *machine);
 
@@ -97,11 +104,11 @@ char		*fill_unknown(t_machine *machine);
 // converters
 
 size_t		apply_converter(t_machine *machine);
-char		*character_conv(t_type curr_type, va_list aptr, t_flag *flags, size_t width);
-char		*nb_conv(t_type curr_type, va_list aptr, t_flag *flags, size_t width);
-char		*signed_conv(t_type curr_type, va_list aptr, t_flag *flags, size_t width);
-char		*unsigned_conv(t_type curr_type, va_list aptr, t_flag *flags, size_t width);
-char		*hex_conv(t_type curr_type, va_list aptr, t_flag *flags, size_t width);
+char		*character_conv(t_arg *arg);
+char		*nb_conv(t_arg *arg);
+char		*signed_conv(t_arg *arg);
+char		*unsigned_conv(t_arg *arg);
+char		*hex_conv(t_arg *arg);
 
 char		*character(va_list aptr);
 char		*string(va_list aptr);

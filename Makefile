@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/12 20:21:39 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/13 11:50:34 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,7 @@ CHECK_FOLDER = tests/
 
 ### COMPILATION
 
-CC = clang
+CC = cc
 
 CFLAGS += -Wall
 CFLAGS += -Wextra

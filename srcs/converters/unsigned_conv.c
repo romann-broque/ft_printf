@@ -6,16 +6,16 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 18:00:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 09:55:31 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 11:41:28 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*unsigned_conv(t_type curr_type, va_list aptr, t_flag *flags, size_t width)
+char	*unsigned_conv(t_arg *arg)
 {
-	if (curr_type & HEX_TYPE)
-		return (hex_conv(curr_type, aptr, flags, width));
+	if (arg->type & HEX_TYPE)
+		return (hex_conv(arg));
 	else
-		return (u_integer(aptr));
+		return (u_integer(arg->aptr));
 }
