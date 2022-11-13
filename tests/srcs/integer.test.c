@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:03:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 15:33:55 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 15:55:36 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -268,7 +268,6 @@ void	integer_tests(void)
 {
 	ft_printf(INTEGER_TESTS);
 	printf(INTEGER_TESTS);
-/*
 	test1();
 	test2();
 	test3();
@@ -283,6 +282,5 @@ void	integer_tests(void)
 	test12();
 	test13();
 	test14();
-*/
 	test15();
 }
