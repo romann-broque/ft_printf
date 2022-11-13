@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 12:12:00 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 13:14:08 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@
 # define HEX_TYPE 0x01C0
 # define LOW_TYPE 0x0040
 # define UP_TYPE 0x0080
+# define ADDRESS_TYPE 0x0100
 
 enum e_state
 {
@@ -113,11 +114,11 @@ char		*hex_conv(t_arg *arg);
 char		*character(va_list aptr);
 char		*string(va_list aptr);
 char		*percentage(void);
-char		*low_hex(va_list aptr, t_flag *flags);
-char		*up_hex(va_list aptr, t_flag *flags);
-char		*address(va_list aptr, t_flag *flags);
-char		*integer_d(va_list aptr, t_flag *flags);
-char		*integer_i(va_list aptr, t_flag *flags);
+char		*low_hex(unsigned long nb);
+char		*up_hex(unsigned long nb);
+char		*address(unsigned long nb);
+char		*integer_d(va_list aptr, t_flag flags);
+char		*integer_i(va_list aptr, t_flag flags);
 char		*u_integer(va_list aptr);
 
 // states

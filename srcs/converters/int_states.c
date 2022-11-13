@@ -6,20 +6,20 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:38:44 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 19:28:59 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 12:19:59 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*integer_d(va_list aptr, t_flag *flags)
+char	*integer_d(va_list aptr, t_flag flags)
 {
 	const int	nb = va_arg(aptr, int);
 	char		*nb_output;
 	char		*output;
 
 	output = NULL;
-	if (nb >= 0 && *flags & PLUS_FLAG)
+	if (nb >= 0 && flags & PLUS_FLAG)
 		output = ft_strdup(PLUS_SIGN);
 	else if (nb < 0)
 		output = ft_strdup(MINUS_SIGN);
@@ -42,7 +42,7 @@ char	*u_integer(va_list aptr)
 	return (output);
 }
 
-char	*integer_i(va_list aptr, t_flag *flags)
+char	*integer_i(va_list aptr, t_flag flags)
 {
 	return (integer_d(aptr, flags));
 }

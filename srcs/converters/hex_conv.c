@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 18:08:32 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 11:42:05 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 13:17:06 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,21 @@
 
 char	*hex_conv(t_arg *arg)
 {
-	static char		*(*converters[])() = {low_hex, up_hex, address};
+	static char		*(*converters[])(unsigned long) = {low_hex, up_hex, address};
 	const ssize_t	type_index = ((arg->type > LOW_TYPE) + (arg->type > UP_TYPE));
-	return (converters[type_index](arg));
+	const unsigned int	nb = va_arg(arg->aptr, unsigned long);
+	char			*conv_out;
+	char			*output;
+
+	output = NULL;
+	if (nb > 0 && arg->flags & PREFIX_FLAG)
+	{
+		output = ft_strdup(PREFIX_HEX);
+		if (arg->type & UP_TYPE)
+			output = toupper_str(output);
+	}
+	conv_out = converters[type_index](nb);
+	output = ft_strnjoin(output, conv_out, ft_strlen(conv_out));
+	free(conv_out);
+	return (output);
 }
