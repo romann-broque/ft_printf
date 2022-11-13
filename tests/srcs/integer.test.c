@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:03:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 17:03:37 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 18:48:14 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -279,11 +279,70 @@ static void	test16(void)
 	printf("\n");
 }
 
+static void	test17(void)
+{
+	const char	*test_name = "test17: ";
+	const char	*str = "RESULTAT -> %.10d";
+	const int	nb1 = 42;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1);
+	printf("\n");
+}
+
+static void	test18(void)
+{
+	const char	*test_name = "test18: ";
+	const char	*str = "RESULTAT -> %.d";
+	const int	nb1 = 42;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1);
+	printf("\n");
+}
+
+static void	test19(void)
+{
+	const char	*test_name = "test19: ";
+	const char	*str = "RESULTAT -> %.2147483648d";
+	const int	nb1 = 42;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1);
+	printf("\n");
+}
+
+static void	test20(void)
+{
+	const char	*test_name = "test20: ";
+	const char	*str = "RESULTAT -> %.2147483648d";
+	const int	nb1 = 42;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1);
+	printf("\n");
+}
+
 void	integer_tests(void)
 {
 	ft_printf(INTEGER_TESTS);
 	printf(INTEGER_TESTS);
-/*
 	test1();
 	test2();
 	test3();
@@ -299,6 +358,10 @@ void	integer_tests(void)
 	test13();
 	test14();
 	test15();
-*/
 	test16();
+	test17();
+	test18();
+	test19();
+
+//	test20();
 }

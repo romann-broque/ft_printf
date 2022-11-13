@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 17:58:35 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 18:36:18 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #  define BUFFER_SIZE 4096
 # endif
 
+# define EMPTY_STRING ""
 # define NULL_DEF "(null)"
 # define NIL_DEF "(nil)"
 # define SPACE_PAT " "

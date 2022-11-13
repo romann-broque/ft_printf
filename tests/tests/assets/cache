@@ -46,13 +46,31 @@ test4: 0
 test5: 0X23AE
 
 -----ADDRESS TESTS-----
-test1: 0x55831b4801a9
+test1: 0x55cf1c82a1a9
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
 
 -----INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5: 0 -1234018 -18
+test6: +0 -1234018 18
+test7: +0 -1234018 +18 +312
+test8:  0  1234018  18 +312
+test9:  10 -1234018
+test10:  10 34018
+test11:  10      34018
+test12: -12349510  2147483647     34018
+test13: RESULTAT -> -12349510,,,,, 21474836473401845,,,   ----2
+test14: RESULTAT -> -12349510                        214748364734018                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      452
+test15: RESULTAT -> -12349510                                      21474836473401845                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      2
 test16: RESULTAT -> 000000000000000000000000000000000012349510        
+test17: RESULTAT -> 0000000042
+test18: RESULTAT -> 42
+test19: RESULTAT -> 
 
 -----U_INTEGER TESTS-----
 test1: 247558
@@ -118,13 +136,31 @@ test4: 0
 test5: 0X23AE
 
 -----ADDRESS TESTS-----
-test1: 0x55831b4801a9
+test1: 0x55cf1c82a1a9
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
 
 -----INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5: 0 -1234018 -18
+test6: +0 -1234018 18
+test7: +0 -1234018 +18 +312
+test8:  0  1234018  18 +312
+test9:  10 -1234018
+test10:  10 34018
+test11:  10      34018
+test12: -12349510  2147483647     34018
+test13: RESULTAT -> -12349510,,,,, 21474836473401845,,,   ----2
+test14: RESULTAT -> -12349510                        214748364734018                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      452
+test15: RESULTAT -> -12349510                                      21474836473401845                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      2
 test16: RESULTAT -> 000000000000000000000000000000000012349510        
+test17: RESULTAT -> 0000000042
+test18: RESULTAT -> 42
+test19: RESULTAT -> 
 
 -----U_INTEGER TESTS-----
 test1: 247558
