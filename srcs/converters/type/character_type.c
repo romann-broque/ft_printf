@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nb_conv.c                                          :+:      :+:    :+:   */
+/*   character_type.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 20:07:36 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 11:40:04 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/13 14:30:39 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/13 14:30:41 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*nb_conv(t_arg *arg)
+char	*character_type(t_arg *arg)
 {
-	static char		*(*converters[])(t_arg *) = {
-		signed_conv,
-		unsigned_conv};
+	static char		*(*converters[])() = {character, string, percentage};
+	size_t			type_index;
 
-	return (converters[!(arg->type & SIGNED_TYPE)](arg));
+	type_index = get_index_from_type(arg->type, CHAR_TYPE);
+	return (converters[type_index](arg->aptr));
 }

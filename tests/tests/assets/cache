@@ -1,29 +1,29 @@
 
------LOW HEX TESTS-----
-test1: 3c706
-test2: ffffffff
-test3: 0
+-----INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
 test4: 0
-test5: 0x23ae
-
------UP HEX TESTS-----
-test1: 3C706
-test2: FFFFFFFF
-test3: 0
-test4: 0
-test5: 0X23AE
+test5: 0 -1234018 -18
+test6: +0 -1234018 18
+test7: +0 -1234018 +18 +312
+test8:  0  1234018  18 +312
+test9:  10 -1234018
+test10:  10 34018
+test11:  10 34018
+test12: -12349510  214748364734018
 <------------------------------------------------------->
 
------LOW HEX TESTS-----
-test1: 3c706
-test2: ffffffff
-test3: 0
+-----INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
 test4: 0
-test5: 0x23ae
-
------UP HEX TESTS-----
-test1: 3C706
-test2: FFFFFFFF
-test3: 0
-test4: 0
-test5: 0X23AE
+test5: 0 -1234018 -18
+test6: +0 -1234018 18
+test7: +0 -1234018 +18 +312
+test8:  0  1234018  18 +312
+test9:  10 -1234018
+test10:  10 34018
+test11:  10      34018
+test12: -12349510  2147483647     34018

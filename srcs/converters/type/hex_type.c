@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hex_conv.c                                         :+:      :+:    :+:   */
+/*   hex_type.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 18:08:32 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 13:17:06 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 14:30:51 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*hex_conv(t_arg *arg)
+char	*hex_type(t_arg *arg)
 {
 	static char		*(*converters[])(unsigned long) = {low_hex, up_hex, address};
 	const ssize_t	type_index = ((arg->type > LOW_TYPE) + (arg->type > UP_TYPE));
-	const unsigned int	nb = va_arg(arg->aptr, unsigned long);
+	const unsigned long	nb = va_arg(arg->aptr, unsigned long);
 	char			*conv_out;
 	char			*output;
 
 	output = NULL;
-	if (nb > 0 && arg->flags & PREFIX_FLAG)
+	if (nb > 0 && (arg->flags & PREFIX_FLAG || arg->type & ADDRESS_TYPE))
 	{
 		output = ft_strdup(PREFIX_HEX);
 		if (arg->type & UP_TYPE)

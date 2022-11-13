@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:20:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 13:03:35 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 14:34:34 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ static t_type	get_type(ssize_t option_index)
 size_t	apply_converter(t_machine *machine)
 {
 	static char		*(*converter_type[])(t_arg *arg) = {
-		character_conv,
-		nb_conv};
+		character_type,
+		nb_type};
 	const char		curr_c = *machine->input;
 	char			*string;
 	ssize_t			option_index;

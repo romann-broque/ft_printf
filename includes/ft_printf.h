@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 13:14:08 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 14:34:22 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,21 +105,24 @@ char		*fill_unknown(t_machine *machine);
 // converters
 
 size_t		apply_converter(t_machine *machine);
-char		*character_conv(t_arg *arg);
-char		*nb_conv(t_arg *arg);
-char		*signed_conv(t_arg *arg);
-char		*unsigned_conv(t_arg *arg);
-char		*hex_conv(t_arg *arg);
-
 char		*character(va_list aptr);
 char		*string(va_list aptr);
 char		*percentage(void);
 char		*low_hex(unsigned long nb);
 char		*up_hex(unsigned long nb);
 char		*address(unsigned long nb);
-char		*integer_d(va_list aptr, t_flag flags);
-char		*integer_i(va_list aptr, t_flag flags);
+char		*integer_d(int nb);
+char		*integer_i(int nb);
 char		*u_integer(va_list aptr);
+
+// converters/type
+
+char		*character_type(t_arg *arg);
+char		*nb_type(t_arg *arg);
+char		*signed_type(t_arg *arg);
+char		*unsigned_type(t_arg *arg);
+char		*hex_type(t_arg *arg);
+
 
 // states
 

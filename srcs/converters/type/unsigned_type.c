@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   signed_conv.c                                      :+:      :+:    :+:   */
+/*   unsigned_type.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 17:56:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 12:36:00 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/12 18:00:38 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/13 14:43:37 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*signed_conv(t_arg *arg)
+char	*unsigned_type(t_arg *arg)
 {
-	static char		*(*converters[])(va_list, t_flag) = {integer_d, integer_i};
-	ssize_t			type_index;
+	char			*conv_out;
+	char			*output;
 
-	type_index = get_index_from_type(arg->type, SIGNED_TYPE);
-	return (converters[type_index](arg->aptr, arg->flags));
+	output = NULL;
+	if (arg->flags & PLUS_FLAG)
+		output = ft_strdup(PLUS_SIGN);
+	else if (arg->flags & SPACE_FLAG)
+		output = ft_strdup(SPACE_PAT);
+	if (arg->type & HEX_TYPE)
+		conv_out = hex_type(arg);
+	else
+		conv_out = u_integer(arg->aptr);
+	output = ft_strnjoin(output, conv_out, ft_strlen(conv_out));
+	return (output);
 }

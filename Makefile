@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/13 11:50:34 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/13 14:33:09 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,26 +17,29 @@ NAME = libftprintf.a
 ### SRCS
 
 PATH_SRCS += srcs/
-PATH_SRCS += srcs/converters
-PATH_SRCS += srcs/core
-PATH_SRCS += srcs/core/struct
-PATH_SRCS += srcs/modifiers
-PATH_SRCS += srcs/printf
-PATH_SRCS += srcs/states
-PATH_SRCS += srcs/utils
+PATH_SRCS += srcs/converters/
+PATH_SRCS += srcs/converters/type
+PATH_SRCS += srcs/core/
+PATH_SRCS += srcs/core/struct/
+PATH_SRCS += srcs/modifiers/
+PATH_SRCS += srcs/printf/
+PATH_SRCS += srcs/states/
+PATH_SRCS += srcs/utils/
 
 # srcs/
 
 # srcs/converters
 SRCS += apply_converter.c
-SRCS += character_conv.c
-SRCS += nb_conv.c
-SRCS += signed_conv.c
-SRCS += unsigned_conv.c
-SRCS += hex_conv.c
 SRCS += char_states.c
 SRCS += hex_states.c
 SRCS += int_states.c
+
+# srcs/converters/type
+SRCS += character_type.c
+SRCS += nb_type.c
+SRCS += signed_type.c
+SRCS += unsigned_type.c
+SRCS += hex_type.c
 
 # srcs/core
 # srcs/core/struct
@@ -76,7 +79,7 @@ LIB = $(LIB_FOLDER)/libft.a
 ### INCLUDES
 
 INCLUDES += includes/
-INCLUDES_LIB = $(LIB_FOLDER)/includes/libft.h
+INCLUDES_LIB = $(LIB_FOLDER)/includes/
 
 ### CHECK
 
