@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:13:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 12:14:10 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 22:51:46 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*fill_unknown(t_machine *machine)
 	{
 		string[len] = '\0';
 		if (len > 0)
-			string[0] = OPTION_CHAR;
+			string[0] = *OPTION_CHAR;
 		if (len > 1)
 			string[1] = *machine->input;
 	}

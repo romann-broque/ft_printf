@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 18:36:18 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 22:43:25 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@
 # define HEX "0123456789abcdef"
 # define DEC "0123456789"
 # define PREFIX_HEX "0x"
-# define OPTION_CHAR '%'
-# define PRECISION_CHAR '.'
+# define OPTION_CHAR "%"
+# define PRECISION_CHAR "."
 # define OPTIONS "cs%diuxXp"
 # define NBOF_OPTIONS 9
 

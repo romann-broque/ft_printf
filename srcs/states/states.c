@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 18:19:19 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 23:43:00 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,10 @@ size_t	width_state(t_machine *machine)
 size_t	precision_state(t_machine *machine)
 {
 	size_t	input_offset;
+	char	*output;
 
 	input_offset = 0;
-	if (machine->input[0] == PRECISION_CHAR)
+	if (*machine->input == *PRECISION_CHAR)
 	{
 		++input_offset;
 		if (ft_isdigit(machine->input[1]) != 0)
@@ -69,8 +70,18 @@ size_t	precision_state(t_machine *machine)
 			machine->arg->precision = atol(machine->input + 1); //code ft_atol function
 			input_offset += get_nbsize(machine->arg->precision, 10);
 		}
+		else if (ft_strchr(OPTIONS, machine->input[1]) == NULL)
+		{
+			cpy_data(machine, OPTION_CHAR, sizeof(char));
+			cpy_data(machine, PRECISION_CHAR, sizeof(char));
+			output = integer_d(machine->arg->precision);
+			cpy_data(machine, output, ft_strlen(output));
+			free(output);
+			machine->state = E_STANDARD;
+		}
 	}
-	machine->state = E_CONV;
+	else
+		machine->state = E_CONV;
 	return (input_offset);
 }
 
@@ -80,7 +91,7 @@ size_t	standard_state(t_machine *machine)
 
 	if (curr_c == END_CHAR)
 		machine->state = E_END;
-	else if (curr_c == OPTION_CHAR)
+	else if (curr_c == *OPTION_CHAR)
 		machine->state = E_MOD;
 	else
 		cpy_data(machine, (char *)machine->input, sizeof(char));

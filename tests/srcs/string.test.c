@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:28:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 21:13:42 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 21:01:26 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,8 +221,8 @@ void	string_tests(void)
 	test7();
 	test8();
 	test9();
-//	test10();
-//	test11();
-//	test12();
-//	test13();
+	test10();
+	test11();
+	test12();
+	test13();
 }

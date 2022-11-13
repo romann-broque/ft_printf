@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:39:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 11:58:31 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 22:44:21 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ char	*character(va_list aptr)
 
 char	*percentage(void)
 {
-	return (to_string(OPTION_CHAR));
+	return (ft_strdup(OPTION_CHAR));
 }

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:03:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 18:48:14 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/13 22:10:08 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -327,15 +327,16 @@ static void	test19(void)
 static void	test20(void)
 {
 	const char	*test_name = "test20: ";
-	const char	*str = "RESULTAT -> %.2147483648d";
-	const int	nb1 = 42;
+	const char	*str = "%.rd";
+	const int	nb1 = -5;
+	const int	nb2 = 12;
 
 	ft_printf(test_name);
-	ft_printf(str, nb1);
+	ft_printf(str, nb1, nb2);
 	ft_printf("\n");
 
 	printf(test_name);
-	printf(str, nb1);
+	printf(str, nb1, nb2);
 	printf("\n");
 }
 
@@ -362,6 +363,5 @@ void	integer_tests(void)
 	test17();
 	test18();
 	test19();
-
-//	test20();
+	test20();
 }
