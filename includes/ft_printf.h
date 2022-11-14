@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 22:43:25 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 10:38:36 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 # define PRECISION_CHAR "."
 # define OPTIONS "cs%diuxXp"
 # define NBOF_OPTIONS 9
+# define UNSET_PRECISION -1
 
 # define FLAGS " +#-0"
 # define NBOF_FLAGS 4
@@ -74,7 +75,7 @@ typedef struct s_arg
 	t_type	type;
 	t_flag	flags;
 	size_t	width;
-	size_t	precision;
+	ssize_t	precision;
 }				t_arg;
 
 typedef struct s_machine
@@ -111,7 +112,7 @@ char		*fill_unknown(t_machine *machine);
 
 size_t		apply_converter(t_machine *machine);
 char		*character(va_list aptr);
-char		*string(va_list aptr);
+char		*string(va_list aptr, ssize_t precision);
 char		*percentage(void);
 char		*low_hex(unsigned long nb);
 char		*up_hex(unsigned long nb);
@@ -144,7 +145,7 @@ void		get_flag(t_flag *flags, const ssize_t flag_index);
 
 // precision
 
-char	*get_precision(size_t precision, char *string);
+char	*get_precision(ssize_t precision, char *string);
 
 // get_size
 
@@ -173,6 +174,7 @@ char		*to_string(const char c);
 // strings
 
 char	*strset(int c, size_t n);
+char	*ft_strndup(const char *str, const size_t size);
 
 // cpy_data
 

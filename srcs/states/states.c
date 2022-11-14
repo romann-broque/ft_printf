@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 23:43:00 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 10:41:01 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	conv_state(t_machine *machine)
 	offset = apply_converter(machine);
 	machine->arg->flags = NO_FLAG;
 	machine->arg->width = 0;
-	machine->arg->precision = 0;
+	machine->arg->precision = UNSET_PRECISION;
 	machine->state = E_STANDARD;
 	return (offset);
 }
@@ -72,6 +72,7 @@ size_t	precision_state(t_machine *machine)
 		}
 		else if (ft_strchr(OPTIONS, machine->input[1]) == NULL)
 		{
+			machine->arg->precision = 0;
 			cpy_data(machine, OPTION_CHAR, sizeof(char));
 			cpy_data(machine, PRECISION_CHAR, sizeof(char));
 			output = integer_d(machine->arg->precision);
