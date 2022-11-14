@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 10:38:36 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 12:20:17 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ typedef struct s_arg
 
 typedef struct s_machine
 {
-	const char	*input;
+	const char		*input;
 	char			*output;
 	char			buffer[BUFFER_SIZE];
 	size_t			nbof_buffer;
@@ -100,7 +100,7 @@ int			ft_printf(const char *str, ...);
 
 // machine_struct
 
-t_arg	*init_arg(t_type type, va_list aptr);
+t_arg		*init_arg(t_type type, va_list aptr);
 t_machine	*init_machine(const char *str, va_list aptr, int fd);
 void		free_machine(t_machine *machine);
 
@@ -119,7 +119,7 @@ char		*up_hex(unsigned long nb);
 char		*address(unsigned long nb);
 char		*integer_d(int nb);
 char		*integer_i(int nb);
-char		*u_integer(va_list aptr);
+char		*u_integer(unsigned int nb);
 
 // converters/type
 
@@ -127,7 +127,7 @@ char		*character_type(t_arg *arg);
 char		*nb_type(t_arg *arg);
 char		*signed_type(t_arg *arg);
 char		*unsigned_type(t_arg *arg);
-char		*hex_type(t_arg *arg);
+char		*hex_type(t_arg *arg, unsigned long nb);
 
 // states
 
@@ -145,7 +145,7 @@ void		get_flag(t_flag *flags, const ssize_t flag_index);
 
 // precision
 
-char	*get_precision(ssize_t precision, char *string);
+char		*get_precision(ssize_t precision, char *string);
 
 // get_size
 

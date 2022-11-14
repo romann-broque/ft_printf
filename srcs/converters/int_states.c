@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:38:44 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 11:22:16 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 12:18:22 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ char	*integer_d(int nb)
 	return (output);
 }
 
-char	*u_integer(va_list aptr)
+char	*u_integer(unsigned int nb)
 {
-	const unsigned int	nb = va_arg(aptr, unsigned int);
 	char				*nb_output;
 	char				*output;
 

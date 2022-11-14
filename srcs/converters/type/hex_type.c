@@ -6,17 +6,16 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 18:08:32 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 10:35:44 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 12:18:02 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*hex_type(t_arg *arg)
+char	*hex_type(t_arg *arg, unsigned long nb)
 {
 	static char		*(*converters[])(unsigned long) = {low_hex, up_hex, address};
 	const ssize_t	type_index = ((arg->type > LOW_TYPE) + (arg->type > UP_TYPE));
-	const unsigned long	nb = va_arg(arg->aptr, unsigned long);
 	char			*conv_out;
 	char			*output;
 

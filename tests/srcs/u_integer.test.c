@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:08:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/09 09:36:37 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 11:46:51 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,22 @@ static void	test6(void)
 	printf("\n");
 }
 
+static void	test7(void)
+{
+	const char	*test_name = "test7: ";
+	const char	*str = "%.0u %-    u";
+	const unsigned int	nb1 = 0;
+	const unsigned int	nb2 = 125;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1, nb2);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1, nb2);
+	printf("\n");
+}
+
 void	u_integer_tests(void)
 {
 	ft_printf(U_INTEGER_TESTS);
@@ -114,4 +130,5 @@ void	u_integer_tests(void)
 	test4();
 	test5();
 	test6();
+	test7();
 }
