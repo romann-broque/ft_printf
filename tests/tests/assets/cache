@@ -44,7 +44,9 @@ test1: 3c706
 test2: ffffffff
 test3: 0
 test4: 0
-test5: 0x23ae
+test5: 23ae
+test6: 0x00000000000023ae
+test7: 0x00000000000023ae
 
 -----UP HEX TESTS-----
 test1: 3C706
@@ -54,7 +56,7 @@ test4: 0
 test5: 0X23AE
 
 -----ADDRESS TESTS-----
-test1: 0x23ae00403d46
+test1: 0x23ae00403e56
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
@@ -145,7 +147,9 @@ test1: 3c706
 test2: ffffffff
 test3: 0
 test4: 0
-test5: 0x23ae
+test5: 23ae
+test6: 0x00000000000023ae
+test7: 0x00000000000023ae
 
 -----UP HEX TESTS-----
 test1: 3C706
@@ -155,7 +159,7 @@ test4: 0
 test5: 0X23AE
 
 -----ADDRESS TESTS-----
-test1: 0x23ae00403d46
+test1: 0x23ae00403e56
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 20:07:36 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 11:42:20 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 16:50:59 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,23 @@ char	*nb_type(t_arg *arg)
 	char			*conv_out;
 	char			*output;
 
+	output = NULL;	
 	conv_out = converters[type_index](arg);
-	output = NULL;
 	if (conv_out != NULL)
 	{
-		output = get_precision(arg->precision, conv_out);	
+		output = get_precision(arg->precision, conv_out);
 		if (output != NULL)
 			output = ft_strnjoin(output, conv_out, ft_strlen(conv_out));
+		if (arg->flags & PREFIX_FLAG)
+		{
+			prefix_add(PREFIX_HEX, &output);
+			if (arg->type & UP_TYPE)
+				output = toupper_str(output);
+		}	
+		if ((arg->flags & SPACE_FLAG)
+			&& !(arg->flags & PLUS_FLAG)
+			&& (arg->type & HEX_TYPE))
+			prefix_add(SPACE_PAT, &output);
 	}
 	free(conv_out);
 	return (output);

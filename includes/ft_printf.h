@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 12:20:17 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 15:47:13 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,7 @@ size_t		standard_state(t_machine *machine);
 // flags
 
 void		remove_flag(t_flag *flags, t_flag removing_flag);
+void		add_flag(t_flag *flags, t_flag removing_flag);
 size_t		get_index_from_type(t_type type, t_type mask);
 void		get_flag(t_flag *flags, const ssize_t flag_index);
 
@@ -180,5 +181,6 @@ char	*ft_strndup(const char *str, const size_t size);
 
 void		cpy_data(t_machine *machine, void *data, size_t n);
 void		cpy_to_buffer(t_machine *machine, char *string);
+void		prefix_add(char *prefix, char **string);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:06:23 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 09:55:37 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 14:48:19 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,28 @@ char	*ft_strndup(const char *str, const size_t size)
 	if (new != NULL)
 		ft_strlcpy(new, str, size + 1);
 	return (new);
+}
+
+void	prefix_add(char *prefix, char **string)
+{
+	const size_t	pre_len = ft_strlen(prefix);
+	size_t			str_len;
+	size_t			len;
+	char			*new;
+
+	if (*string == NULL)
+		*string = ft_strdup(new);
+	else
+	{
+		str_len = ft_strlen(*string);
+		len = pre_len + str_len;
+		new = (char *)malloc((len + 1) * sizeof(char));
+		if (new != NULL)
+		{
+			ft_strcpy(new, prefix);
+			ft_strcpy(new + pre_len, *string);
+			free(*string);
+			*string = new;
+		}
+	}
 }

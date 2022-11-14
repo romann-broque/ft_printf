@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 22:57:05 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 21:11:57 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 12:37:07 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	test3(void)
 static void	test4(void)
 {
 	const char	*test_name = "test4: ";
-	const char	*str = "%#+x";
+	const char	*str = "%+x";
 	const unsigned int	nb = 0;
 
 	ft_printf(test_name);
@@ -75,7 +75,7 @@ static void	test4(void)
 static void	test5(void)
 {
 	const char	*test_name = "test5: ";
-	const char	*str = "%#    +x";
+	const char	*str = "%    +x";
 	const unsigned int	nb = 9134;
 
 	ft_printf(test_name);
@@ -87,6 +87,35 @@ static void	test5(void)
 	printf("\n");
 }
 
+static void	test6(void)
+{
+	const char	*test_name = "test6: ";
+	const char	*str = "%#.16x";
+	const unsigned int	nb = 9134;
+
+	ft_printf(test_name);
+	ft_printf(str, nb);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb);
+	printf("\n");
+}
+
+static void	test7(void)
+{
+	const char	*test_name = "test7: ";
+	const char	*str = "%#0.16x";
+	const unsigned int	nb = 9134;
+
+	ft_printf(test_name);
+	ft_printf(str, nb);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb);
+	printf("\n");
+}
 void	low_hex_tests(void)
 {
 	ft_printf(LOW_HEX_TESTS);
@@ -96,4 +125,6 @@ void	low_hex_tests(void)
 	test3();
 	test4();
 	test5();
+	test6();
+	test7();
 }

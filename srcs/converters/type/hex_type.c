@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 18:08:32 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 12:18:02 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 16:03:52 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,10 @@ char	*hex_type(t_arg *arg, unsigned long nb)
 	char			*output;
 
 	output = NULL;
-	if (arg->flags & SPACE_FLAG && !(arg->flags & PLUS_FLAG))
-		output = ft_strnjoin(output, SPACE_PAT, ft_strlen(SPACE_PAT));
-	if (nb > 0 && (arg->flags & PREFIX_FLAG || arg->type & ADDRESS_TYPE))
-	{
-		output = ft_strnjoin(output, PREFIX_HEX, ft_strlen(PREFIX_HEX));
-		if (arg->type & UP_TYPE)
-			output = toupper_str(output);
-	}
+	if (nb == 0)
+			remove_flag(&arg->flags, PREFIX_FLAG);
+	else if (arg->type & ADDRESS_TYPE)
+			add_flag(&arg->flags, PREFIX_FLAG);
 	conv_out = converters[type_index](nb);
 	output = ft_strnjoin(output, conv_out, ft_strlen(conv_out));
 	free(conv_out);
