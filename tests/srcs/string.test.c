@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:28:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 10:32:31 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 11:17:42 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,6 +211,21 @@ static void	test13(void)
 static void	test14(void)
 {
 	const char	*test_name = "test14: ";
+	const char	*str1 = "%.2s";
+	const char	*str2 = "Hello";
+
+	ft_printf(test_name);
+	ft_printf(str1, str2);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str1, str2);
+	printf("\n");
+}
+
+static void	test15(void)
+{
+	const char	*test_name = "test15: ";
 	const char	*str1 = "%.2s";
 	const char	*str2 = "Hello";
 

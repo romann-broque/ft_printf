@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:56:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 15:31:20 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 11:42:46 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,18 @@ char	*signed_type(t_arg *arg)
 	char			*output;
 
 	output = NULL;
-	if (nb >= 0)
+	if (nb != 0 || arg->precision != 0)
 	{
-		if (arg->flags & PLUS_FLAG)
-			output = ft_strdup(PLUS_SIGN);
-		else if (arg->flags & SPACE_FLAG)
-			output = ft_strdup(SPACE_PAT);
+		if (nb >= 0)
+		{
+			if (arg->flags & PLUS_FLAG)
+				output = ft_strdup(PLUS_SIGN);
+			else if (arg->flags & SPACE_FLAG)
+				output = ft_strdup(SPACE_PAT);
+		}
+		conv_out = converters[type_index](nb);
+		output = ft_strnjoin(output, conv_out, ft_strlen(conv_out));
+		free(conv_out);
 	}
-	conv_out = converters[type_index](nb);
-	output = ft_strnjoin(output, conv_out, ft_strlen(conv_out));
-	free(conv_out);
 	return (output);
 }

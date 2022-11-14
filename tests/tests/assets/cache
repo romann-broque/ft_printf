@@ -54,7 +54,7 @@ test4: 0
 test5: 0X23AE
 
 -----ADDRESS TESTS-----
-test1: 0x55c7ee0d71a9
+test1: 0x55f5ff1902f9
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
@@ -80,6 +80,7 @@ test17: RESULTAT -> 0000000042
 test18: RESULTAT -> 42
 test19: RESULTAT -> 
 test20: %.0rd
+test21: 
 
 -----U_INTEGER TESTS-----
 test1: 247558
@@ -153,7 +154,7 @@ test4: 0
 test5: 0X23AE
 
 -----ADDRESS TESTS-----
-test1: 0x55c7ee0d71a9
+test1: 0x55f5ff1902f9
 test2: (nil)
 test3: (nil)
 test4:  0xffffffffffffffff
@@ -179,6 +180,7 @@ test17: RESULTAT -> 0000000042
 test18: RESULTAT -> 42
 test19: RESULTAT -> 
 test20: %.0rd
+test21: 
 
 -----U_INTEGER TESTS-----
 test1: 247558

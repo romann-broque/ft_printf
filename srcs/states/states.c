@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 10:41:01 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 11:36:06 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ size_t	precision_state(t_machine *machine)
 	if (*machine->input == *PRECISION_CHAR)
 	{
 		++input_offset;
+		machine->arg->precision = 0;
 		if (ft_isdigit(machine->input[1]) != 0)
 		{
 			machine->arg->precision = atol(machine->input + 1); //code ft_atol function
