@@ -46,6 +46,9 @@ A C-library of usual functions
 
 ### Part 2 - Additional functions
 
+#### [`get_min`](srcs/math/get_min.c)
+> Get the minimum between two size_t.
+
 #### [`ft_itoa`](srcs/conv/ft_itoa.c)
 > Allocates (with malloc(3)) and returns a string
 > representing the input integer.
