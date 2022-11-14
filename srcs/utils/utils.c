@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:18:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 17:57:46 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 20:12:35 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,15 @@ ssize_t	get_index(const char *str, const char c)
 
 char	*to_string(const char c)
 {
-	char	str[2];
+	char	*str;
 
-	str[0] = c;
-	str[1] = '\0';
-	return (ft_strdup(str));
+	str = (char *)malloc((2) * sizeof(char));
+	if (str != NULL)
+	{
+		str[0] = c;
+		str[1] = '\0';
+	}
+	return (str);
 }
 
 size_t	reduce_size(size_t width, char *str)

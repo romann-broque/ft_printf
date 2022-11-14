@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 15:47:13 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 19:55:54 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@
 # define ZERO_FLAG 0x20
 
 # define CHAR_TYPE 0x0007
+# define CHARACTER_TYPE 0x0001
 # define NB_TYPE 0x01F8
 # define SIGNED_TYPE 0x0018
 # define UNSIGNED_TYPE 0x01E0

@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/13 17:55:52 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/14 17:07:39 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -116,7 +116,8 @@ endif
 all: $(NAME)
 
 $(NAME): $(LIB) $(OBJS)
-	ar rcs $@ $^
+	cp $(LIB) $(NAME)
+	ar rcs $(NAME) $(OBJS)
 
 $(LIB):
 	$(MAKE) -sC $(LIB_FOLDER)

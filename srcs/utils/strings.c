@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:06:23 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 14:48:19 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 19:48:21 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	prefix_add(char *prefix, char **string)
 	char			*new;
 
 	if (*string == NULL)
-		*string = ft_strdup(new);
+		*string = ft_strdup(prefix);
 	else
 	{
 		str_len = ft_strlen(*string);

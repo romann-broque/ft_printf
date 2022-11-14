@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 16:43:03 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 21:16:58 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ int	ft_vdprintf(int fd, const char *str, va_list aptr)
 			machine->buffer, machine->index + 1);
 	ret_val = write(fd, machine->output,
 		machine->nbof_buffer * BUFFER_SIZE + machine->index);
-	if (ret_val != -1)
-		ret_val = ft_strlen(machine->output);
 	free_machine(machine);
 	return (ret_val);
 }

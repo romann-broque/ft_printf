@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 11:36:06 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 18:29:21 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ size_t mod_state(t_machine *machine)
 		++input_offset; //input_offset+=ft_strlen(flag)
 	}
 	else
-		machine->state = E_WIDTH;
+	//	machine->state = E_WIDTH;
+		machine->state = E_CONV;
 	return (input_offset);
 }
 

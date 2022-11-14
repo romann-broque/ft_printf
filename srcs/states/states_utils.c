@@ -6,17 +6,11 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:13:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 22:51:46 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/14 18:18:18 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	get_width(t_machine *machine)
-{
-	machine->arg->width = machine->arg->width * 10 + *machine->input - '0';
-	machine->state = E_MOD;
-}
 
 char	*fill_unknown(t_machine *machine)
 {
