@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 18:29:21 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/19 14:03:21 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ size_t	precision_state(t_machine *machine)
 		else if (ft_strchr(OPTIONS, machine->input[1]) == NULL)
 		{
 			machine->arg->precision = 0;
-			cpy_data(machine, OPTION_CHAR, sizeof(char));
-			cpy_data(machine, PRECISION_CHAR, sizeof(char));
+			cpy_data(machine->output, OPTION_CHAR, sizeof(char));
+			cpy_data(machine->output, PRECISION_CHAR, sizeof(char));
 			output = integer_d(machine->arg->precision);
-			cpy_data(machine, output, ft_strlen(output));
+			cpy_data(machine->output, output, ft_strlen(output));
 			free(output);
 			machine->state = E_STANDARD;
 		}
@@ -97,6 +97,6 @@ size_t	standard_state(t_machine *machine)
 	else if (curr_c == *OPTION_CHAR)
 		machine->state = E_MOD;
 	else
-		cpy_data(machine, (char *)machine->input, sizeof(char));
+		cpy_data(machine->output, (char *)machine->input, sizeof(char));
 	return (1);
 }

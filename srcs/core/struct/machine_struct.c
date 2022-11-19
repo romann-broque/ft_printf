@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 12:04:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 10:10:47 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/19 13:59:22 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,21 @@ t_arg	*init_arg(t_type type, va_list aptr)
 	return (new);
 }
 
+static t_output	*init_output(void)
+{
+	t_output	*new;
+
+	new = (t_output *)malloc(sizeof(t_output));
+	if (new != NULL)
+	{
+		ft_bzero(new->buffer, BUFFER_SIZE + 1);
+		new->index = 0;
+		new->nbof_buffer = 0;
+		new->final_str = NULL;
+	}
+	return (new);
+}
+
 t_machine	*init_machine(const char *str, va_list aptr, int fd)
 {
 	t_machine	*machine;
@@ -36,11 +51,8 @@ t_machine	*init_machine(const char *str, va_list aptr, int fd)
 	if (machine != NULL)
 	{
 		machine->input = (char *)str;
-		machine->output = NULL;
 		machine->arg = init_arg(0, aptr);
-		ft_bzero(machine->buffer, BUFFER_SIZE);
-		machine->nbof_buffer = 0;
-		machine->index = 0;
+		machine->output = init_output();
 		machine->fd = fd;
 		machine->state = E_STANDARD;
 	}
@@ -49,6 +61,7 @@ t_machine	*init_machine(const char *str, va_list aptr, int fd)
 
 void	free_machine(t_machine *machine)
 {
+	free(machine->output->final_str);
 	free(machine->output);
 	free(machine->arg);
 	free(machine);

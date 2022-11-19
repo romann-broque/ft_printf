@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 19:55:54 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/19 14:01:01 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,15 +79,20 @@ typedef struct s_arg
 	ssize_t	precision;
 }				t_arg;
 
+typedef struct s_output
+{
+	char	buffer[BUFFER_SIZE + 1];
+	size_t	index;
+	size_t	nbof_buffer;
+	char	*final_str;
+}				t_output;
+
 typedef struct s_machine
 {
 	const char		*input;
-	char			*output;
-	char			buffer[BUFFER_SIZE];
-	size_t			nbof_buffer;
-	size_t			index;
-	int				fd;
+	t_output		*output;
 	t_arg			*arg;
+	int				fd;
 	enum e_state	state;
 }				t_machine;
 
@@ -180,7 +185,7 @@ char	*ft_strndup(const char *str, const size_t size);
 
 // cpy_data
 
-void		cpy_data(t_machine *machine, void *data, size_t n);
+void		cpy_data(t_output *output, void *data, size_t n);
 void		cpy_to_buffer(t_machine *machine, char *string);
 void		prefix_add(char *prefix, char **string);
 
