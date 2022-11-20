@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:46:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/20 18:19:22 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/20 18:22:42 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	cpy_data(t_output *output, void *data, size_t n)
 	while (output->index + n >= BUFFER_SIZE)
 	{
 		fill_buffer(output, data, &data_index);
-		n -= BUFFER_SIZE;
+		if (n >= BUFFER_SIZE)
+			n -= BUFFER_SIZE;
 	}
 	ft_memcpy(output->buffer + output->index, data + data_index, n);
 	output->index += n;

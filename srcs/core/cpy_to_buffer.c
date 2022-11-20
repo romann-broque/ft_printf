@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:55:48 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/20 18:13:56 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/20 18:25:25 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	cpy_to_buffer(t_machine *machine, char *string)
 {
-	const size_t	size = ft_strlen(string) + (*string == '\0' && machine->arg->type & CHARACTER_TYPE);
+	const size_t	size = ft_strlen(string)
+					+ (*string == '\0' && machine->arg->type & CHARACTER_TYPE);
 
 	cpy_data(machine->output, string, size);
 }
