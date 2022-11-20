@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   precision.c                                        :+:      :+:    :+:   */
+/*   cpy_to_buffer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/13 16:59:57 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 11:40:50 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/20 15:55:48 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/20 15:56:59 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*get_precision(ssize_t precision, char *string)
+void	cpy_to_buffer(t_machine *machine, char *string)
 {
-	if (precision > INT_MAX)
-		return (NULL);
-	if (precision == UNSET_PRECISION)
-		precision = 0;
-	precision = reduce_size(precision, string);
-	return (strset('0', precision));
+	const size_t	size = ft_strlen(string);
+
+	cpy_data(machine->output, string, size);
 }

@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hex_states.c                                       :+:      :+:    :+:   */
+/*   char_conv.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 16:37:48 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 14:11:36 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/20 15:31:32 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/20 15:50:30 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*low_hex(unsigned long nb)
+char	*character(va_list aptr)
 {
-	return (itoa_base(nb, HEX));
+	const int	c = va_arg(aptr, int);
+
+	return (to_string(c));
 }
 
-char	*up_hex(unsigned long nb)
+char	*string(va_list aptr)
 {
-	return (toupper_str(low_hex(nb)));
-}
+	char	*str;
 
-char	*address(unsigned long address)
-{
-	char				*output;
-
-	output = NULL;
-	if (address == 0)
-		output = ft_strdup(NIL_DEF);
+	str = va_arg(aptr, char *);
+	if (str == NULL)
+		return(ft_strdup(NULL_DEF));
 	else
-		output = low_hex(address);
-	return (output);
+		return (ft_strdup(str));
+}
+
+char	*percentage(void)
+{
+	return (to_string(*OPTION_CHAR));
 }

@@ -4,11 +4,7 @@ test1: a
 test2: ÿ
 test3: ÿ c 1 9 1
 test4: Charlotte
-test5: e
-test6: 
-test7: casd
-test8: casccd
-test9: c
+test5: c
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -16,8 +12,4 @@ test1: a
 test2: ÿ
 test3: ÿ c 1 9 1
 test4: Charlotte
-test5: e
-test6: 
-test7: casd
-test8: casccd
-test9: c
+test5: c

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   machine_struct.c                                   :+:      :+:    :+:   */
+/*   machine_truct.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 12:04:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/19 13:59:22 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/20 14:55:19 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/20 15:14:33 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_arg	*init_arg(t_type type, va_list aptr)
+t_arg		*init_arg(t_type type, va_list aptr)
 {
 	t_arg	*new;
 
@@ -28,11 +28,11 @@ t_arg	*init_arg(t_type type, va_list aptr)
 	return (new);
 }
 
-static t_output	*init_output(void)
+t_output	*init_output(void);
 {
-	t_output	*new;
+	t_arg	*new;
 
-	new = (t_output *)malloc(sizeof(t_output));
+	new = (t_option *)malloc(sizeof(t_option));
 	if (new != NULL)
 	{
 		ft_bzero(new->buffer, BUFFER_SIZE + 1);
@@ -45,24 +45,16 @@ static t_output	*init_output(void)
 
 t_machine	*init_machine(const char *str, va_list aptr, int fd)
 {
-	t_machine	*machine;
+	t_machine	*new;
 
-	machine = (t_machine *)malloc(sizeof(t_machine));
-	if (machine != NULL)
+	new = (t_machine *)malloc(sizeof(t_machine));
+	if (new != NULL)
 	{
-		machine->input = (char *)str;
-		machine->arg = init_arg(0, aptr);
-		machine->output = init_output();
-		machine->fd = fd;
-		machine->state = E_STANDARD;
+		new->input = str;
+		new->output = init_output();
+		new->arg = init_arg(NO_TYPE, aptr);
+		new->fd = fd;
+		new->state = E_STANDARD;
 	}
-	return (machine);
-}
-
-void	free_machine(t_machine *machine)
-{
-	free(machine->output->final_str);
-	free(machine->output);
-	free(machine->arg);
-	free(machine);
+	return (new);
 }

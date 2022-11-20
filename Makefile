@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/14 17:07:39 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/20 15:57:26 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,28 +28,19 @@ PATH_SRCS += srcs/utils/
 
 # srcs/
 
-SRCS += width.c
-SRCS += precision.c
-
 # srcs/converters
 SRCS += apply_converter.c
-SRCS += char_states.c
-SRCS += hex_states.c
-SRCS += int_states.c
+SRCS += char_conv.c
 
 # srcs/converters/type
-SRCS += character_type.c
-SRCS += nb_type.c
-SRCS += signed_type.c
-SRCS += unsigned_type.c
-SRCS += hex_type.c
 
 # srcs/core
-# srcs/core/struct
 SRCS += machine_struct.c
+SRCS += cpy_to_buffer.c
+
+# srcs/core/struct
 
 # srcs/modifiers
-SRCS += flags.c
 
 # srcs/printf
 SRCS += ft_printf.c

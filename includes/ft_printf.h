@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/19 14:01:01 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/20 15:59:25 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@
 # define MINUS_FLAG 0x10
 # define ZERO_FLAG 0x20
 
+# define NO_TYPE 0x0000
 # define CHAR_TYPE 0x0007
 # define CHARACTER_TYPE 0x0001
 # define NB_TYPE 0x01F8
@@ -60,9 +61,9 @@
 enum e_state
 {
 	E_STANDARD,
-	E_MOD,
-	E_WIDTH,
-	E_PRECISION,
+//	E_MOD,
+//	E_WIDTH,
+//	E_PRECISION,
 	E_CONV,
 	E_END,
 };
@@ -118,7 +119,7 @@ char		*fill_unknown(t_machine *machine);
 
 size_t		apply_converter(t_machine *machine);
 char		*character(va_list aptr);
-char		*string(va_list aptr, ssize_t precision);
+char		*string(va_list aptr);
 char		*percentage(void);
 char		*low_hex(unsigned long nb);
 char		*up_hex(unsigned long nb);

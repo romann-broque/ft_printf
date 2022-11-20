@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/19 14:03:21 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/20 15:51:04 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	conv_state(t_machine *machine)
 	machine->state = E_STANDARD;
 	return (offset);
 }
-
+/*
 size_t mod_state(t_machine *machine)
 {
 	const char	curr_c = *machine->input;
@@ -87,7 +87,7 @@ size_t	precision_state(t_machine *machine)
 		machine->state = E_CONV;
 	return (input_offset);
 }
-
+*/
 size_t	standard_state(t_machine *machine)
 {
 	const char	curr_c = *machine->input;
@@ -95,7 +95,7 @@ size_t	standard_state(t_machine *machine)
 	if (curr_c == END_CHAR)
 		machine->state = E_END;
 	else if (curr_c == *OPTION_CHAR)
-		machine->state = E_MOD;
+		machine->state = E_CONV;
 	else
 		cpy_data(machine->output, (char *)machine->input, sizeof(char));
 	return (1);
