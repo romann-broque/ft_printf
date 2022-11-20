@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/20 15:51:04 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/20 16:11:42 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ size_t	conv_state(t_machine *machine)
 	size_t	offset;
 
 	offset = apply_converter(machine);
+	machine->arg->type = NO_TYPE;
 	machine->arg->flags = NO_FLAG;
 	machine->arg->width = 0;
 	machine->arg->precision = UNSET_PRECISION;
