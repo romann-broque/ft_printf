@@ -56,7 +56,7 @@ test2: FFFFFFFF
 test3: 0
 
 -----ADDRESS TESTS-----
-test1: 0x4d07c0
+test1: 0x402916
 test2: (nil)
 <------------------------------------------------------->
 
@@ -117,5 +117,5 @@ test2: FFFFFFFF
 test3: 0
 
 -----ADDRESS TESTS-----
-test1: 0x4d07c0
+test1: 0x402916
 test2: (nil)
