@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 23:29:01 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 12:04:13 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/21 17:06:14 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ static void	test2(void)
 	printf("\n");
 }
 
-static void	test3(void)
+static void	test1_bonus(void)
 {
-	const char	*test_name = "test3: ";
+	const char	*test_name = "test1_bonus: ";
 	const char	*str = "%+#  p";
 	char		*ptr;
 
@@ -57,9 +57,9 @@ static void	test3(void)
 	printf("\n");
 }
 
-static void	test4(void)
+static void	test2_bonus(void)
 {
-	const char	*test_name = "test4: ";
+	const char	*test_name = "test2_bonus: ";
 	const char	*str = "% p";
 	char		*ptr;
 
@@ -79,6 +79,6 @@ void	address_tests(void)
 	printf(ADDRESS_TESTS);
 	test1();
 	test2();
-	test3();
-	test4();
+//	test1_bonus();
+//	test2_bonus();
 }

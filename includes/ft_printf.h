@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/21 16:44:44 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/21 16:57:57 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,16 +124,8 @@ char		*integer_d(va_list aptr);
 char		*integer_i(va_list aptr);
 char		*u_integer(va_list nb);
 char		*low_hex(va_list aptr);
-char		*up_hex(unsigned long nb);
-char		*address(unsigned long nb);
-
-// converters/type
-
-char		*character_type(t_arg *arg);
-char		*nb_type(t_arg *arg);
-char		*signed_type(t_arg *arg);
-char		*unsigned_type(t_arg *arg);
-char		*hex_type(t_arg *arg, unsigned long nb);
+char		*up_hex(va_list nb);
+char		*address(va_list nb);
 
 // states
 
@@ -142,6 +134,15 @@ size_t		mod_state(t_machine *machine);
 size_t		width_state(t_machine *machine);
 size_t		precision_state(t_machine *machine);
 size_t		standard_state(t_machine *machine);
+
+/*
+// converters/type
+
+char		*character_type(t_arg *arg);
+char		*nb_type(t_arg *arg);
+char		*signed_type(t_arg *arg);
+char		*unsigned_type(t_arg *arg);
+char		*hex_type(t_arg *arg, unsigned long nb);
 
 // flags
 
@@ -157,37 +158,38 @@ char		*get_precision(ssize_t precision, char *string);
 // get_size
 
 void		get_widthsize(t_machine *machine, ssize_t option_index);
+*/
 
 // tocase_str
 
-char		*toupper_str(char *str);
-char		*tolower_str(char *str);
+char			*toupper_str(char *str);
+char			*tolower_str(char *str);
 
 // itoa_base
 
-size_t		get_nbsize(unsigned long nb, const size_t len_base);
-char		*itoa_base(const unsigned long nb, const char *base);
+size_t			get_nbsize(unsigned long nb, const size_t len_base);
+char			*itoa_base(const unsigned long nb, const char *base);
 
 // get_abs
 
 unsigned int	get_abs(int nb);
-char	*add_str(char *s1, const char *s2, const size_t n);
 
 // utils
 
-size_t		reduce_size(size_t width, char *str);
-ssize_t		get_index(const char *str, const char c);
-char		*to_string(const char c);
+size_t			reduce_size(size_t width, char *str);
+ssize_t			get_index(const char *str, const char c);
+char			*to_string(const char c);
 
 // strings
 
-char	*strset(int c, size_t n);
-char	*ft_strndup(const char *str, const size_t size);
+char			*strset(int c, size_t n);
+char			*ft_strndup(const char *str, const size_t size);
+char			*add_str(char *s1, const char *s2, const size_t n);
 
 // cpy_data
 
-void		cpy_data(t_output *output, void *data, size_t n);
-void		cpy_to_buffer(t_machine *machine, char *string);
-void		prefix_add(char *prefix, char **string);
+void			cpy_data(t_output *output, void *data, size_t n);
+void			cpy_to_buffer(t_machine *machine, char *string);
+void			prefix_add(char *prefix, char **string);
 
 #endif

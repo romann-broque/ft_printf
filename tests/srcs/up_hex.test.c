@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 20:22:17 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 11:07:22 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/21 17:02:35 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ static void	test3(void)
 	printf("\n");
 }
 
-static void	test4(void)
+static void	test1_bonus(void)
 {
-	const char	*test_name = "test4: ";
+	const char	*test_name = "test1_bonus: ";
 	const char	*str = "%#+X";
 	const unsigned int	nb = 0;
 
@@ -72,9 +72,9 @@ static void	test4(void)
 	printf("\n");
 }
 
-static void	test5(void)
+static void	test2_bonus(void)
 {
-	const char	*test_name = "test5: ";
+	const char	*test_name = "test2_bonus: ";
 	const char	*str = "%#    +X";
 	const unsigned int	nb = 9134;
 
@@ -94,6 +94,8 @@ void	up_hex_tests(void)
 	test1();
 	test2();
 	test3();
-	test4();
-	test5();
+/*
+	test1_bonus();
+	test2_bonus();
+*/
 }
