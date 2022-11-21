@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 19:28:24 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/20 16:00:05 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/21 14:51:33 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,8 @@ int	ft_vdprintf(int fd, const char *str, va_list aptr)
 	output = machine->output;
 	while (machine->state != E_END)
 		machine->input += state_function[machine->state](machine);
-	output->final_str = ft_strnjoin(output->final_str,
-			output->buffer, output->index + 1);
-	ret_val = write(fd, output->final_str,
-		output->nbof_buffer * BUFFER_SIZE + output->index);
+	output->final_str = add_str(output->final_str, output->buffer, output->index);
+	ret_val = write(fd, output->final_str, output->nbof_buffer * BUFFER_SIZE + output->index);
 	free_machine(machine);
 	return (ret_val);
 }

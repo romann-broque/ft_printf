@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/20 15:57:26 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/21 12:26:05 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ SRCS += tocase_str.c
 SRCS += itoa_base.c
 SRCS += get_abs.c
 SRCS += cpy_data.c
+SRCS += add_str.c
 
 vpath %.c $(PATH_SRCS)
 

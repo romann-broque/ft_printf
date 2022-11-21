@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/20 18:13:22 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/21 12:25:51 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,6 +172,7 @@ char		*itoa_base(const unsigned long nb, const char *base);
 // get_abs
 
 unsigned int	get_abs(int nb);
+char	*add_str(char *s1, const char *s2, const size_t n);
 
 // utils
 

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:35:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/20 16:04:41 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/21 15:01:54 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,38 @@ static void	test4(void)
 static void	test5(void)
 {
 	const char	*test_name = "test5: ";
+	const char	*str = "%cp";
+	const char	character = '\0';
+
+	ft_printf(test_name);
+	ft_printf(str, character);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, character);
+	printf("\n");
+}
+
+static void	test6(void)
+{
+	const char	*test_name = "test6: ";
+	const char	*str = "%c%c%c%";
+	const char	character = '\0';
+	const char	character2 = '\0';
+	const char	character3 = 1;
+
+	ft_printf(test_name);
+	ft_printf(str, character, character2, character3);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, character, character2, character3);
+	printf("\n");
+}
+
+static void	test7(void)
+{
+	const char	*test_name = "test7: ";
 	const char	*str = "c%c%c%";
 	const char	character = '\0';
 	const char	character2 = '\0';
@@ -164,6 +196,8 @@ void	character_tests(void)
 	test3();
 	test4();
 	test5();
+	test6();
+	test7();
 /*
 	test1_bonus();
 	test2_bonus();
