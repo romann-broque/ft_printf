@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:13:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 21:03:55 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/21 16:38:18 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,9 @@ static void	test5(void)
 	printf("\n");
 }
 
-static void	test6(void)
+static void	test1_bonus(void)
 {
-	const char	*test_name = "test6: ";
+	const char	*test_name = "test1_bonus: ";
 	const char	*str = "%+ i";
 	const int nb = 114;
 
@@ -111,5 +111,5 @@ void	integer_ten_tests(void)
 	test3();
 	test4();
 	test5();
-	test6();
+//	test1_bonus();
 }

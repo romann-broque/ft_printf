@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:18:25 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/21 15:56:58 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/21 16:38:39 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static t_type	get_type(ssize_t index)
 
 size_t	apply_converter(t_machine *machine)
 {
-	static char	*(*conv[])() = {character, string, percentage, integer_d};
-//, integer_i, u_integer, low_hex, up_hex, address};
+	static char	*(*conv[])() = {character, string, percentage, integer_d, integer_i, u_integer};
+//, low_hex, up_hex, address};
 	const char	curr_c = *(machine->input);
 	ssize_t		index;
 	char		*string;

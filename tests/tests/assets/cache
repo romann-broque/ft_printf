@@ -31,6 +31,19 @@ test1: 247558
 test2: 2147483647
 test3: -2147483648
 test4: 0
+
+-----INTEGER TEN TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5: 114
+
+-----U_INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: 4294967295
+test4: 0
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -64,4 +77,17 @@ test4: % %%%
 test1: 247558
 test2: 2147483647
 test3: -2147483648
+test4: 0
+
+-----INTEGER TEN TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5: 114
+
+-----U_INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: 4294967295
 test4: 0
