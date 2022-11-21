@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:28:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 18:20:54 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/21 15:19:17 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,9 +176,9 @@ static void	test11(void)
 	printf("\n");
 }
 
-static void	test12(void)
+static void	test1_bonus(void)
 {
-	const char	*test_name = "test12: ";
+	const char	*test_name = "test1_bonus: ";
 	const char	*str1 = "%s    \n";
 	const char	*str2 = "";
 
@@ -191,9 +191,9 @@ static void	test12(void)
 	printf("\n");
 }
 
-static void	test13(void)
+static void	test2_bonus(void)
 {
-	const char	*test_name = "test13: ";
+	const char	*test_name = "test2_bonus: ";
 	const char	*str1 = "%s    \n%s	% sa sdasdasdSSSSSS";
 	const char	*str2 = "";
 	const char	*str3 = "asdasd";
@@ -208,9 +208,9 @@ static void	test13(void)
 	printf("\n");
 }
 
-static void	test14(void)
+static void	test3_bonus(void)
 {
-	const char	*test_name = "test14: ";
+	const char	*test_name = "test3_bonus: ";
 	const char	*str1 = "%.2s";
 	const char	*str2 = "Hello";
 
@@ -223,9 +223,9 @@ static void	test14(void)
 	printf("\n");
 }
 
-static void	test15(void)
+static void	test4_bonus(void)
 {
-	const char	*test_name = "test15: ";
+	const char	*test_name = "test4_bonus: ";
 	const char	*str1 = "%.5s";
 	const char	*str2 = NULL;
 
@@ -252,9 +252,11 @@ void	string_tests(void)
 	test8();
 	test9();
 	test10();
-	test11();
-	test12();
-	test13();
-	test14();
-	//test15();
+//	test11();
+/*
+	test1_bonus();
+	test2_bonus();
+	test3_bonus();
+	test4_bonus();
+*/
 }

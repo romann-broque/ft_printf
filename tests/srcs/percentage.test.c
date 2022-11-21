@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:23:17 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/13 17:01:59 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/21 15:24:37 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,9 @@ static void	test4(void)
 	printf("\n");
 }
 
-static void	test5(void)
+static void	test1_bonus(void)
 {
-	const char	*test_name = "test5: ";
+	const char	*test_name = "test1_bonus: ";
 	const char	*str = "qw%% %%%%% %; v%% % %jjjj%%% %%rqwqqvsf";
 
 	ft_printf(test_name);
@@ -82,9 +82,9 @@ static void	test5(void)
 	printf("\n");
 }
 
-static void	test6(void)
+static void	test2_bonus(void)
 {
-	const char	*test_name = "test6: ";
+	const char	*test_name = "test2_bonus: ";
 	const char	*str = "qw%%  \n%%%%%     %; v%% % %jjjj%%% %%rqwqqvsf";
 
 	ft_printf(test_name);
@@ -96,9 +96,9 @@ static void	test6(void)
 	printf("\n");
 }
 
-static void	test7(void)
+static void	test3_bonus(void)
 {
-	const char	*test_name = "test7: ";
+	const char	*test_name = "test3_bonus: ";
 	const char	*str = "qw%%  \n%10%  39%%%     %; v%% % %jjjj%%% %%rqwqqvsf";
 
 	ft_printf(test_name);
@@ -119,7 +119,9 @@ void	percentage_tests(void)
 	test2();
 	test3();
 	test4();
-	test5();
-	test6();
-	test7();
+/*
+	test1_bonus();
+	test2_bonus();
+	test3_bonus();
+*/
 }

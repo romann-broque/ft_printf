@@ -7,6 +7,24 @@ test4: Charlotte
 test5: p
 test6: 
 test7: c
+
+-----STRING TESTS-----
+test1: wouah
+test2: wouincredibleah
+test3: wouincredible
+test4: wou
+test5: wou
+test6: wouincredible
+test7: wou%
+test8: wou%wincredible
+test9: 
+test10: (null)
+
+-----PERCENTAGE TESTS-----
+test1: %
+test2: % %%
+test3: % %%
+test4: % %%%
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -17,3 +35,21 @@ test4: Charlotte
 test5: p
 test6: 
 test7: c
+
+-----STRING TESTS-----
+test1: wouah
+test2: wouincredibleah
+test3: wouincredible
+test4: wou
+test5: wou
+test6: wouincredible
+test7: wou%
+test8: wou%wincredible
+test9: 
+test10: (null)
+
+-----PERCENTAGE TESTS-----
+test1: %
+test2: % %%
+test3: % %%
+test4: % %%%
