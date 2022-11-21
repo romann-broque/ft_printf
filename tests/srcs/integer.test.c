@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:03:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 11:19:00 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/21 16:20:14 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,9 @@ static void	test4(void)
 	printf("\n");
 }
 
-static void	test5(void)
+static void	test1_bonus(void)
 {
-	const char	*test_name = "test5: ";
+	const char	*test_name = "test1_bonus: ";
 	const char	*str = "%d % d %d";
 	const int	nb1 = 0;
 	const int	nb2 = -1234018;
@@ -89,9 +89,9 @@ static void	test5(void)
 	printf("\n");
 }
 
-static void	test6(void)
+static void	test2_bonus(void)
 {
-	const char	*test_name = "test6: ";
+	const char	*test_name = "test2_bonus: ";
 	const char	*str = "%+  d % +d %d";
 	const int	nb1 = 0;
 	const int	nb2 = -1234018;
@@ -106,9 +106,9 @@ static void	test6(void)
 	printf("\n");
 }
 
-static void	test7(void)
+static void	test3_bonus(void)
 {
-	const char	*test_name = "test7: ";
+	const char	*test_name = "test3_bonus: ";
 	const char	*str = "%+  d % +d % +d %++ +++d";
 	const int	nb1 = 0;
 	const int	nb2 = -1234018;
@@ -124,9 +124,9 @@ static void	test7(void)
 	printf("\n");
 }
 
-static void	test8(void)
+static void	test4_bonus(void)
 {
-	const char	*test_name = "test8: ";
+	const char	*test_name = "test4_bonus: ";
 	const char	*str = "% d % -d %- d %++ +++d";
 	const int	nb1 = 0;
 	const int	nb2 = 1234018;
@@ -142,9 +142,9 @@ static void	test8(void)
 	printf("\n");
 }
 
-static void	test9(void)
+static void	test5_bonus(void)
 {
-	const char	*test_name = "test9: ";
+	const char	*test_name = "test5_bonus: ";
 	const char	*str = "% -d %-d";
 	const int	nb1 = 10;
 	const int	nb2 = -1234018;
@@ -158,9 +158,9 @@ static void	test9(void)
 	printf("\n");
 }
 
-static void	test10(void)
+static void	test6_bonus(void)
 {
-	const char	*test_name = "test10: ";
+	const char	*test_name = "test6_bonus: ";
 	const char	*str = "% -d %d";
 	const int	nb1 = 10;
 	const int	nb2 = 34018;
@@ -174,9 +174,9 @@ static void	test10(void)
 	printf("\n");
 }
 
-static void	test11(void)
+static void	test7_bonus(void)
 {
-	const char	*test_name = "test11: ";
+	const char	*test_name = "test7_bonus: ";
 	const char	*str = "% -d %10d";
 	const int	nb1 = 10;
 	const int	nb2 = 34018;
@@ -190,9 +190,9 @@ static void	test11(void)
 	printf("\n");
 }
 
-static void	test12(void)
+static void	test8_bonus(void)
 {
-	const char	*test_name = "test12: ";
+	const char	*test_name = "test8_bonus: ";
 	const char	*str = "% -d %     9d%10d";
 	const int	nb1 = -12349510;
 	const int	nb2 = INT_MAX;
@@ -207,9 +207,9 @@ static void	test12(void)
 	printf("\n");
 }
 
-static void	test13(void)
+static void	test9_bonus(void)
 {
-	const char	*test_name = "test13: ";
+	const char	*test_name = "test9_bonus: ";
 	const char	*str = "RESULTAT -> %d,,,,, %d%d%d,,,   ----%d";
 	const int	nb1 = -12349510;
 	const int	nb2 = INT_MAX;
@@ -226,9 +226,9 @@ static void	test13(void)
 	printf("\n");
 }
 
-static void	test14(void)
+static void	test10_bonus(void)
 {
-	const char	*test_name = "test14: ";
+	const char	*test_name = "test10_bonus: ";
 	const char	*str = "RESULTAT -> %d%34d%d%1000d%d";
 	const int	nb1 = -12349510;
 	const int	nb2 = INT_MAX;
@@ -245,9 +245,9 @@ static void	test14(void)
 	printf("\n");
 }
 
-static void	test15(void)
+static void	test11_bonus(void)
 {
-	const char	*test_name = "test15: ";
+	const char	*test_name = "test11_bonus: ";
 	const char	*str = "RESULTAT -> %-0 +23d%34d%d%-1000d%d";
 	const int	nb1 = -12349510;
 	const int	nb2 = INT_MAX;
@@ -264,9 +264,9 @@ static void	test15(void)
 	printf("\n");
 }
 
-static void	test16(void)
+static void	test12_bonus(void)
 {
-	const char	*test_name = "test16: ";
+	const char	*test_name = "test12_bonus: ";
 	const char	*str = "RESULTAT -> %-50.42d";
 	const int	nb1 = 12349510;
 
@@ -279,9 +279,9 @@ static void	test16(void)
 	printf("\n");
 }
 
-static void	test17(void)
+static void	test13_bonus(void)
 {
-	const char	*test_name = "test17: ";
+	const char	*test_name = "test13_bonus: ";
 	const char	*str = "RESULTAT -> %.10d";
 	const int	nb1 = 42;
 
@@ -294,9 +294,9 @@ static void	test17(void)
 	printf("\n");
 }
 
-static void	test18(void)
+static void	test14_bonus(void)
 {
-	const char	*test_name = "test18: ";
+	const char	*test_name = "test14_bonus: ";
 	const char	*str = "RESULTAT -> %.d";
 	const int	nb1 = 42;
 
@@ -309,9 +309,9 @@ static void	test18(void)
 	printf("\n");
 }
 
-static void	test19(void)
+static void	test15_bonus(void)
 {
-	const char	*test_name = "test19: ";
+	const char	*test_name = "test15_bonus: ";
 	const char	*str = "RESULTAT -> %.2147483648d";
 	const int	nb1 = 42;
 
@@ -324,9 +324,9 @@ static void	test19(void)
 	printf("\n");
 }
 
-static void	test20(void)
+static void	test16_bonus(void)
 {
-	const char	*test_name = "test20: ";
+	const char	*test_name = "test16_bonus: ";
 	const char	*str = "%.rd";
 	const int	nb1 = -5;
 	const int	nb2 = 12;
@@ -340,9 +340,9 @@ static void	test20(void)
 	printf("\n");
 }
 
-static void	test21(void)
+static void	test17_bonus(void)
 {
-	const char	*test_name = "test21: ";
+	const char	*test_name = "test17_bonus: ";
 	const char	*str = "%.d";
 	const int	nb1 = 0;
 
@@ -363,6 +363,7 @@ void	integer_tests(void)
 	test2();
 	test3();
 	test4();
+/*
 	test5();
 	test6();
 	test7();
@@ -380,4 +381,5 @@ void	integer_tests(void)
 	test19();
 	test20();
 	test21();
+*/
 }

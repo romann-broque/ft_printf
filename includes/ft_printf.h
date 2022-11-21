@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/21 12:25:51 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/21 16:14:43 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
 # define END_CHAR '\0'
 # define PLUS_SIGN "+"
 # define MINUS_SIGN "-"
-# define NIL_DEF "(nil)"
 # define WIDTH_UNIT " 0"
 # define HEX "0123456789abcdef"
 # define DEC "0123456789"
@@ -121,10 +120,10 @@ size_t		apply_converter(t_machine *machine);
 char		*character(va_list aptr);
 char		*string(va_list aptr);
 char		*percentage(void);
-char		*low_hex(unsigned long nb);
+char		*low_hex(va_list aptr);
 char		*up_hex(unsigned long nb);
 char		*address(unsigned long nb);
-char		*integer_d(int nb);
+char		*integer_d(va_list aptr);
 char		*integer_i(int nb);
 char		*u_integer(unsigned int nb);
 

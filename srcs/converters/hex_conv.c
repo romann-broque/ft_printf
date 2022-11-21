@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   hex_conv.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 15:36:42 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/21 15:43:46 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/21 15:26:06 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/21 15:28:25 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.test.h"
+#include "ft_printf.h"
 
-int	main(void)
+char	*low_hex(va_list aptr)
 {
-	printf(SEPARATOR);
-	character_tests();
-	string_tests();
-	percentage_tests();
-	integer_tests();
-/*
-	integer_ten_tests();
-	u_integer_tests();
-	low_hex_tests();
-	up_hex_tests();
-	address_tests();
-*/
-	return (EXIT_SUCCESS);
+	const unsigned int	nb = va_arg(aptr, unsigned int);
+	char				*output;
+
+	output = NULL;
+	if (nb == 0)
+		output = ft_strdup(NULL_DEF);
+	else
+		output = itoa_base(nb, HEX);
+	return (output);
 }
