@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/21 16:57:57 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/22 20:00:26 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,12 +120,12 @@ size_t		apply_converter(t_machine *machine);
 char		*character(va_list aptr);
 char		*string(va_list aptr);
 char		*percentage(void);
-char		*integer_d(va_list aptr);
-char		*integer_i(va_list aptr);
-char		*u_integer(va_list nb);
-char		*low_hex(va_list aptr);
-char		*up_hex(va_list nb);
-char		*address(va_list nb);
+char		*integer_d(int nb);
+char		*integer_i(int nb);
+char		*u_integer(unsigned long nb);
+char		*low_hex(unsigned int nb);
+char		*up_hex(unsigned int nb);
+char		*address(void *address);
 
 // states
 
@@ -135,10 +135,9 @@ size_t		width_state(t_machine *machine);
 size_t		precision_state(t_machine *machine);
 size_t		standard_state(t_machine *machine);
 
-/*
 // converters/type
 
-char		*character_type(t_arg *arg);
+char		*char_type(t_arg *arg);
 char		*nb_type(t_arg *arg);
 char		*signed_type(t_arg *arg);
 char		*unsigned_type(t_arg *arg);
@@ -158,7 +157,6 @@ char		*get_precision(ssize_t precision, char *string);
 // get_size
 
 void		get_widthsize(t_machine *machine, ssize_t option_index);
-*/
 
 // tocase_str
 

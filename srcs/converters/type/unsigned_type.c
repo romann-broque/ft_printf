@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char_conv.c                                        :+:      :+:    :+:   */
+/*   unsigned_type.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 15:31:32 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/22 20:00:10 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/22 14:42:59 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/22 14:43:01 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*character(va_list aptr)
+char	*unsigned_type(t_arg *arg)
 {
-	const int	c = va_arg(aptr, int);
+	const unsigned long	nb = va_arg(arg->aptr, unsigned long);
+	char				*conv_out;
+	char				*output;
 
-	return (to_string(c));
-}
-
-char	*string(va_list aptr)
-{
-	const char	*str = va_arg(aptr, char *);
-
-	if (str == NULL)
-		return(ft_strdup(NULL_DEF));
-	else
-		return (ft_strdup(str));
-}
-
-char	*percentage(void)
-{
-	return (to_string(*OPTION_CHAR));
+	output = NULL;
+	if (nb != 0 || arg->precision != 0)
+	{
+		if (arg->type & HEX_TYPE)
+			conv_out = hex_type(arg, nb);
+		else
+			conv_out = u_integer(nb);
+		output = ft_strnjoin(output, conv_out, ft_strlen(conv_out));
+		free(conv_out);
+	}
+	return (output);
 }

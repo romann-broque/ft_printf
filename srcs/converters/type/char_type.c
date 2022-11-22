@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char_conv.c                                        :+:      :+:    :+:   */
+/*   char_type.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 15:31:32 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/22 20:00:10 by rbroque          ###   ########.fr       */
+/*   Created: 2022/11/22 14:45:01 by rbroque           #+#    #+#             */
+/*   Updated: 2022/11/22 19:59:29 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*character(va_list aptr)
+char	*char_type(t_arg *arg)
 {
-	const int	c = va_arg(aptr, int);
+	static char		*(*converters[])() = {character, string, percentage};
+	size_t			type_index;
 
-	return (to_string(c));
-}
-
-char	*string(va_list aptr)
-{
-	const char	*str = va_arg(aptr, char *);
-
-	if (str == NULL)
-		return(ft_strdup(NULL_DEF));
-	else
-		return (ft_strdup(str));
-}
-
-char	*percentage(void)
-{
-	return (to_string(*OPTION_CHAR));
+	type_index = get_index_from_type(arg->type, CHAR_TYPE);
+	return (converters[type_index](arg->aptr));
 }

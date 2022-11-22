@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/21 16:14:26 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/22 19:15:20 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,12 @@ SRCS += hex_conv.c
 SRCS += nb_conv.c
 
 # srcs/converters/type
+SRCS += nb_type.c
+SRCS += char_type.c
+SRCS += hex_type.c
+SRCS += unsigned_type.c
+SRCS += signed_type.c
+SRCS += get_type.c
 
 # srcs/core
 SRCS += machine_struct.c

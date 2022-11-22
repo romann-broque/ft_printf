@@ -6,29 +6,26 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:26:06 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/21 17:16:10 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/22 18:53:36 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*low_hex(va_list aptr)
+char	*low_hex(unsigned int nb)
 {
-	const unsigned int	nb = va_arg(aptr, unsigned int);
-
 	return (itoa_base(nb, HEX));
 }
 
-char	*up_hex(va_list aptr)
+char	*up_hex(unsigned int nb)
 {
-	return (toupper_str(low_hex(aptr)));
+	return (toupper_str(low_hex(nb)));
 }
 
-char	*address(va_list aptr)
+char	*address(void *address)
 {
-	const void			*address = va_arg(aptr, void *);
-	char				*output;
-	char				*nb_str;
+	char	*output;
+	char	*nb_str;
 
 	if (address == NULL)
 		output = ft_strdup(NIL_DEF);

@@ -6,17 +6,16 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:57:19 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/21 16:44:58 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/22 18:56:30 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*integer_d(va_list aptr)
+char	*integer_d(int nb)
 {
-	const int	nb = va_arg(aptr, int);
-	char		*nb_str;
-	char		*output;
+	char	*nb_str;
+	char	*output;
 
 	output = NULL;
 	if (nb < 0)
@@ -27,16 +26,15 @@ char	*integer_d(va_list aptr)
 	return (output);
 }
 
-char	*integer_i(va_list aptr)
+char	*integer_i(int nb)
 {
-	return (integer_d(aptr));
+	return (integer_d(nb));
 }
 
-char	*u_integer(va_list aptr)
+char	*u_integer(unsigned long nb)
 {
-	const unsigned int	nb = va_arg(aptr, unsigned int);
-	char				*nb_str;
-	char				*output;
+	char	*nb_str;
+	char	*output;
 
 	output = NULL;
 	nb_str = itoa_base(nb, DEC);
