@@ -55,6 +55,28 @@ test14_bonus: RESULTAT -> 42
 test15_bonus: RESULTAT -> 
 test16_bonus: %.0rd
 test17_bonus: 
+test18_bonus: -003
+
+-----INTEGER TEN TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5: 114
+
+-----U_INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: 4294967295
+test4: 0
+test1_bonus: 3 125
+test2_bonus: 3 125
+test3_bonus:  125
+
+-----LOW HEX TESTS-----
+test1: 3c706
+test2: ffffffff
+test3: 0
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -113,3 +135,25 @@ test14_bonus: RESULTAT -> 42
 test15_bonus: RESULTAT -> 
 test16_bonus: %.0rd
 test17_bonus: 
+test18_bonus: -003
+
+-----INTEGER TEN TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5: 114
+
+-----U_INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: 4294967295
+test4: 0
+test1_bonus: 3 125
+test2_bonus: 3 125
+test3_bonus:  125
+
+-----LOW HEX TESTS-----
+test1: 3c706
+test2: ffffffff
+test3: 0

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:35:26 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 16:00:06 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/23 16:27:30 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ char	*nb_type(t_arg *arg)
 	char			*output;
 
 	output = NULL;
-	conv_out = converters[type_index](arg);
+	conv_out = NULL;
+	if (arg->precision <= INT_MAX)
+		conv_out = converters[type_index](arg);
 	if (conv_out != NULL)
 	{
 		output = ft_strnjoin(output, conv_out, ft_strlen(conv_out));
