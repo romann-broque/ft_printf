@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 14:08:34 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/23 14:26:17 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,10 @@ size_t	width_state(t_machine *machine)
 		machine->arg->width = atol(machine->input); //code ft_atol function
 		input_offset = get_nbsize(machine->arg->width, 10);
 	}
-	//machine->state = E_PRECISION;
-	machine->state = E_CONV;
+	machine->state = E_PRECISION;
 	return (input_offset);
 }
 
-/*
 size_t	precision_state(t_machine *machine)
 {
 	size_t	input_offset;
@@ -89,7 +87,7 @@ size_t	precision_state(t_machine *machine)
 		machine->state = E_CONV;
 	return (input_offset);
 }
-*/
+
 size_t	standard_state(t_machine *machine)
 {
 	const char	curr_c = *machine->input;

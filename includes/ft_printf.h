@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 14:15:29 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/23 14:35:13 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ enum e_state
 	E_STANDARD,
 	E_MOD,
 	E_WIDTH,
-//	E_PRECISION,
+	E_PRECISION,
 	E_CONV,
 	E_END,
 };
@@ -118,7 +118,7 @@ char		*fill_unknown(t_machine *machine);
 
 size_t		apply_converter(t_machine *machine);
 char		*character(va_list aptr);
-char		*string(va_list aptr);
+char		*string(va_list aptr, ssize_t precision);
 char		*percentage(void);
 char		*integer_d(int nb);
 char		*integer_i(int nb);

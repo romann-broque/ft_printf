@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:28:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 13:58:27 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/23 14:36:49 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,7 +194,7 @@ static void	test1_bonus(void)
 static void	test2_bonus(void)
 {
 	const char	*test_name = "test2_bonus: ";
-	const char	*str1 = "%s    \n%s	% sa sdasdasdSSSSSS";
+	const char	*str1 = "%s    %s	% sa sdasdasdSSSSSS";
 	const char	*str2 = "";
 	const char	*str3 = "asdasd";
 	const char	*str4 = "ougiouhug";
@@ -253,10 +253,10 @@ void	string_tests(void)
 	test9();
 	test10();
 //	test11();
-/*
-	test1_bonus();
+//	test1_bonus();
 	test2_bonus();
 	test3_bonus();
 	test4_bonus();
+/*
 */
 }

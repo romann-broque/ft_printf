@@ -11,6 +11,21 @@ test1_bonus: e
 test2_bonus: 
 test3_bonus: casd
 test4_bonus: casccd
+
+-----STRING TESTS-----
+test1: wouah
+test2: wouincredibleah
+test3: wouincredible
+test4: wou
+test5: wou
+test6: wouincredible
+test7: wou%
+test8: wou%wincredible
+test9: 
+test10: (null)
+test2_bonus:     asdasd	ougiouhuga sdasdasdSSSSSS
+test3_bonus: He
+test4_bonus: 
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -25,3 +40,18 @@ test1_bonus: e
 test2_bonus: 
 test3_bonus: casd
 test4_bonus: casccd
+
+-----STRING TESTS-----
+test1: wouah
+test2: wouincredibleah
+test3: wouincredible
+test4: wou
+test5: wou
+test6: wouincredible
+test7: wou%
+test8: wou%wincredible
+test9: 
+test10: (null)
+test2_bonus:     asdasd	ougiouhuga sdasdasdSSSSSS
+test3_bonus: He
+test4_bonus: 
