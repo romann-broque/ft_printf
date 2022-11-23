@@ -31,6 +31,33 @@ test1: 247558
 test2: 2147483647
 test3: -2147483648
 test4: 0
+
+-----INTEGER TEN TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5: 114
+
+-----U_INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: 4294967295
+test4: 0
+
+-----LOW HEX TESTS-----
+test1: 3c706
+test2: ffffffff
+test3: 0
+
+-----UP HEX TESTS-----
+test1: 3C706
+test2: FFFFFFFF
+test3: 0
+
+-----ADDRESS TESTS-----
+test1: 0x402916
+test2: (nil)
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -65,3 +92,30 @@ test1: 247558
 test2: 2147483647
 test3: -2147483648
 test4: 0
+
+-----INTEGER TEN TESTS-----
+test1: 247558
+test2: 2147483647
+test3: -2147483648
+test4: 0
+test5: 114
+
+-----U_INTEGER TESTS-----
+test1: 247558
+test2: 2147483647
+test3: 4294967295
+test4: 0
+
+-----LOW HEX TESTS-----
+test1: 3c706
+test2: ffffffff
+test3: 0
+
+-----UP HEX TESTS-----
+test1: 3C706
+test2: FFFFFFFF
+test3: 0
+
+-----ADDRESS TESTS-----
+test1: 0x402916
+test2: (nil)
