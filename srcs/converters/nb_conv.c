@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 15:57:19 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/22 18:56:30 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/23 13:03:57 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ char	*integer_i(int nb)
 
 char	*u_integer(unsigned long nb)
 {
-	char	*nb_str;
-	char	*output;
+	char				*nb_str;
+	char				*output;
 
 	output = NULL;
 	nb_str = itoa_base(nb, DEC);
