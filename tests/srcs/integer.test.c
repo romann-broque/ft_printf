@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:03:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/21 16:20:14 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/23 16:03:34 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -363,23 +363,23 @@ void	integer_tests(void)
 	test2();
 	test3();
 	test4();
+	test1_bonus();
+	test2_bonus();
+	test3_bonus();
+	test4_bonus();
+	test5_bonus();
+	test6_bonus();
+	test7_bonus();
+	test8_bonus();
+	test9_bonus();
+	test10_bonus();
+	test11_bonus();
+	test12_bonus();
+	test13_bonus();
+	test14_bonus();
+	test15_bonus();
+	test16_bonus();
+	test17_bonus();
 /*
-	test5();
-	test6();
-	test7();
-	test8();
-	test9();
-	test10();
-	test11();
-	test12();
-	test13();
-	test14();
-	test15();
-	test16();
-	test17();
-	test18();
-	test19();
-	test20();
-	test21();
 */
 }

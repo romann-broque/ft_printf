@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:18:25 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/22 20:07:00 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/23 16:02:28 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ size_t	apply_converter(t_machine *machine)
 	char		*string;
 
 	index = get_index(OPTIONS, curr_c);
-	if (index != -1)
+	if (index != -1 && machine->arg->precision <= INT_MAX)
 	{
 		machine->arg->type = get_type(index);
 		string = conv[!(machine->arg->type & CHAR_TYPE)](machine->arg->aptr);

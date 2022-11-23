@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:43:25 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 13:05:02 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/23 15:55:46 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ char	*signed_type(t_arg *arg)
 	const int		nb = va_arg(arg->aptr, int);
 	char			*conv_out;
 	char			*output;
+	char			*precision_part;
 
 	output = NULL;
 	if (nb != 0 || arg->precision != 0)
@@ -30,8 +31,13 @@ char	*signed_type(t_arg *arg)
 			else if (arg->flags & SPACE_FLAG)
 				output = ft_strdup(SPACE_PAT);
 		}
+		else
+				output = ft_strdup(MINUS_SIGN);
 		conv_out = converters[type_index](nb);
+		precision_part = get_precision(arg->precision, conv_out);
+		output = ft_strnjoin(output, precision_part, ft_strlen(precision_part));
 		output = ft_strnjoin(output, conv_out, ft_strlen(conv_out));
+		free(precision_part);
 		free(conv_out);
 	}
 	return (output);

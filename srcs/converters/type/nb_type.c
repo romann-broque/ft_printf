@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:35:26 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 13:06:48 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/23 16:00:06 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ char	*nb_type(t_arg *arg)
 	conv_out = converters[type_index](arg);
 	if (conv_out != NULL)
 	{
-//		output = get_precision(arg->precision, conv_out);
 		output = ft_strnjoin(output, conv_out, ft_strlen(conv_out));
 		if (arg->flags & PREFIX_FLAG)
 		{
