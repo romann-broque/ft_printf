@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 13:00:48 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/23 14:15:29 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@
 enum e_state
 {
 	E_STANDARD,
-//	E_MOD,
-//	E_WIDTH,
+	E_MOD,
+	E_WIDTH,
 //	E_PRECISION,
 	E_CONV,
 	E_END,
@@ -174,7 +174,7 @@ unsigned int	get_abs(int nb);
 
 // utils
 
-size_t			reduce_size(size_t width, char *str);
+size_t			reduce_size(size_t width, size_t size);
 ssize_t			get_index(const char *str, const char c);
 char			*to_string(const char c);
 

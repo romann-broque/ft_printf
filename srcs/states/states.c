@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/20 16:11:42 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/23 14:08:34 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	conv_state(t_machine *machine)
 	machine->state = E_STANDARD;
 	return (offset);
 }
-/*
+
 size_t mod_state(t_machine *machine)
 {
 	const char	curr_c = *machine->input;
@@ -39,8 +39,7 @@ size_t mod_state(t_machine *machine)
 		++input_offset; //input_offset+=ft_strlen(flag)
 	}
 	else
-	//	machine->state = E_WIDTH;
-		machine->state = E_CONV;
+		machine->state = E_WIDTH;
 	return (input_offset);
 }
 
@@ -54,10 +53,12 @@ size_t	width_state(t_machine *machine)
 		machine->arg->width = atol(machine->input); //code ft_atol function
 		input_offset = get_nbsize(machine->arg->width, 10);
 	}
-	machine->state = E_PRECISION;
+	//machine->state = E_PRECISION;
+	machine->state = E_CONV;
 	return (input_offset);
 }
 
+/*
 size_t	precision_state(t_machine *machine)
 {
 	size_t	input_offset;
@@ -96,7 +97,7 @@ size_t	standard_state(t_machine *machine)
 	if (curr_c == END_CHAR)
 		machine->state = E_END;
 	else if (curr_c == *OPTION_CHAR)
-		machine->state = E_CONV;
+		machine->state = E_MOD;
 	else
 		cpy_data(machine->output, (char *)machine->input, sizeof(char));
 	return (1);

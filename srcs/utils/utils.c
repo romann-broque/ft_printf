@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 17:18:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 20:12:35 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/23 14:15:22 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,12 @@ char	*to_string(const char c)
 	return (str);
 }
 
-size_t	reduce_size(size_t width, char *str)
+size_t	reduce_size(size_t width, size_t size)
 {
-	const size_t len = ft_strlen(str);
-
-	if (width <= len)
+	if (width <= size)
 		width = 0;
 	else
-		width -= len;
+		width -= size;
 	return (width);
 }
 
