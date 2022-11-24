@@ -56,6 +56,11 @@ test15_bonus: RESULTAT ->
 test16_bonus: %.0rd
 test17_bonus: 
 test18_bonus: -003
+test19_bonus:      -3
+test20_bonus: -000000047
+test21_bonus: 000000000
+test22_bonus: -42 
+test23_bonus:           
 
 -----INTEGER TEN TESTS-----
 test1: 247558
@@ -77,6 +82,23 @@ test3_bonus:  125
 test1: 3c706
 test2: ffffffff
 test3: 0
+test1_bonus: 0
+test2_bonus: 23ae
+test3_bonus: 0x00000000000023ae
+test4_bonus: 0x00000000000023ae
+
+-----UP HEX TESTS-----
+test1: 3C706
+test2: FFFFFFFF
+test3: 0
+test1_bonus: 0
+test2_bonus: 0X23AE
+
+-----ADDRESS TESTS-----
+test1: 0x23ae0000007d
+test2: (nil)
+test1_bonus: (nil)
+test2_bonus:  0xffffffffffffffff
 <------------------------------------------------------->
 
 -----CHAR TESTS-----
@@ -136,6 +158,11 @@ test15_bonus: RESULTAT ->
 test16_bonus: %.0rd
 test17_bonus: 
 test18_bonus: -003
+test19_bonus:      -3
+test20_bonus: -000000047
+test21_bonus: 000000000
+test22_bonus: -42 
+test23_bonus:           
 
 -----INTEGER TEN TESTS-----
 test1: 247558
@@ -157,3 +184,20 @@ test3_bonus:  125
 test1: 3c706
 test2: ffffffff
 test3: 0
+test1_bonus: 0
+test2_bonus: 23ae
+test3_bonus: 0x00000000000023ae
+test4_bonus: 0x00000000000023ae
+
+-----UP HEX TESTS-----
+test1: 3C706
+test2: FFFFFFFF
+test3: 0
+test1_bonus: 0
+test2_bonus: 0X23AE
+
+-----ADDRESS TESTS-----
+test1: 0x23ae0000007d
+test2: (nil)
+test1_bonus: (nil)
+test2_bonus:  0xffffffffffffffff

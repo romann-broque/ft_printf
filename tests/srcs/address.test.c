@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 23:29:01 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/21 17:06:14 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/23 22:21:14 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ void	address_tests(void)
 	printf(ADDRESS_TESTS);
 	test1();
 	test2();
-//	test1_bonus();
-//	test2_bonus();
+	test1_bonus();
+	test2_bonus();
+/*
+*/
 }

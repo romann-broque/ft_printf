@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:03:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 21:57:56 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/24 14:35:33 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -370,6 +370,81 @@ static void	test18_bonus(void)
 	printf("\n");
 }
 
+static void	test19_bonus(void)
+{
+	const char	*test_name = "test19_bonus: ";
+	const char	*str = "%7.1d";
+	const int	nb1 = -3;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1);
+	printf("\n");
+}
+
+static void	test20_bonus(void)
+{
+	const char	*test_name = "test20_bonus: ";
+	const char	*str = "%04.9d";
+	const int	nb1 = -47;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1);
+	printf("\n");
+}
+
+static void	test21_bonus(void)
+{
+	const char	*test_name = "test21_bonus: ";
+	const char	*str = "%-04.9d";
+	const int	nb1 = 0;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1);
+	printf("\n");
+}
+
+static void	test22_bonus(void)
+{
+	const char	*test_name = "test22_bonus: ";
+	const char	*str = "%-4.d";
+	const int	nb1 = -42;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1);
+	printf("\n");
+}
+
+static void	test23_bonus(void)
+{
+	const char	*test_name = "test23_bonus: ";
+	const char	*str = "%-10.d";
+	const int	nb1 = 0;
+
+	ft_printf(test_name);
+	ft_printf(str, nb1);
+	ft_printf("\n");
+
+	printf(test_name);
+	printf(str, nb1);
+	printf("\n");
+}
+
 void	integer_tests(void)
 {
 	ft_printf(INTEGER_TESTS);
@@ -396,6 +471,11 @@ void	integer_tests(void)
 	test16_bonus();
 	test17_bonus();
 	test18_bonus();
+	test19_bonus();
+	test20_bonus();
+	test21_bonus();
+	test22_bonus();
+	test23_bonus();
 /*
 */
 }

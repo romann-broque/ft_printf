@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:55:48 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 21:57:14 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/24 12:41:51 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	add_width(char **output, t_arg *arg)
 	{
 		if (arg->flags & MINUS_FLAG)
 		{
-			*output = add_str(*output, width_part,  ft_strlen(width_part));
+			*output = add_str(*output, width_part, arg->width);
 			free(width_part);
 		}
 		else
@@ -82,4 +82,6 @@ void	add_width(char **output, t_arg *arg)
 			free(tmp);
 		}
 	}
+	else
+		free(width_part);
 }
