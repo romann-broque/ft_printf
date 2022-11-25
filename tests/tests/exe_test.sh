@@ -9,32 +9,29 @@ if [ -z "$1" ]; then
 	exit 1
 fi
 
-echo "<--------- TEST ---------->"
+echo -e "\n<--------- TEST ---------->\n\n"
 
 ### CHECK TESTS
 
 BIN=$1
-CACHE="./tests/assets/cache"
+CACHE1="./tests/assets/cache1"
+CACHE2="./tests/assets/cache2"
 
-for arg in "$@"; do
-	if [ "${arg}" != "${BIN}" ]; then
-		ARGS+="${arg} "
-	fi
-done
+echo "" > ${CACHE1}
+echo "" > ${CACHE2}
 
-echo "$(./${BIN} ${ARGS})" > ${CACHE}
+./${BIN}
 
 ### RETURN_VALUE 
 
-PROGRAM="./tests/is_same"
-
-IS_SAME=$(${PROGRAM} ${CACHE})
+IS_SAME=$(diff -a ${CACHE1} ${CACHE2})
 RET=$?
 
 if [ "${RET}" == "0" ]; then
 	echo -e "${GREEN}OK${NC}"
 else
-	cat ${CACHE}
+	echo ${IS_SAME}
+	echo -e "\n\n"
 	echo -e "${RED}KO${NC}"
 fi
 

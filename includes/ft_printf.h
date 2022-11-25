@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/25 12:41:47 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/25 15:05:14 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,10 @@ typedef struct s_machine
 // ft_vdprintf
 
 int			ft_vdprintf(int fd, const char *str, va_list aptr);
+
+// ft_dprintf
+
+int			ft_dprintf(int fd, const char *str, ...);
 
 // ft_printf
 

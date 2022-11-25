@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:31:19 by rbroque           #+#    #+#             */
-/*   Updated: 2022/10/17 16:14:50 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/25 14:39:07 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@
 # define INTEGER_TEN_TESTS "\n-----INTEGER TEN TESTS-----\n"
 # define PERCENTAGE_TESTS "\n-----PERCENTAGE TESTS-----\n"
 
-void	string_tests(void);
-void	character_tests(void);
-void	low_hex_tests(void);
-void	up_hex_tests(void);
-void	address_tests(void);
-void	integer_tests(void);
-void	u_integer_tests(void);
-void	integer_ten_tests(void);
-void	percentage_tests(void);
+void	string_tests(int fd1, int fd2);
+void	character_tests(int fd1, int fd2);
+void	low_hex_tests(int fd1, int fd2);
+void	up_hex_tests(int fd1, int fd2);
+void	address_tests(int fd1, int fd2);
+void	integer_tests(int fd1, int fd2);
+void	u_integer_tests(int fd1, int fd2);
+void	integer_ten_tests(int fd1, int fd2);
+void	percentage_tests(int fd1, int fd2);
 
 #endif

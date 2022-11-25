@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/23 15:56:08 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/25 14:59:21 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,7 @@ SRCS += cpy_to_buffer.c
 
 # srcs/printf
 SRCS += ft_printf.c
+SRCS += ft_dprintf.c
 SRCS += ft_vdprintf.c
 
 # srcs/states

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:36:42 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/25 12:59:38 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/25 15:29:31 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,24 @@
 
 int	main(void)
 {
-	printf(SEPARATOR);
-	character_tests();
-	string_tests();
-	percentage_tests();
-	integer_tests();
-	integer_ten_tests();
-	u_integer_tests();
-	low_hex_tests();
-	up_hex_tests();
-	address_tests();
+	int	fd1;
+	int	fd2;
+
+	fd1 = open("tests/assets/cache1", O_WRONLY);
+	fd2 = open("tests/assets/cache2", O_WRONLY);
+	character_tests(fd1, fd2);
+/*
+	string_tests(fd1, fd2);
+	percentage_tests(fd1, fd2);
+	integer_tests(fd1, fd2);
+	integer_ten_tests(fd1, fd2);
+	u_integer_tests(fd1, fd2);
+	low_hex_tests(fd1, fd2);
+	up_hex_tests(fd1, fd2);
+	address_tests(fd1, fd2);
+*/
+	close(fd1);
+	close(fd2);
 /*
 */
 	return (EXIT_SUCCESS);

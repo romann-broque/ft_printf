@@ -6,43 +6,43 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:35:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 13:58:38 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/25 15:15:37 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.test.h"
 
-static void	test1(void)
+static void	test1(int fd1, int fd2)
 {
 	const char	*test_name = "test1: ";
 	const char	*str = "%c";
 	const char	character = 'a';
 
-	ft_printf(test_name);
-	ft_printf(str, character);
-	ft_printf("\n");
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, character);
+	ft_dprintf(fd1, "\n");
 
-	printf(test_name);
-	printf(str, character);
-	printf("\n");
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, character);
+	dprintf(fd2, "\n");
 }
 
-static void	test2(void)
+static void	test2(int fd1, int fd2)
 {
 	const char	*test_name = "test2: ";
 	const char	*str = "%c";
 	const unsigned char	character = UCHAR_MAX;
 
-	ft_printf(test_name);
-	ft_printf(str, character);
-	ft_printf("\n");
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, character);
+	ft_dprintf(fd1, "\n");
 
-	printf(test_name);
-	printf(str, character);
-	printf("\n");
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, character);
+	dprintf(fd2, "\n");
 }
 
-static void	test3(void)
+static void	test3(int fd1, int fd2)
 {
 	const char	*test_name = "test3: ";
 	const char	*str = "%c %c %c %c %c";
@@ -52,46 +52,46 @@ static void	test3(void)
 	const char	character4 = '9';
 	const char	character5 = '1';
 
-	ft_printf(test_name);
-	ft_printf(str, character1, character2, character3, character4, character5);
-	ft_printf("\n");
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, character1, character2, character3, character4, character5);
+	ft_dprintf(fd1, "\n");
 
-	printf(test_name);
-	printf(str, character1, character2, character3, character4, character5);
-	printf("\n");
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, character1, character2, character3, character4, character5);
+	dprintf(fd2, "\n");
 }
 
-static void	test4(void)
+static void	test4(int fd1, int fd2)
 {
 	const char	*test_name = "test4: ";
 	const char	*str = "Charlott%c";
 	const char	character = 'e';
 
-	ft_printf(test_name);
-	ft_printf(str, character);
-	ft_printf("\n");
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, character);
+	ft_dprintf(fd1, "\n");
 
-	printf(test_name);
-	printf(str, character);
-	printf("\n");
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, character);
+	dprintf(fd2, "\n");
 }
 
-static void	test5(void)
+static void	test5(int fd1, int fd2)
 {
 	const char	*test_name = "test5: ";
 	const char	*str = "%cp";
 	const char	character = '\0';
 
-	ft_printf(test_name);
-	ft_printf(str, character);
-	ft_printf("\n");
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, character);
+	ft_dprintf(fd1, "\n");
 
-	printf(test_name);
-	printf(str, character);
-	printf("\n");
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, character);
+	dprintf(fd2, "\n");
 }
 
-static void	test6(void)
+static void	test6(int fd1, int fd2)
 {
 	const char	*test_name = "test6: ";
 	const char	*str = "%c%c%c%";
@@ -99,109 +99,121 @@ static void	test6(void)
 	const char	character2 = '\0';
 	const char	character3 = 1;
 
-	ft_printf(test_name);
-	ft_printf(str, character, character2, character3);
-	ft_printf("\n");
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, character, character2, character3);
+	ft_dprintf(fd1, "\n");
 
-	printf(test_name);
-	printf(str, character, character2, character3);
-	printf("\n");
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, character, character2, character3);
+	dprintf(fd2, "\n");
 }
 
-static void	test7(void)
+static void	test7(int fd1, int fd2)
 {
 	const char	*test_name = "test7: ";
 	const char	*str = "c%c%c%";
 	const char	character = '\0';
 	const char	character2 = '\0';
 
-	ft_printf(test_name);
-	ft_printf(str, character, character2);
-	ft_printf("\n");
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, character, character2);
+	ft_dprintf(fd1, "\n");
 
-	printf(test_name);
-	printf(str, character, character2);
-	printf("\n");
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, character, character2);
+	dprintf(fd2, "\n");
 }
 
 // BONUS
-static void	test1_bonus(void)
+static void	test1_bonus(int fd1, int fd2)
 {
 	const char	*test_name = "test1_bonus: ";
 	const char	*str = "%   -0c";
 	const char	character = 'e';
 
-	ft_printf(test_name);
-	ft_printf(str, character);
-	ft_printf("\n");
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, character);
+	ft_dprintf(fd1, "\n");
 
-	printf(test_name);
-	printf(str, character);
-	printf("\n");
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, character);
+	dprintf(fd2, "\n");
 }
 
-static void	test2_bonus(void)
+static void	test2_bonus(int fd1, int fd2)
 {
 	const char	*test_name = "test2_bonus: ";
 	const char	*str = "% c";
 	const char	character = '\0';
 
-	ft_printf(test_name);
-	ft_printf(str, character);
-	ft_printf("\n");
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, character);
+	ft_dprintf(fd1, "\n");
 
-	printf(test_name);
-	printf(str, character);
-	printf("\n");
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, character);
+	dprintf(fd2, "\n");
 }
 
-static void	test3_bonus(void)
+static void	test3_bonus(int fd1, int fd2)
 {
 	const char	*test_name = "test3_bonus: ";
 	const char	*str = "c% casd";
 	const char	character = '\0';
 
-	ft_printf(test_name);
-	ft_printf(str, character);
-	ft_printf("\n");
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, character);
+	ft_dprintf(fd1, "\n");
 
-	printf(test_name);
-	printf(str, character);
-	printf("\n");
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, character);
+	dprintf(fd2, "\n");
 }
 
-static void	test4_bonus(void)
+static void	test4_bonus(int fd1, int fd2)
 {
 	const char	*test_name = "test4_bonus: ";
 	const char	*str = "c% cas%       cccd";
 	const char	character = '\0';
 	const char	character2 = '\0';
 
-	ft_printf(test_name);
-	ft_printf(str, character, character2);
-	ft_printf("\n");
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, character, character2);
+	ft_dprintf(fd1, "\n");
 
-	printf(test_name);
-	printf(str, character, character2);
-	printf("\n");
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, character, character2);
+	dprintf(fd2, "\n");
 }
 
-
-void	character_tests(void)
+static void	test_what(int fd1, int fd2)
 {
-	ft_printf(CHAR_TESTS);
-	printf(CHAR_TESTS);
-	test1();
-	test2();
-	test3();
-	test4();
-	test5();
-	test6();
-	test7();
-	test1_bonus();
-	test2_bonus();
-	test3_bonus();
-	test4_bonus();
+	const char	*test_name = "test4_bonus: ";
+	const char	*str = "c% cas%       cccd";
+	const char	character = '\0';
+	const char	character2 = '\0';
+
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, character, character2);
+	dprintf(fd2, "\n");
+}
+
+void	character_tests(int fd1, int fd2)
+{
+	ft_dprintf(fd1, CHAR_TESTS);
+	dprintf(fd2, CHAR_TESTS);
+	test1(fd1, fd2);
+	test2(fd1, fd2);
+	test3(fd1, fd2);
+	test4(fd1, fd2);
+	test5(fd1, fd2);
+	test6(fd1, fd2);
+	test7(fd1, fd2);
+	test1_bonus(fd1, fd2);
+	test2_bonus(fd1, fd2);
+	test3_bonus(fd1, fd2);
+	test4_bonus(fd1, fd2);
+	test_what(fd1, fd2);
 /*
 */
 }

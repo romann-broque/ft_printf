@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 10:14:45 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/21 11:53:24 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/25 14:56:13 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,16 @@ PATH_SRCS += tests/
 # CHECKS
 
 CHECK_SRCS += main.c
-CHECK_SRCS += string.test.c
 CHECK_SRCS += character.test.c
-CHECK_SRCS += low_hex.test.c
-CHECK_SRCS += up_hex.test.c
-CHECK_SRCS += address.test.c
-CHECK_SRCS += integer.test.c
-CHECK_SRCS += u_integer.test.c
-CHECK_SRCS += integer_ten.test.c
-CHECK_SRCS += percentage.test.c
+
+#CHECK_SRCS += string.test.c
+#CHECK_SRCS += low_hex.test.c
+#CHECK_SRCS += up_hex.test.c
+#CHECK_SRCS += address.test.c
+#CHECK_SRCS += integer.test.c
+#CHECK_SRCS += u_integer.test.c
+#CHECK_SRCS += integer_ten.test.c
+#CHECK_SRCS += percentage.test.c
 
 # FINAL_SRCS
 
