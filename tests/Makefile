@@ -6,12 +6,11 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/31 10:14:45 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/25 14:56:13 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/25 15:52:51 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = tests/exe
-FINAL_NAME = tests/is_same
 
 ########## SRCS
 
@@ -22,19 +21,16 @@ PATH_SRCS += tests/
 
 CHECK_SRCS += main.c
 CHECK_SRCS += character.test.c
-
-#CHECK_SRCS += string.test.c
-#CHECK_SRCS += low_hex.test.c
-#CHECK_SRCS += up_hex.test.c
-#CHECK_SRCS += address.test.c
-#CHECK_SRCS += integer.test.c
-#CHECK_SRCS += u_integer.test.c
-#CHECK_SRCS += integer_ten.test.c
-#CHECK_SRCS += percentage.test.c
+CHECK_SRCS += string.test.c
+CHECK_SRCS += percentage.test.c
+CHECK_SRCS += integer.test.c
+CHECK_SRCS += integer_ten.test.c
+CHECK_SRCS += u_integer.test.c
+CHECK_SRCS += low_hex.test.c
+CHECK_SRCS += up_hex.test.c
+CHECK_SRCS += address.test.c
 
 # FINAL_SRCS
-
-FINAL_CHECK_SRCS += is_same_output.c
 
 vpath %.c $(PATH_SRCS)
 
@@ -43,7 +39,6 @@ vpath %.c $(PATH_SRCS)
 PATH_CHECK_OBJS += objs
 
 CHECK_OBJS += $(patsubst %.c, $(PATH_CHECK_OBJS)/%.o, $(CHECK_SRCS))
-FINAL_CHECK_OBJS += $(patsubst %.c, $(PATH_CHECK_OBJS)/%.o, $(FINAL_CHECK_SRCS))
 
 ########## INCLUDES
 
@@ -81,15 +76,8 @@ endif
 
 ########## RULES
 
-all: $(NAME) $(FINAL_NAME)
+all: $(NAME)
 	./tests/exe_test.sh ./tests/exe
-
-$(FINAL_NAME): $(FINAL_CHECK_OBJS)
-	$(CC) $(CFLAGS) $^ $(LIB) $(LINKS) -o $@ -I $(LIB_INCLUDES) -I $(INCLUDES) -I $(CHECK_INCLUDES)
-
-$(FINAL_CHECK_OBJS): $(PATH_CHECK_OBJS)/%.o: %.c
-	@mkdir -p $(PATH_CHECK_OBJS)
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES) -I $(CHECK_INCLUDES) -I $(TEST_INCLUDES)
 
 $(NAME): $(CHECK_OBJS)
 	$(CC) $(CFLAGS) $^ $(LIB) $(LINKS) -o $@ -I $(LIB_INCLUDES) -I $(INCLUDES) -I $(CHECK_INCLUDES)
@@ -104,7 +92,6 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) $(FINAL_NAME)
 
 re: fclean
 	$(MAKE)
