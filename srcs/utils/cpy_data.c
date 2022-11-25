@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:46:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/21 14:41:01 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/24 15:31:58 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	build_new_buffer(t_output *output)
 {
 	output->final_str = add_str(output->final_str, output->buffer, BUFFER_SIZE);
-	++output->nbof_buffer;
+	output->total_size += BUFFER_SIZE;
 	ft_bzero(output->buffer, BUFFER_SIZE);
 }
 

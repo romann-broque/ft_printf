@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:43:25 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/24 14:39:55 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/24 15:45:17 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char	*signed_type(t_arg *arg)
 		precision_part = get_precision(arg->precision, conv_out);
 		output = ft_strnjoin(output, precision_part, ft_strlen(precision_part));
 		output = ft_strnjoin(output, conv_out, ft_strlen(conv_out));
+		arg->size = ft_strlen(output) + ((arg->flags & PLUS_FLAG) || (nb < 0) || (arg->flags & SPACE_FLAG));
 		free(precision_part);
 		free(conv_out);
 	}

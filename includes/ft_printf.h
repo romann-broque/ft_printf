@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 21:46:43 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/25 12:41:47 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "../libft/includes/libft.h"
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
+#  define BUFFER_SIZE 10
 # endif
 
 # define EMPTY_STRING ""
@@ -73,6 +73,7 @@ typedef uint8_t t_flag;
 typedef struct s_arg
 {
 	va_list	aptr;
+	size_t	size;
 	t_type	type;
 	t_flag	flags;
 	size_t	width;
@@ -83,7 +84,7 @@ typedef struct s_output
 {
 	char	buffer[BUFFER_SIZE + 1];
 	size_t	index;
-	size_t	nbof_buffer;
+	size_t	total_size;
 	char	*final_str;
 }				t_output;
 

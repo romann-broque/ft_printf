@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:55:48 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/24 14:59:07 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/24 15:45:38 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,7 @@ void	add_width(char **output, t_arg *arg)
 	char	width_unit;
 
 	size = 0;
-	if (*output != NULL)
-		size = ft_strlen(*output) + (**output == '\0' && arg->type & CHARACTER_TYPE);
-	arg->width = reduce_size(arg->width, size);
+	arg->width = reduce_size(arg->width, arg->size);
 	width_unit = get_width_unit(arg->flags, arg->type);
 	width_part = strset(width_unit, arg->width);
 	if (width_part != NULL && *width_part != '\0')

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:00:22 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/12 15:42:44 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/25 12:03:58 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
+# ifndef BUFFER_SIZE_GNL
+#  define BUFFER_SIZE_GNL 10000
 # endif
 # define OPEN_MAX FOPEN_MAX
 
