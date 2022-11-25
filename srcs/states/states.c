@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 14:26:17 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/25 19:33:28 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ size_t	precision_state(t_machine *machine)
 			cpy_data(machine->output, PRECISION_CHAR, sizeof(char));
 			output = integer_d(machine->arg->precision);
 			cpy_data(machine->output, output, ft_strlen(output));
+			printf("output --> %s\n", output);
+			printf("precision --> %ld\n", atol(machine->input + 1));
 			free(output);
 			machine->state = E_STANDARD;
 		}

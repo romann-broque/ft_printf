@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:03:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/25 15:45:03 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/25 19:29:57 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -463,16 +463,45 @@ static void	test24_bonus(int fd1, int fd2)
 static void	test25_bonus(int fd1, int fd2)
 {
 	const char	*test_name = "test25_bonus: ";
-	const char	*str = "azwsxdfhjl;./lkjhgfdszjmk,l.;l,kjhbugyvftcdrxsezasxrdcfvgbhjmk,pl.[;lpmonjibuyvtrewzsxruiop[oiuytrewqzexrnijmok,pkojihugyftcrewrio";
-//	const char	*str = "%010d";
-//	const int	nb1 = -4200;
+	const char	*str = "%0.d";
+	const int	nb1 = -4200;
 
 	ft_dprintf(fd1, test_name);
-	ft_dprintf(fd1, str);
+	ft_dprintf(fd1, str, nb1);
 	ft_dprintf(fd1, "\n");
 
 	dprintf(fd2, test_name);
-	dprintf(fd2, str);
+	dprintf(fd2, str, nb1);
+	dprintf(fd2, "\n");
+}
+
+static void	test26_bonus(int fd1, int fd2)
+{
+	const char	*test_name = "test26_bonus: ";
+	const char	*str = "%0.0d";
+	const int	nb1 = -4200;
+
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, nb1);
+	ft_dprintf(fd1, "\n");
+
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, nb1);
+	dprintf(fd2, "\n");
+}
+
+static void	test27_bonus(int fd1, int fd2)
+{
+	const char	*test_name = "test27_bonus: ";
+	const char	*str = "%0.01d";
+	const int	nb1 = -4560;
+
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, nb1);
+	ft_dprintf(fd1, "\n");
+
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, nb1);
 	dprintf(fd2, "\n");
 }
 
@@ -509,6 +538,8 @@ void	integer_tests(int fd1, int fd2)
 	test23_bonus(fd1, fd2);
 	test24_bonus(fd1, fd2);
 	test25_bonus(fd1, fd2);
+	test26_bonus(fd1, fd2);
+	test27_bonus(fd1, fd2);
 /*
 */
 }
