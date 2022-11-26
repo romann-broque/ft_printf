@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:03:15 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/26 15:49:17 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/26 16:37:45 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -535,6 +535,21 @@ static void	test29_bonus(int fd1, int fd2)
 	dprintf(fd2, "\n");
 }
 
+static void	test30_bonus(int fd1, int fd2)
+{
+	const char	*test_name = "test30_bonus: ";
+	const char	*str = "%42.d";
+	const int	nb1 = 0;
+
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, nb1);
+	ft_dprintf(fd1, "\n");
+
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, nb1);
+	dprintf(fd2, "\n");
+}
+
 void	integer_tests(int fd1, int fd2)
 {
 	ft_dprintf(fd1, INTEGER_TESTS);
@@ -572,6 +587,7 @@ void	integer_tests(int fd1, int fd2)
 	test27_bonus(fd1, fd2);
 	test28_bonus(fd1, fd2);
 	test29_bonus(fd1, fd2);
+	test30_bonus(fd1, fd2);
 /*
 */
 }

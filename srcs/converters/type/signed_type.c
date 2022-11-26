@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:43:25 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/26 16:01:15 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/26 16:41:07 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	add_beginning(int nb, char **output, t_arg *arg)
 {
 	if (arg->precision == UNSET_PRECISION && arg->flags & ZERO_FLAG && !(arg->flags & MINUS_FLAG))
 	{
-		add_width(output, arg);
+	add_width(output, arg);
 		add_sign(nb, output, arg);
 	}
 	else
