@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:02:10 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/25 19:33:28 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/26 15:37:53 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ size_t	precision_state(t_machine *machine)
 		if (ft_isdigit(machine->input[1]) != 0)
 		{
 			machine->arg->precision = atol(machine->input + 1); //code ft_atol function
-			input_offset += get_nbsize(machine->arg->precision, 10);
+			input_offset += get_precision_size(machine->input + 1, machine->arg);
 		}
 		else if (ft_strchr(OPTIONS, machine->input[1]) == NULL)
 		{
@@ -79,8 +79,6 @@ size_t	precision_state(t_machine *machine)
 			cpy_data(machine->output, PRECISION_CHAR, sizeof(char));
 			output = integer_d(machine->arg->precision);
 			cpy_data(machine->output, output, ft_strlen(output));
-			printf("output --> %s\n", output);
-			printf("precision --> %ld\n", atol(machine->input + 1));
 			free(output);
 			machine->state = E_STANDARD;
 		}

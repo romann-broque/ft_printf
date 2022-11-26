@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:54:34 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 15:56:34 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/26 15:37:38 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,16 @@ char	*get_precision(ssize_t precision, char *string)
 		precision = 0;
 	precision = reduce_size(precision, ft_strlen(string));
 	return (strset('0', precision));
+}
+
+size_t	get_precision_size(const char *input, const t_arg *arg)
+{
+	size_t	size;
+
+	size = 0;
+	while (input[size] == '0')
+		++size;
+	if (arg->precision > 0)
+		size += get_nbsize(arg->precision, 10);
+	return (size);
 }

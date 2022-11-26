@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/25 15:05:14 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/26 15:33:16 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,6 +158,7 @@ void		get_flag(t_flag *flags, const ssize_t flag_index);
 // precision
 
 char		*get_precision(ssize_t precision, char *string);
+size_t		get_precision_size(const char *input, const t_arg *arg);
 
 // get_size
 
