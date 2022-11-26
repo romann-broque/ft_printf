@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:55:48 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/25 19:25:09 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/26 15:59:17 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
    cpy_data(machine->output, width_part, ft_strlen(width_part));
    }
  */
-static char get_width_unit(t_flag flags, t_type type)
+static char get_width_unit(t_arg *arg, t_type type)
 {
-	if (flags & ZERO_FLAG && !(flags & MINUS_FLAG) && type & NB_TYPE)
+	if (arg->precision == UNSET_PRECISION && arg->flags & ZERO_FLAG && !(arg->flags & MINUS_FLAG) && type & NB_TYPE)
 		return (WIDTH_UNIT[1]);
 	return (WIDTH_UNIT[0]); 
 }
@@ -64,7 +64,7 @@ void	add_width(char **output, t_arg *arg)
 
 	size = 0;
 	arg->width = reduce_size(arg->width, arg->size);
-	width_unit = get_width_unit(arg->flags, arg->type);
+	width_unit = get_width_unit(arg, arg->type);
 	width_part = strset(width_unit, arg->width);
 	if (width_part != NULL && *width_part != '\0')
 	{
