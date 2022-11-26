@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:31:32 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/23 14:53:44 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/26 17:20:45 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static size_t	reduce_to_precision(size_t len, ssize_t precision)
 			final_len = precision;
 	return (final_len);
 }
+
 char	*character(va_list aptr)
 {
 	const int	c = va_arg(aptr, int);

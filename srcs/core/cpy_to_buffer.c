@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:55:48 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/26 16:40:56 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/26 17:39:51 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,6 @@ void	cpy_to_buffer(t_machine *machine, char *string)
 		size = ft_strlen(string) + (*string == '\0' && arg->type & CHARACTER_TYPE);
 	cpy_data(machine->output, string, size);
 }
-
-size_t	ft_strlen_sec(const char *str)
-{
-	size_t	len;
-
-	if (str != NULL)
-		len = ft_strlen(str);
-	else
-		len = 0;
-	return (len);
-}
-
 void	add_width(char **output, t_arg *arg)
 {
 	size_t	size;

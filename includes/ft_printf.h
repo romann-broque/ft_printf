@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/26 15:33:16 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/26 17:39:47 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,6 +186,7 @@ char			*to_string(const char c);
 
 // strings
 
+size_t			ft_strlen_sec(const char *str);
 char			*strset(int c, size_t n);
 char			*ft_strndup(const char *str, const size_t size);
 char			*add_str(char *s1, const char *s2, const size_t n);

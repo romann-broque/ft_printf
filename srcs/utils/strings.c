@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:06:23 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 19:48:21 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/26 17:39:01 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,15 @@ void	prefix_add(char *prefix, char **string)
 			*string = new;
 		}
 	}
+}
+
+size_t	ft_strlen_sec(const char *str)
+{
+	size_t	len;
+
+	if (str != NULL)
+		len = ft_strlen(str);
+	else
+		len = 0;
+	return (len);
 }

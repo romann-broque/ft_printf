@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:35:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/25 15:33:07 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/26 17:09:29 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,22 @@ static void	test7(int fd1, int fd2)
 	dprintf(fd2, "\n");
 }
 
+static void	test8(int fd1, int fd2)
+{
+	const char	*test_name = "test8: ";
+	const char	*str = "wouah%c%chello";
+	const char	character = '\0';
+	const char	character2 = '\0';
+
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, character, character2);
+	ft_dprintf(fd1, "\n");
+
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, character, character2);
+	dprintf(fd2, "\n");
+}
+
 // BONUS
 static void	test1_bonus(int fd1, int fd2)
 {
@@ -197,6 +213,7 @@ void	character_tests(int fd1, int fd2)
 	test5(fd1, fd2);
 	test6(fd1, fd2);
 	test7(fd1, fd2);
+	test8(fd1, fd2);
 	test1_bonus(fd1, fd2);
 	test2_bonus(fd1, fd2);
 	test3_bonus(fd1, fd2);
