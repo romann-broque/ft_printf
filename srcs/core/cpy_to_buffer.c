@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:55:48 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/26 18:26:29 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/27 19:16:01 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,10 @@ void	cpy_to_buffer(t_machine *machine, char *string)
 
 void	add_width(char **output, t_arg *arg)
 {
-	size_t	size;
 	char	*width_part;
 	char	*tmp;
 	char	width_unit;
 
-	size = 0;
 	arg->width = reduce_size(arg->width, arg->size);
 	width_unit = get_width_unit(arg, arg->type);
 	width_part = strset(width_unit, arg->width);

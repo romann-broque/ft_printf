@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:31:32 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/26 18:49:12 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/27 19:13:46 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ char	*string(t_arg *arg)
 	if (arg->precision != UNSET_PRECISION)
 		final_len = reduce_to_precision(final_len, arg->precision);
 	output = ft_strndup(str, final_len);
-	add_width(&output, arg);
 	return (output);
 }
 
