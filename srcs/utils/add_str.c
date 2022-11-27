@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:25:12 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/27 18:16:46 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/27 20:47:09 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,10 @@ char	*add_strn(char *s1, const size_t n1, const char *s2, const size_t n2)
 	new = (char *)malloc((len1 + len2 + 1) + sizeof(char));
 	if (new != NULL)
 	{
-		if (s1 != NULL)
-			ft_memcpy(new, (char *)s1, len1);
+		ft_memcpy(new, (char *)s1, len1);
 		ft_memcpy(new + len1, (char *)s2, len2);
 		new[len1 + len2] = '\0';
 	}
 	free(s1);
 	return (new);
-	
 }

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:55:48 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/27 19:16:01 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/27 21:12:25 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,46 +15,53 @@
 static char get_width_unit(t_arg *arg, t_type type)
 {
 	if (arg->precision == UNSET_PRECISION
-		&& arg->flags & ZERO_FLAG
-		&& !(arg->flags & MINUS_FLAG)
-		&& type & NB_TYPE)
+			&& arg->flags & ZERO_FLAG
+			&& !(arg->flags & MINUS_FLAG)
+			&& type & NB_TYPE)
 		return (WIDTH_UNIT[1]);
 	return (WIDTH_UNIT[0]); 
 }
 
-void	cpy_to_buffer(t_machine *machine, char *string)
+static size_t	get_output_size(const char *string, const t_arg *arg)
 {
 	size_t	size;
-	t_arg	*arg;
 
 	size = 0;
-	arg = machine->arg;
 	if (string != NULL)
 		size = ft_strlen(string)
 			+ (*string == '\0' && arg->type & CHARACTER_TYPE);
+	return (size);
+}
+
+void	cpy_to_buffer(t_machine *machine, char *string)
+{
+	const size_t	size = get_output_size(string, machine->arg);
+
 	cpy_data(machine->output, string, size);
 }
 
 void	add_width(char **output, t_arg *arg)
 {
-	char	*width_part;
-	char	*tmp;
-	char	width_unit;
+	char			*padding;
+	char			*tmp;
+	char			width_unit;
 
 	arg->width = reduce_size(arg->width, arg->size);
 	width_unit = get_width_unit(arg, arg->type);
-	width_part = strset(width_unit, arg->width);
-	if (width_part != NULL && *width_part != '\0')
+	padding = strset(width_unit, arg->width);
+	if (padding == NULL || *padding == '\0')
 	{
-		if (arg->flags & MINUS_FLAG)
-			*output = add_str(*output, width_part, arg->width);
-		else
-		{
-			tmp = *output;
-			*output = add_str(width_part, *output, ft_strlen_sec(*output));
-			width_part = NULL;
-			free(tmp);
-		}
+		free(padding);
+		return;
 	}
-	free(width_part);
+	if (arg->flags & MINUS_FLAG)
+		*output = add_str(*output, padding, arg->width);
+	else
+	{
+		tmp = *output;
+		*output = add_str(padding, *output, arg->size);
+		padding = NULL;
+		free(tmp);
+	}
+	free(padding);
 }
