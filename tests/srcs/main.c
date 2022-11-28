@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:36:42 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/27 20:46:49 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:06:42 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(void)
 	fd2 = open("tests/assets/cache2", O_WRONLY);
 	character_tests(fd1, fd2);
 	string_tests(fd1, fd2);
+/*
 	percentage_tests(fd1, fd2);
 	integer_tests(fd1, fd2);
 	integer_ten_tests(fd1, fd2);
@@ -28,7 +29,6 @@ int	main(void)
 	low_hex_tests(fd1, fd2);
 	up_hex_tests(fd1, fd2);
 	address_tests(fd1, fd2);
-/*
 */
 	close(fd1);
 	close(fd2);

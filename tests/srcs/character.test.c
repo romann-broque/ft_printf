@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 18:35:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/27 20:47:30 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:29:39 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,7 +236,6 @@ void	character_tests(int fd1, int fd2)
 {
 	ft_dprintf(fd1, CHAR_TESTS);
 	dprintf(fd2, CHAR_TESTS);
-/*
 	test1(fd1, fd2);
 	test2(fd1, fd2);
 	test3(fd1, fd2);
@@ -250,6 +249,7 @@ void	character_tests(int fd1, int fd2)
 	test3_bonus(fd1, fd2);
 	test4_bonus(fd1, fd2);
 	test5_bonus(fd1, fd2);
-*/
 	test6_bonus(fd1, fd2);
+/*
+*/
 }

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:13:20 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 18:18:18 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:25:57 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*fill_unknown(t_machine *machine)
 			string[0] = *OPTION_CHAR;
 		if (len > 1)
 			string[1] = *machine->input;
+		machine->arg->size += ft_strlen(string);
 	}
 	return (string);
 }

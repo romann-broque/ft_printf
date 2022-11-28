@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:31:32 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/27 19:13:46 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:28:49 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char	*character(t_arg *arg)
 {
 	const int	c = va_arg(arg->aptr, int);
 
+	arg->size += sizeof(char);
 	return (to_string(c));
 }
 
@@ -42,12 +43,17 @@ char	*string(t_arg *arg)
 		final_len = reduce_to_precision(len, arg->precision);
 		if (final_len < len)
 			final_len = 0;
-		return (ft_strndup(NULL_DEF, final_len));
+		output = ft_strndup(NULL_DEF, final_len);
 	}
-	final_len = ft_strlen(str);
-	if (arg->precision != UNSET_PRECISION)
-		final_len = reduce_to_precision(final_len, arg->precision);
-	output = ft_strndup(str, final_len);
+	else
+	{
+		final_len = ft_strlen(str);
+		if (arg->precision != UNSET_PRECISION)
+			final_len = reduce_to_precision(final_len, arg->precision);
+		output = ft_strndup(str, final_len);
+	}
+	if (output != NULL)
+		arg->size += ft_strlen(output);
 	return (output);
 }
 

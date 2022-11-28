@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:55:48 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/27 21:12:25 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:29:04 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,32 @@ static char get_width_unit(t_arg *arg, t_type type)
 	return (WIDTH_UNIT[0]); 
 }
 
-static size_t	get_output_size(const char *string, const t_arg *arg)
+size_t	get_output_size(const char *string, const t_arg *arg)
 {
 	size_t	size;
 
 	size = 0;
 	if (string != NULL)
-		size = ft_strlen(string)
-			+ (*string == '\0' && arg->type & CHARACTER_TYPE);
+	{
+		size = ft_strlen(string);
+		if (size == 0)
+			size = !(!(arg->type & CHARACTER_TYPE));
+	}
 	return (size);
 }
 
 void	cpy_to_buffer(t_machine *machine, char *string)
 {
-	const size_t	size = get_output_size(string, machine->arg);
+	const size_t	size = machine->arg->size;
 
 	cpy_data(machine->output, string, size);
 }
 
 void	add_width(char **output, t_arg *arg)
 {
-	char			*padding;
-	char			*tmp;
-	char			width_unit;
+	char	*padding;
+	char	*tmp;
+	char	width_unit;
 
 	arg->width = reduce_size(arg->width, arg->size);
 	width_unit = get_width_unit(arg, arg->type);
@@ -55,13 +58,14 @@ void	add_width(char **output, t_arg *arg)
 		return;
 	}
 	if (arg->flags & MINUS_FLAG)
-		*output = add_str(*output, padding, arg->width);
+		*output = add_strn(*output, arg->size, padding, arg->width);
 	else
 	{
 		tmp = *output;
-		*output = add_str(padding, *output, arg->size);
+		*output = add_strn(padding, arg->width, *output, arg->size);
 		padding = NULL;
 		free(tmp);
 	}
+	arg->size += arg->width;
 	free(padding);
 }

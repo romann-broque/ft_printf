@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/27 18:16:11 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:07:53 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -194,6 +194,7 @@ char			*add_strn(char *s1, const size_t n1, const char *s2, const size_t n2);
 
 // cpy_data
 
+size_t			get_output_size(const char *string, const t_arg *arg);
 void			cpy_data(t_output *output, void *data, size_t n);
 void			cpy_to_buffer(t_machine *machine, char *string);
 void			add_width(char **output, t_arg *arg);

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:45:01 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/27 20:41:07 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:21:47 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ char	*char_type(t_arg *arg)
 
 	type_index = get_index_from_type(arg->type, CHAR_TYPE);
 	output = converters[type_index](arg);
-	++arg->size;
 	add_width(&output, arg);
 	return (output);
 }
