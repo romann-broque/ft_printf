@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:55:48 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/28 17:29:04 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 18:01:05 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static char get_width_unit(t_arg *arg, t_type type)
 {
 	if (arg->precision == UNSET_PRECISION
+			&& (size_t)arg->precision > arg->width
 			&& arg->flags & ZERO_FLAG
 			&& !(arg->flags & MINUS_FLAG)
 			&& type & NB_TYPE)

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:08:51 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/25 15:48:53 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 18:03:11 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,37 @@ static void	test3_bonus(int fd1, int fd2)
 	dprintf(fd2, "\n");
 }
 
+static void	test4_bonus(int fd1, int fd2)
+{
+	const char	*test_name = "test4_bonus: ";
+	const char	*str = "%15.0u %-    u";
+	const unsigned int	nb1 = 0;
+	const unsigned int	nb2 = 125;
+
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, nb1, nb2);
+	ft_dprintf(fd1, "\n");
+
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, nb1, nb2);
+	dprintf(fd2, "\n");
+}
+
+static void	test5_bonus(int fd1, int fd2)
+{
+	const char	*test_name = "test5_bonus: ";
+	const char	*str = "%0.8u";
+	const unsigned int	nb1 = 1;
+
+	ft_dprintf(fd1, test_name);
+	ft_dprintf(fd1, str, nb1);
+	ft_dprintf(fd1, "\n");
+
+	dprintf(fd2, test_name);
+	dprintf(fd2, str, nb1);
+	dprintf(fd2, "\n");
+}
+
 void	u_integer_tests(int fd1, int fd2)
 {
 	ft_dprintf(fd1, U_INTEGER_TESTS);
@@ -131,4 +162,6 @@ void	u_integer_tests(int fd1, int fd2)
 	test1_bonus(fd1, fd2);
 	test2_bonus(fd1, fd2);
 	test3_bonus(fd1, fd2);
+	test4_bonus(fd1, fd2);
+	test5_bonus(fd1, fd2);
 }

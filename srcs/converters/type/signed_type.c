@@ -6,38 +6,11 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:43:25 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/26 16:41:07 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:49:21 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	add_sign(int nb, char **output, t_arg *arg)
-{
-	if (nb >= 0)
-	{
-		if (arg->flags & PLUS_FLAG)
-			prefix_add(PLUS_SIGN, output);
-		else if (arg->flags & SPACE_FLAG)
-			prefix_add(SPACE_PAT, output);
-	}
-	else
-		prefix_add(MINUS_SIGN, output);
-}
-
-void	add_beginning(int nb, char **output, t_arg *arg)
-{
-	if (arg->precision == UNSET_PRECISION && arg->flags & ZERO_FLAG && !(arg->flags & MINUS_FLAG))
-	{
-	add_width(output, arg);
-		add_sign(nb, output, arg);
-	}
-	else
-	{
-		add_sign(nb, output, arg);
-		add_width(output, arg);
-	}
-}
 
 char	*signed_type(t_arg *arg)
 {

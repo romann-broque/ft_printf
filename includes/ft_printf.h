@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/28 17:45:58 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:50:17 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,8 @@ size_t		standard_state(t_machine *machine);
 
 // converters/type
 
+void		add_sign(int nb, char **output, t_arg *arg);
+void		add_beginning(int nb, char **output, t_arg *arg);
 char		*char_type(t_arg *arg);
 char		*nb_type(t_arg *arg);
 char		*signed_type(t_arg *arg);
