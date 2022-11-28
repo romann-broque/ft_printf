@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:23:17 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/25 15:42:29 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:40:18 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,9 +119,9 @@ void	percentage_tests(int fd1, int fd2)
 	test2(fd1, fd2);
 	test3(fd1, fd2);
 	test4(fd1, fd2);
+	test1_bonus(fd1, fd2);
+	test2_bonus(fd1, fd2);
+//	test3_bonus(fd1, fd2);
 /*
-	test1_bonus();
-	test2_bonus();
-	test3_bonus();
 */
 }

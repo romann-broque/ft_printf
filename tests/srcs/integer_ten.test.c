@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:13:33 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/25 15:46:47 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:38:34 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,5 @@ void	integer_ten_tests(int fd1, int fd2)
 	test3(fd1, fd2);
 	test4(fd1, fd2);
 	test5(fd1, fd2);
-//	test1_bonus();
+	test1_bonus(fd1, fd2);
 }

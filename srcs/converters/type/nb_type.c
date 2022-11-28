@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:35:26 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/24 13:47:15 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:37:28 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,17 @@ char	*nb_type(t_arg *arg)
 		if (arg->flags & PREFIX_FLAG)
 		{
 			prefix_add(PREFIX_HEX, &output);
+			arg->size += ft_strlen(PREFIX_HEX);
 			if (arg->type & UP_TYPE)
 				output = toupper_str(output);
 		}	
 		if ((arg->flags & SPACE_FLAG)
 			&& !(arg->flags & PLUS_FLAG)
 			&& (arg->type & HEX_TYPE))
+		{
 			prefix_add(SPACE_PAT, &output);
+			arg->size += ft_strlen(SPACE_PAT);
+		}
 	}
 	free(conv_out);
 	return (output);

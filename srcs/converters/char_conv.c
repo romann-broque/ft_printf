@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:31:32 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/28 17:28:49 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:31:53 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ char	*string(t_arg *arg)
 	return (output);
 }
 
-char	*percentage(void)
+char	*percentage(t_arg *arg)
 {
+	arg->size += sizeof(char);
 	return (to_string(*OPTION_CHAR));
 }

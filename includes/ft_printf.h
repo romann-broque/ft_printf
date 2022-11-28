@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/28 17:07:53 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:32:06 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ char		*fill_unknown(t_machine *machine);
 size_t		apply_converter(t_machine *machine);
 char		*character(t_arg *arg);
 char		*string(t_arg *arg);
-char		*percentage(void);
+char		*percentage(t_arg *arg);
 char		*integer_d(int nb);
 char		*integer_i(int nb);
 char		*u_integer(unsigned long nb);
