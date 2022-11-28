@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 23:52:41 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/28 23:56:48 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/29 00:07:24 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,7 @@ NAME = libftprintf.a
 
 PATH_SRCS += srcs/
 PATH_SRCS += srcs/converters/
-PATH_SRCS += srcs/converters/type
 PATH_SRCS += srcs/struct/
-PATH_SRCS += srcs/modifiers/
 PATH_SRCS += srcs/printf/
 PATH_SRCS += srcs/states/
 PATH_SRCS += srcs/utils/
