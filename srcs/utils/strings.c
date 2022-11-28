@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:06:23 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/28 23:18:50 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/29 00:29:02 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,19 @@ char	*to_string(const char c)
 	{
 		str[0] = c;
 		str[1] = '\0';
+	}
+	return (str);
+}
+
+char	*toupper_str(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		str[i] = ft_toupper(str[i]);
+		++i;
 	}
 	return (str);
 }

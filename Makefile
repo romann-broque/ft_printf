@@ -6,7 +6,7 @@
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/28 23:52:41 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/29 00:07:24 by rbroque          ###   ########.fr        #
+#    Updated: 2022/11/29 00:28:43 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,6 @@ SRCS += states_utils.c
 
 # srcs/utils
 SRCS += strings.c
-SRCS += tocase_str.c
 SRCS += itoa_base.c
 SRCS += cpy_data.c
 SRCS += get_nb_data.c
@@ -76,7 +75,6 @@ CC = cc
 CFLAGS += -Wall
 CFLAGS += -Werror
 CFLAGS += -Wextra
-CFLAGS += -fPIE
 
 LINKS += -lft
 

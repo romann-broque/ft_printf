@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/28 23:46:12 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/29 00:28:38 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,11 +111,6 @@ char		*address(va_list nb);
 size_t		conv_state(t_machine *machine);
 size_t		standard_state(t_machine *machine);
 
-// tocase_str
-
-char		*toupper_str(char *str);
-char		*tolower_str(char *str);
-
 // itoa_base
 
 char		*itoa_base(const unsigned long nb, const char *base);
@@ -130,6 +125,7 @@ char		*add_str(char *s1, const char *s2, const size_t n);
 char		*ft_strndup(const char *str, const size_t size);
 ssize_t		get_index(const char *str, const char c);
 char		*to_string(const char c);
+char		*toupper_str(char *str);
 
 // cpy_data
 
