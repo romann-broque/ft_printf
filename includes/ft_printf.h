@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/28 17:32:06 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 17:45:58 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@
 
 # define NO_TYPE 0x0000
 # define CHAR_TYPE 0x0007
+# define PERCENTAGE_TYPE 0x0004
 # define CHARACTER_TYPE 0x0001
 # define NB_TYPE 0x01F8
 # define SIGNED_TYPE 0x0018
