@@ -6,13 +6,13 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 14:55:19 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/28 23:22:41 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 23:39:48 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_arg		*init_arg(t_type type, va_list aptr)
+t_arg	*init_arg(t_type type, va_list aptr)
 {
 	t_arg	*new;
 

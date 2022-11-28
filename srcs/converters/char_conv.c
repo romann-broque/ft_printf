@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 15:31:32 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/20 15:50:30 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 23:42:44 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*string(va_list aptr)
 
 	str = va_arg(aptr, char *);
 	if (str == NULL)
-		return(ft_strdup(NULL_DEF));
+		return (ft_strdup(NULL_DEF));
 	else
 		return (ft_strdup(str));
 }
