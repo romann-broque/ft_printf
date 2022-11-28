@@ -5,7 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              ##    Updated: 2022/11/28 23:24:06 by rbroque          ###   ########.fr        #
+#    Created: 2022/11/28 23:52:41 by rbroque           #+#    #+#              #
+#    Updated: 2022/11/28 23:56:48 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,16 +69,14 @@ LIB = $(LIB_FOLDER)/libft.a
 
 INCLUDES += includes/
 INCLUDES_LIB = $(LIB_FOLDER)/includes/
-
-### CHECK
-
-CHECK_FOLDER = tests/
+HEADER = $(INCLUDES)/ft_printf.h
 
 ### COMPILATION
 
 CC = cc
 
 CFLAGS += -Wall
+CFLAGS += -Werror
 CFLAGS += -Wextra
 CFLAGS += -fPIE
 
@@ -85,10 +84,6 @@ LINKS += -lft
 
 ifneq ($(noerror), 1)
 	CFLAGS += -Werror
-endif
-
-ifeq ($(everything), true)
-	CFLAGS += -Weverything
 endif
 
 ifeq ($(debug), true)
@@ -111,23 +106,18 @@ $(OBJS): $(PATH_OBJS)/%.o: %.c $(HEADER)
 	@mkdir -p $(PATH_OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES) -I $(INCLUDES_LIB)
 
-test: $(NAME)
-	$(MAKE) -sC $(CHECK_FOLDER) $(IS_BONUS)
-
 clean:
 	$(RM) -R $(PATH_OBJS)
 	$(MAKE) -sC $(LIB_FOLDER) clean
-	$(MAKE) -sC $(CHECK_FOLDER) fclean
 
 fclean: clean
 	$(RM) $(NAME)
 	$(MAKE) -sC $(LIB_FOLDER) fclean
-	$(MAKE) -sC $(CHECK_FOLDER) fclean
 
 re: fclean
 	$(MAKE)
 
 norm:
-	@norminette $(PATH_SRCS) $(INCLUDES)
+	@norminette $(PATH_SRCS) $(INCLUDES) $(LIB_FOLDER)
 
 .PHONY: all clean fclean re
