@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 14:55:19 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/20 15:18:02 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 22:53:11 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ t_arg		*init_arg(t_type type, va_list aptr)
 	{
 		va_copy(new->aptr, aptr);
 		new->type = type;
-		new->flags = NO_FLAG;
-		new->width = 0;
-		new->precision = UNSET_PRECISION;
 	}
 	return (new);
 }

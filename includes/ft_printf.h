@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/21 16:57:57 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 22:57:07 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,12 @@
 # define END_CHAR '\0'
 # define PLUS_SIGN "+"
 # define MINUS_SIGN "-"
-# define WIDTH_UNIT " 0"
 # define HEX "0123456789abcdef"
 # define DEC "0123456789"
 # define PREFIX_HEX "0x"
 # define OPTION_CHAR "%"
-# define PRECISION_CHAR "."
 # define OPTIONS "cs%diuxXp"
 # define NBOF_OPTIONS 9
-# define UNSET_PRECISION -1
-
-# define FLAGS " +#-0"
-# define NBOF_FLAGS 4
-# define NO_FLAG 0x01
-# define SPACE_FLAG 0x02
-# define PLUS_FLAG 0x04
-# define PREFIX_FLAG 0x08
-# define MINUS_FLAG 0x10
-# define ZERO_FLAG 0x20
 
 # define NO_TYPE 0x0000
 # define CHAR_TYPE 0x0007
@@ -60,23 +48,16 @@
 enum e_state
 {
 	E_STANDARD,
-//	E_MOD,
-//	E_WIDTH,
-//	E_PRECISION,
 	E_CONV,
 	E_END,
 };
 
 typedef uint16_t t_type;
-typedef uint8_t t_flag;
 
 typedef struct s_arg
 {
 	va_list	aptr;
 	t_type	type;
-	t_flag	flags;
-	size_t	width;
-	ssize_t	precision;
 }				t_arg;
 
 typedef struct s_output
@@ -130,35 +111,7 @@ char		*address(va_list nb);
 // states
 
 size_t		conv_state(t_machine *machine);
-size_t		mod_state(t_machine *machine);
-size_t		width_state(t_machine *machine);
-size_t		precision_state(t_machine *machine);
 size_t		standard_state(t_machine *machine);
-
-/*
-// converters/type
-
-char		*character_type(t_arg *arg);
-char		*nb_type(t_arg *arg);
-char		*signed_type(t_arg *arg);
-char		*unsigned_type(t_arg *arg);
-char		*hex_type(t_arg *arg, unsigned long nb);
-
-// flags
-
-void		remove_flag(t_flag *flags, t_flag removing_flag);
-void		add_flag(t_flag *flags, t_flag removing_flag);
-size_t		get_index_from_type(t_type type, t_type mask);
-void		get_flag(t_flag *flags, const ssize_t flag_index);
-
-// precision
-
-char		*get_precision(ssize_t precision, char *string);
-
-// get_size
-
-void		get_widthsize(t_machine *machine, ssize_t option_index);
-*/
 
 // tocase_str
 
