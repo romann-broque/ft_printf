@@ -5,8 +5,7 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              #
-#    Updated: 2022/11/21 16:14:26 by rbroque          ###   ########.fr        #
+#    Created: 2022/10/10 15:35:01 by rbroque           #+#    #+#              ##    Updated: 2022/11/28 23:24:06 by rbroque          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +18,7 @@ NAME = libftprintf.a
 PATH_SRCS += srcs/
 PATH_SRCS += srcs/converters/
 PATH_SRCS += srcs/converters/type
-PATH_SRCS += srcs/core/
-PATH_SRCS += srcs/core/struct/
+PATH_SRCS += srcs/struct/
 PATH_SRCS += srcs/modifiers/
 PATH_SRCS += srcs/printf/
 PATH_SRCS += srcs/states/
@@ -36,13 +34,8 @@ SRCS += nb_conv.c
 
 # srcs/converters/type
 
-# srcs/core
+# srcs/struct
 SRCS += machine_struct.c
-SRCS += cpy_to_buffer.c
-
-# srcs/core/struct
-
-# srcs/modifiers
 
 # srcs/printf
 SRCS += ft_printf.c
@@ -53,13 +46,11 @@ SRCS += states.c
 SRCS += states_utils.c
 
 # srcs/utils
-SRCS += utils.c
 SRCS += strings.c
 SRCS += tocase_str.c
 SRCS += itoa_base.c
-SRCS += get_abs.c
 SRCS += cpy_data.c
-SRCS += add_str.c
+SRCS += get_nb_data.c
 
 vpath %.c $(PATH_SRCS)
 

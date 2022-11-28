@@ -6,13 +6,13 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 17:30:06 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/11 15:27:45 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 23:28:08 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	get_nbsize(unsigned long nb, const size_t len_base)
+static size_t	get_nbsize(unsigned long nb, const size_t len_base)
 {
 	size_t	size;
 

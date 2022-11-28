@@ -6,24 +6,11 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 14:06:23 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/14 19:48:21 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 23:18:50 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-char	*strset(int c, size_t n)
-{
-	char	*new;
-
-	new = (char *)malloc((n + 1) * sizeof(char));
-	if (new != NULL)
-	{
-		ft_memset(new, c, n);
-		new[n] = '\0';
-	}
-	return (new);
-}
 
 char	*ft_strndup(const char *str, const size_t size)
 {
@@ -35,26 +22,48 @@ char	*ft_strndup(const char *str, const size_t size)
 	return (new);
 }
 
-void	prefix_add(char *prefix, char **string)
+char	*add_str(char *s1, const char *s2, const size_t n)
 {
-	const size_t	pre_len = ft_strlen(prefix);
-	size_t			str_len;
-	size_t			len;
-	char			*new;
+	size_t	len1;
+	size_t	len2;
+	char	*new;
 
-	if (*string == NULL)
-		*string = ft_strdup(prefix);
-	else
+	len1 = 0;
+	if (s1 != NULL)
+		len1 = ft_strlen(s1) + (*s1 == '\0');
+	len2 = n;
+	new = (char *)malloc((len1 + len2 + 1) + sizeof(char));
+	if (new != NULL)
 	{
-		str_len = ft_strlen(*string);
-		len = pre_len + str_len;
-		new = (char *)malloc((len + 1) * sizeof(char));
-		if (new != NULL)
-		{
-			ft_strcpy(new, prefix);
-			ft_strcpy(new + pre_len, *string);
-			free(*string);
-			*string = new;
-		}
+		ft_memcpy(new, (char *)s1, len1);
+		ft_memcpy(new + len1, (char *)s2, len2);
+		new[len1 + len2] = '\0';
 	}
+	free(s1);
+	return (new);
+}
+
+ssize_t	get_index(const char *str, const char c)
+{
+	ssize_t	index;
+
+	index = 0;
+	while (str[index] != '\0' && str[index] != c)
+		++index;
+	if (str[index] == '\0')
+		index = -1;
+	return (index);
+}
+
+char	*to_string(const char c)
+{
+	char	*str;
+
+	str = (char *)malloc((2) * sizeof(char));
+	if (str != NULL)
+	{
+		str[0] = c;
+		str[1] = '\0';
+	}
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 15:37:38 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/28 22:57:07 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 23:27:46 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,12 @@
 # define NIL_DEF "(nil)"
 # define SPACE_PAT " "
 # define END_CHAR '\0'
-# define PLUS_SIGN "+"
 # define MINUS_SIGN "-"
 # define HEX "0123456789abcdef"
 # define DEC "0123456789"
 # define PREFIX_HEX "0x"
 # define OPTION_CHAR "%"
-# define OPTIONS "cs%diuxXp"
-# define NBOF_OPTIONS 9
+# define CONVERTERS "cs%diuxXp"
 
 # define NO_TYPE 0x0000
 # define CHAR_TYPE 0x0007
@@ -64,7 +62,7 @@ typedef struct s_output
 {
 	char	buffer[BUFFER_SIZE + 1];
 	size_t	index;
-	size_t	nbof_buffer;
+	size_t	total_size;
 	char	*final_str;
 }				t_output;
 
@@ -120,29 +118,23 @@ char			*tolower_str(char *str);
 
 // itoa_base
 
-size_t			get_nbsize(unsigned long nb, const size_t len_base);
 char			*itoa_base(const unsigned long nb, const char *base);
 
-// get_abs
+// get_nb_data
 
 unsigned int	get_abs(int nb);
 
-// utils
-
-size_t			reduce_size(size_t width, char *str);
-ssize_t			get_index(const char *str, const char c);
-char			*to_string(const char c);
 
 // strings
 
-char			*strset(int c, size_t n);
+char	*add_str(char *s1, const char *s2, const size_t n);
 char			*ft_strndup(const char *str, const size_t size);
-char			*add_str(char *s1, const char *s2, const size_t n);
+ssize_t			get_index(const char *str, const char c);
+char			*to_string(const char c);
 
 // cpy_data
 
 void			cpy_data(t_output *output, void *data, size_t n);
 void			cpy_to_buffer(t_machine *machine, char *string);
-void			prefix_add(char *prefix, char **string);
 
 #endif

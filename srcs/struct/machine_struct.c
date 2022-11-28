@@ -6,7 +6,7 @@
 /*   By: rbroque <rbroque@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 14:55:19 by rbroque           #+#    #+#             */
-/*   Updated: 2022/11/28 22:53:11 by rbroque          ###   ########.fr       */
+/*   Updated: 2022/11/28 23:22:41 by rbroque          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_output	*init_output(void)
 	{
 		ft_bzero(new->buffer, BUFFER_SIZE + 1);
 		new->index = 0;
-		new->nbof_buffer = 0;
+		new->total_size = 0;
 		new->final_str = NULL;
 	}
 	return (new);
@@ -58,8 +58,12 @@ t_machine	*init_machine(const char *str, va_list aptr, int fd)
 
 void	free_machine(t_machine *machine)
 {
-	free(machine->arg);
-	free(machine->output->final_str);
-	free(machine->output);
+	if (machine != NULL)
+	{
+		free(machine->arg);
+		if (machine->output != NULL)
+			free(machine->output->final_str);
+		free(machine->output);
+	}
 	free(machine);
 }
