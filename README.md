@@ -2,7 +2,7 @@
 
 ### 📜 Project Overview
 
-The `ft_printf` project is an implementation of the C standard library's `printf` function. It's a powerful tool for formatting and printing text to the console or a file. This project showcases your ability to handle complex string manipulation, work with variadic functions, and follow the principles of Don't Repeat Yourself (DRY) and Keep It Simple, Stupid (KISS).
+The `ft_printf` project is an implementation of the C standard library's `printf` function. It's a powerful tool for formatting and printing text to the console or a file. This project showcases your ability to handle complex string manipulation and work with variadic functions.
 
 ### 🌟 Key Features
 
