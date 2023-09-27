@@ -6,10 +6,7 @@ The `ft_printf` project is an implementation of the C standard library's `printf
 
 ### 🌟 Key Features
 
-- Supports a plethora of format specifiers (%s, %d, %x, %f, and more).
-- Customizable flags and modifiers for precise formatting.
-- Create your custom format specifiers.
-- Clean and simple to use.
+- Supports some format specifiers (%c, %s, %p, %d, %i, %u, %x, %X, %%).
 
 ### 🚀 How to Use
 
